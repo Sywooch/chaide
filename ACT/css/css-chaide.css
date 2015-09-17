@@ -115,7 +115,11 @@ nav ul{
 nav ul li{
 	width:14%;
 	float:left;
-	}	
+	position:relative;
+	}
+nav ul li:hover > #submenu-chaide{
+	display:block;
+	}		
 nav ul li a:link, nav ul li a:visited{
 	width:100%;
 	float:left;
@@ -181,7 +185,29 @@ nav ul li a:link, nav ul li a:visited{
   transform: scaleY(1);
   -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
   transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
-}					
+}	
+/* SUBMENU CHAIDE */
+#submenu-chaide{
+	width:150% !important;
+	position:absolute;
+	top:100%;
+	left:0;
+	display:none;
+	}	
+#submenu-chaide li{
+	width:100% !important;
+	float:left;
+	}	
+#submenu-chaide li a:link, .submenu-chaide li a:visited{
+	width:100%;
+	padding:2% 0;
+	background-color:#d8d6d2;
+	color:#645f54;
+	font-size:0.8em;
+	}
+#submenu-chaide li a:hover{
+	color:#FFF;
+	}					
 /* HOME CHAIDE */
 #home-chaide{
 	width:100%;
