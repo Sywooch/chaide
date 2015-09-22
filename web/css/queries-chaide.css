@@ -1,0 +1,826 @@
+@media screen and (max-width: 1910px){
+.header-int {
+    height: 19%;
+}
+}
+@media screen and (max-width: 1800px){
+.secc-intcolchon ul li{
+	width: 17.6%;
+	margin:0 0.2%;
+	padding:0 1%;
+	}
+.txt-estructura-interna h1 {
+  margin: 2% 0 0 0;
+}
+#asesor-compra{
+	width:2%;
+	}		
+}
+@media screen and (max-width: 1700px){
+.cont-medidas50 ul{
+  width: 40%;
+  padding: 2% 0 0 38%;
+}
+.cont-medidas50 ul li span {
+  width: 40%;
+}
+.txt-altura {
+  width: 40%;
+  margin: 2% 0 2% 33%;
+}
+.header-int {
+    height: 17%;
+}
+}
+@media screen and (max-width: 1480px){
+.secc-intcolchon {
+  width: 98%;
+  padding: 0 1%;
+	}
+.txt-estructura-interna {
+  width: 35%;
+  padding: 0 2.5% 2% 2.5%;
+  float: left;
+}	
+.conte-local{
+	width: 52%;
+    margin: 1% 0 0 2%;
+	}
+}
+@media screen and (max-width: 1435px){
+.secc-intcolchon {
+ height:35%;
+	}
+}	
+@media screen and (max-width: 1366px) {
+body{
+	font-size:1.1em;
+	}	
+header{
+	width:85%;
+	left:7.5%;
+	}
+.footter-home ul{
+	width:70%;
+	margin:0 15%;
+	}	
+.cont-compra {
+  width: 25%;
+}	
+.txt-colchonint {
+  width: 45%;
+  bottom: 3%;
+  left: 8%;
+}
+.secciones-productos ul {
+    width: 90%;
+    margin: 0.5% 5%;
+}	
+.cont-titulos {
+    margin: 8.5% 25% 0 25%;
+}
+.secc-noticia{
+	width:90%;
+	padding:0 5%;
+	}
+}
+@media screen and (max-width: 1280px) {
+header{
+	width:90%;
+	left:5%;
+	}
+body{
+	font-size:1em;
+	}	
+.n-colchon {
+  top: 12%;
+}
+.footter-intcolchon ul{
+	width:90%;
+	margin:0 5%;
+	}	
+.cont-colchon360 {
+  width: 51%;
+}
+.txt-estructura-interna {
+  width: 45%;
+  padding: 0 2% 2% 2%;
+}	
+.img-comfort {
+  width: 70%;
+  margin: 2% 15% 0 15%;
+}
+.header-int {
+    height: 15%;
+}
+.background-registro {
+    background-size: 120%;
+}
+.cont-formulario {
+    width: 50%;
+    float: left;
+    margin: 0% 22% 0 22%;
+    padding: 1% 3%;
+    background-color: rgba(0,0,0,0.75);
+}
+.cont-notinternas {
+    width: 90%;
+    float: left;
+    padding: 1% 5%;
+}
+.inf-notprincipal {
+    width: 50%;
+    bottom: 8%;
+    right: 5%;
+}
+.cont-trayectoria {
+    width: 90%;
+    padding: 10% 5% 1% 5%;
+}
+}
+@media screen and (max-width: 1150px) {
+.background-home {
+    background-size:cover;
+	}
+.background-registro{
+	background-size:cover;
+	}	
+}
+@media screen and (max-width: 1024px) {
+header{
+	width:96%;
+	left:2%;
+	}
+body{
+	font-size:0.9em;
+	}	
+.footter-home ul{
+	width:80%;
+	margin:0 10%;
+	}	
+.cont-footer {
+  width: 80%;
+  padding: 0 10%;
+}
+.footer-cierre ul {
+  width: 20%;
+  margin: 0 40%;
+}
+#home-chaide {
+  width: 100%;
+  min-height: 85%;
+}
+.footter-intcolchon ul {
+  width: 98%;
+  margin: 0 1%;
+}
+.txt-colchonint {
+  width: 50%;
+  bottom: 3%;
+  left: 3%;
+}
+.btn-comprar2 {
+  top: 60%;
+}
+.secciones-productos ul {
+    width: 100%;
+    margin: 0.5% 0;
+}
+.secciones-productos ul li {
+    font-size: 0.8em;
+}
+.cont-titulos {
+    width: 60%;
+    margin:10% 20% 0 20%;
+}
+.cont-formulario {
+    width: 60%;
+    float: left;
+    margin: 0 17% 0 17%;
+    padding: 1% 3%;
+}
+.conte-local {
+    width: 60%;
+}
+.cont-maps iframe {
+    min-height: 400px;
+}
+.secc-noticia{
+	width:96%;
+	padding:0 2%;
+	}
+.cont-trayectoria{
+    width: 98%;
+    padding: 10% 1% 1% 1%;
+}	
+}
+/* TAMAÑO TABLETS */
+@media screen and (max-width:960px){
+.cont-medidas50 ul {
+  width: 60%;
+  padding: 2% 0 0 28%;
+}
+.txt-altura {
+  width: 60%;
+  margin: 2% 0 2% 20%;
+}
+.img-comfort {
+  width: 80%;
+  margin: 2% 10% 2% 10%;
+}
+.cont-compra {
+  width:30%;
+}
+#asesor-compra{
+	width:3%;
+	top:20%;
+	}	
+.header-int {
+    height: 12%;
+}	
+.tit-productos {
+    width: 40%;
+    padding: 1% 30%;
+}
+.cont-paginternas {
+    width: 90%;
+    padding: 15% 5% 2% 5%;
+}
+.background-registro {
+    background-size: 120%;
+}
+.background-registro {
+    background-size: cover;
+}
+.cont-formulario {
+    width: 60%;
+    float: left;
+    margin: 0% 17% 0 17%;
+    padding: 1% 3%;
+    background-color: rgba(0,0,0,0.75);
+}
+.cont-titulos {
+    width: 80%;
+    margin: 15% 10% 0 10%;
+}
+.cont-formulario {
+    width: 86%;
+    margin: 0% 5% 0 5%;
+    padding: 1% 2%;
+}
+.cont-secciones ul{
+    width: 90% !important;
+    margin: 0.5% 5% !important;
+}
+ul.secciones-noticias{
+	width: 100% !important;
+	margin:0 !important;
+	padding:0;
+	font-size: 1em;
+	}
+}
+@media screen and (max-width: 800px) {
+.footter-home ul{
+	width:90%;
+	margin:0 5%;
+	}
+.cont-footer {
+  width: 90%;
+  padding: 0 5%;
+}
+.footer-cierre ul {
+  width: 30%;
+  margin: 0 35%;
+}	
+.cont-servicios {
+  height: 50%;
+  /*background-attachment:fixed;
+  background-size:200%;
+  background-repeat:no-repeat;
+  background-position:30% 0;*/
+}
+#home-chaide {
+  width: 100%;
+  min-height: 70%;
+}
+.txt-secc {
+  width: 60%;
+  top: 25%;
+  left: 5%;
+}
+.footter-home p {
+    width: 80%;
+    padding: 0 10%;
+}
+.cont-noticia{
+	width:90%;
+	margin:0 5% 1% 5%;
+	padding:0 0 1% 0;
+	border-bottom:1px dashed #535353;
+	}
+.txt-noticia{
+	margin:5% 0 0 0;
+	}
+.img-noticia {
+    width: 100%;
+    height: 350px;
+	position:relative;
+}
+.desc-noticia {
+    width: 96%;
+    margin: 1% 0;
+    padding: 0 2%;
+}			
+}
+@media screen and (max-width: 760px) {
+.cont-footer {
+  width: 98%;
+  padding: 0 1%;
+}	
+.footter-home {
+  background-size: cover;
+}
+.footter-home ul {
+  width: 95%;
+  margin: 0 2.5%;
+}
+.footter-home ul li img {
+  width: 20%;
+  margin: 0 40%;
+}
+.txt-informativo, .txt-informativo-medium {
+  width: 95% !important;
+  margin: 4% 2.5% 0 2.5%;
+}
+.li-medium img {
+  width: 27% !important;
+  margin: 0 36.5% !important;
+}
+.txt-informativo h1, .txt-informativo-medium h1{
+	width:100%;
+	text-align:center;
+	float:left;
+	}
+.txt-informativo span, .txt-informativo-medium span{
+	text-align:center;
+	width:100%;
+	float:left;
+	}
+.m-menu {
+ display:none;
+}
+nav ul {
+  width: 14%;
+}	
+nav ul li{
+  width: 100%;
+}
+#barra-mobile{
+	display:block;
+}	
+.cont-servicios {
+  background-attachment:scroll;
+  background-size:100%;
+  height: 70%;
+}	
+.cont-compra {
+  width: 35%;
+  top: 15%;
+}	
+.btn-comprar2 {
+  top: 50%;
+  width:50%;
+  left:25%;
+}
+.header-int {
+    height: 11%;
+}
+.img-locales {
+    opacity: 0.3;
+}
+.conte-local {
+    width: 96%;
+}
+.cont-notinternas {
+    width: 98%;
+    float: left;
+    padding: 1% 1%;
+}
+
+}
+@media screen and (max-width: 720px) {
+#home-chaide {
+  min-height: 100%;
+}
+.background-colchonint {
+  background-size: 120%;
+  background-attachment: scroll;
+}
+.n-colchon {
+   left: 0;
+}
+.cont-compra {
+  width: 40%;
+}
+.txt-colchonint h1 {
+  font-size: 2em;
+}
+.txt-colchonint p {
+  font-size: 1.1em;
+}
+.footter-intcolchon ul li {
+  width: 33.33%;
+}
+.cont-colchonint2 {
+  background-attachment: scroll;
+}
+.cont-colchon360 {
+  width: 70%;
+  margin: 0 15% 2% 15%;
+}
+.txt-estructura-interna {
+  width: 80%;
+  padding: 0 10% 2% 10%;
+}
+.cont-medidas50 ul {
+  width: 80%;
+  padding: 2% 0 0 20%;
+}
+.img-comfort {
+  width: 90%;
+  margin: 6% 5% 3% 5%;
+}
+.txt-altura {
+  width: 80%;
+  margin: 2% 0 2% 10%;
+}
+#asesor-compra{
+	display:none;
+	}	
+.secciones-productos ul li {
+    width: 41.7%;
+    padding: 0 4%;
+}
+.noticia-int {
+    width: 47%;
+    margin: 1%;
+    float: none;
+    display: inline-block;
+}
+}
+@media screen and (max-width: 600px) {
+.cont-footer {
+ display:none;
+}	
+.cont-compra {
+  width: 50%;
+  right: 2%;
+}
+#home-chaide {
+  min-height: auto;
+}
+.cont-compra {
+  width: 100%;
+  right: 0;
+  position: relative;
+}
+.footter-intcolchon {
+  position: relative;
+}
+.cont-fcompra {
+  width: 60%;
+  margin: 0 20%;
+}
+.colchon-celular{
+	display:block;
+	}
+.secc-intcolchon{
+	position:relative;
+	height:auto;
+	float:left;
+	}
+.cont-colchonint2{
+	height:auto;
+	}	
+.secc-intcolchon ul li {
+  width: 96%;
+  margin: 0 1%;
+  padding: 0 1%;
+}	
+.secc-intcolchon ul li p {
+  width: 100%;
+  padding: 10px 0 ;
+}
+.header-int {
+    height: 10%;
+}	
+.cont-secciones ul li {
+    width: 45.8% !important;
+    padding: 0 2% !important;
+}	
+.cont-formulario {
+    width: 96%;
+    margin: 0% 1% 0 1%;
+    padding: 1% 1%;
+}
+ul.secciones-noticias li{
+	width: 50% !important;
+    padding: 0 !important;
+	margin:0 !important;
+	}
+.not-principal {
+    margin: 15% 0 0 0;
+}
+.img-noticia {
+    width: 100%;
+    height: 300px;
+}	
+}
+/* TAMAÑO TABLETS */
+@media screen and (max-width:500px){
+.txt-colchonint {
+  width: 80%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  color: #FFF;
+  padding:10px 10%;
+  background:rgba(0,0,0,0.8);
+}
+.border-der {
+  border-right:none;
+}
+.cont-medidas50 {
+  width: 100%;
+  float: left;
+}
+.cont-paginternas {
+    width: 96%;
+    padding: 10% 2% 2% 2%;
+}
+.header-int {
+    height: 9%;
+}	
+.txt-noticia {
+    width: 100%;
+    margin: 5% 0 0 0;
+}
+.cont-noticia img {
+    width: 60%;
+    margin: 0 20%;
+}
+	}
+@media screen and (max-width: 430px) {
+.footer-cierre ul {
+  width: 40%;
+  margin: 0 30%;
+}	
+nav ul {
+  width: 23%;
+}
+#barra-mobile {
+  width: 77%;
+  margin: 2% 0 0 0;
+}
+.btn-comprar2 {
+  top: 40%;
+  width:60%;
+  left:20%;
+}
+.header-int {
+    height: 11%;
+}
+.cont-paginternas {
+    padding: 15% 2%;
+}
+.cont-titulos {
+    width: 80%;
+    margin: 22% 10% 0 10%;
+}
+#registro-chaide {
+    width: 100%;
+    min-height: 80%;
+    position: relative;
+    float: left;
+    padding: 0 2% 0 2%;
+}
+.cont-formulario input[type="submit"] {
+    width: 35%;
+}
+.cont-txt{
+	width:56%;
+	margin:0 1% 0 0;
+	}	
+.cont-cant{
+	margin:0 1% 0 0;
+	}	
+.footter-home p {
+    width: 96%;
+    padding: 0 2%;
+}	
+.cont-locales {
+    margin: 17% 0 0 0;
+}
+.cont-maps iframe {
+    min-height: 350px;
+}
+}
+@media screen and (max-width: 360px) {
+.footer-cierre ul {
+  width: 50%;
+  margin: 0 25%;
+}
+.footter-home ul li {
+  min-height:120px;
+}
+.footter-home ul li img {
+  width: 40%;
+  margin: 0 30%;
+}
+.li-medium img {
+  width: 50% !important;
+  margin: 0 25% !important;
+}	
+nav ul {
+  width: 25%;
+}
+#barra-mobile {
+  width: 75%;
+  margin: 2% 0 0 0;
+}
+.txt-informativo span, .txt-informativo-medium span {
+    line-height: 1em;
+}
+.txt-secciones {
+    float: left;
+}
+.header-int {
+    height: 9%;
+}
+.cont-titulos {
+    width: 80%;
+    margin: 25% 10% 0 10%;
+}
+.cont-noticia img {
+    width: 90%;
+    margin: 0 5%;
+}
+}
+/* PORTRAIT */
+@media screen and (max-width: 1024px) and (orientation:portrait){
+
+.inf-home {
+  width: 80%;
+  margin: 30% 10% 40% 10%;
+}
+.cont-servicios {
+  height: 50%;
+  
+}
+.background-colchonint {
+    background-size: 160%; /* 120 */
+}
+
+}
+@media screen and (max-width: 780px) and (orientation:portrait){
+.background-home {
+    background-size: 131%;
+}
+.background-colchonint {
+    background-size: 160%; /* 120 */
+}
+#home-chaide {
+    width: 100%;
+    min-height: 56%;
+	padding:0 0 4% 0;
+}
+.n-colchon {
+    top: 15%;
+	left:1%;
+}
+.cont-servicios {
+    background-attachment: inherit;
+	background-size: cover;
+}
+#linea-c {
+    clear: both;
+}
+.txt-secc {
+    top: 35%;
+}
+}
+@media screen and (max-width: 420px) and (orientation:portrait){
+.inf-home span {
+    font-size: 1.2em;
+}
+.inf-home {
+    float:left;
+	margin: 55% 10% 5% 10%;
+}
+.background-home {
+    background-size: 165%;
+}
+.btn-comprara {
+    width: 70%;
+    margin: 2% 15% 0 15%;
+}
+.footter-home {
+    float: left;
+	position:relative;
+}
+.footter-home ul {
+    width: 98%;
+    margin: 0 1%;
+}
+#linea-s {
+    font-size: 1.5em;
+}
+#linea-c {
+    font-size: 3em;
+    clear: both;
+    margin: -5px 0 0 0;
+}
+.txt-secciones {
+    width: 96%;
+    padding: 3% 2%;
+    float: left;
+}
+.txt-secciones h1{
+	width:100%;
+	float:left;
+	text-align:center;
+	}
+.txt-secciones span{
+    width: 100%;
+    font-size: 0.9em;
+	text-align:center;
+	float:left;
+}	
+#txt-linea {
+    width: 100%;
+    padding: 1% 0 0 0;
+}
+.txt-secc {
+    width: 80%;
+    top: 35%;
+    left: 3%;
+}
+.btn-comprar3 {
+    width: 60%;
+    margin: 3% 20% 0 20%;
+}
+.cont-servicios {
+    background-size: 124%;
+    height:50%;
+}
+.flecha-r, .flecha-l{
+    width: 15%;
+    top: 15%;
+}
+.btn-comprar2 {
+    top: 45%;
+    width: 70%;
+    left: 15%;
+}
+}
+@media screen and (max-width: 360px) and (orientation:portrait){
+.txt-secciones {
+    width: 90%;
+    padding: 3% 5%;
+}
+.btn-comprar2 {
+    top: 40%;
+}
+.inf-home {
+    margin: 51% 10% 5% 10%;
+}
+#txt-linea {
+    margin: 20px 0 0 0;
+}
+.txt-secc {
+    top: 25%;
+}
+}
+/*@media screen and (max-width: 960px) and (orientation:portrait){
+.cont-colchonint2 {
+  width: 100%;
+  height: 60%;
+}
+}*/
+/* LANDSCAPE */
+@media screen and (max-width: 1024px) and (orientation:landscape){
+.inf-home {
+  width: 80%;
+  margin: 35% 10% 0 10%;
+}
+.cont-servicios {
+  background-attachment:scroll;
+  background-size:100%;
+  height: 70%;
+}
+#home-chaide {
+    width: 100%;
+   min-height: 80%;
+}
+}
+
