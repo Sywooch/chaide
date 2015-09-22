@@ -3,7 +3,7 @@ use yii\helpers\Url;
 /* @var $this yii\web\View */
 $this->title = 'Chaide';
 ?>
-<!-- -->º
+<!-- -->
 <section id="home-chaide" class="background-home">
     <div class="inf-home">
         <div class="borde-externo">

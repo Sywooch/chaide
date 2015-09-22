@@ -65,6 +65,7 @@ footer,header,hgroup,menu,nav,section {
 /**/
 img{
 	width:100%;
+	display:block;
 	}
 a{
 	color:inherit;
@@ -325,12 +326,20 @@ nav ul li a:link, nav ul li a:visited{
 	color:#FFF;
 	font-size:1.1em;
 	}	
+.txt-secciones span{
+	width:100%;
+	float:left;
+	text-align:center;
+	}	
 .background-almohadas{
 	background-color:#a6a19e;
 	}
 .background-edredones{
 	background-color:#6c6662;
 	}
+.background-edredones h1{
+	color:#a6a19e !important;
+	}	
 .flecha-l{
 	width:8%;
 	position:absolute;
