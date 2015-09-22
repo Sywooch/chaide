@@ -135,8 +135,14 @@ nav ul li a:link, nav ul li a:visited{
 	padding:1% 0 !important;	
 	}	
 .m-menu img{
-	width: 14.2%;
-	}		
+	width: 16%;
+    float: left;
+    margin: 0.5% 0 0.5% 20%;
+	}
+.menu-imagen span{
+	float:left;
+	margin:2% 0 0 3%;
+	}			
 /* anim-menu */
 /* Bounce To Top */
 .hvr-bounce-to-top {

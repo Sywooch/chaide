@@ -43,7 +43,7 @@ AppAsset::register($this);
                 <li><a href="<?= Url::home() ?>"><img src="images/logo-chaide.svg" alt="logotipo chaide"/></a></li>
                 <li class="m-menu"><a href="locales.html" class="hvr-bounce-to-top">LOCALES</a></li>
                 <li class="m-menu"><a href="#" class="hvr-bounce-to-top">INNOVACIÓN</a></li>
-                <li class="m-menu menu-imagen"><a href="registro.html" class="hvr-bounce-to-top"><img src="images/ico-compras.svg"/> COMPRAS</a></li>
+                <li class="m-menu menu-imagen"><a href="registro.html" class="hvr-bounce-to-top"><img src="images/ico-compras.svg"/><span>COMPRAS</span></a></li>
             </ul>
             <div id="barra-mobile">
                 <a id="menu-chaide"><span></span></a>
