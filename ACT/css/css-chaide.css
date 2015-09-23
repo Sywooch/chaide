@@ -65,6 +65,7 @@ footer,header,hgroup,menu,nav,section {
 /**/
 img{
 	width:100%;
+	display:block;
 	}
 a{
 	color:inherit;
@@ -215,6 +216,12 @@ nav ul li a:link, nav ul li a:visited{
 	position:relative;
 	float:left;
 	}
+#interna-chaide{
+	width:100%;
+	min-height:100%;
+	position:relative;
+	float:left;
+	}	
 #registro-chaide{
 	width:100%;
 	min-height:88%;
@@ -395,7 +402,7 @@ nav ul li a:link, nav ul li a:visited{
 	width:30%;
 	float:left;
 	position:absolute;
-	top:30%;
+	top:60%;
 	left:10%;
 	}
 #linea-s{
@@ -855,18 +862,22 @@ footer{
 	color:#FFF;
 	}
 .txt-colchonint h1{
-	width:100%;
-	font-size:3em;
-	font-family: 'dosismedium';
-	line-height:1em;
+	width:100% !important;
+	font-size:3em !important;
+	font-family: 'dosismedium' !important;
+	line-height:1em !important;
+	color:inherit !important;
+	text-align:left !important;
 	}	
 .txt-colchonint h1 font{
 	font-family: 'dosislight' !important;
 	}
 .txt-colchonint p{
-	width:100%;
-	padding:2% 0;
-	font-size:1.2em;
+	width:100% !important;
+	padding:2% 0 !important;
+	font-size:1.2em !important;
+	color:inherit !important;
+	text-align:left !important;
 	}
 .colchon-celular{
 	display:none;
