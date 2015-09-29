@@ -130,17 +130,23 @@ nav ul li a:link, nav ul li a:visited{
 	}	
 .m-menu{
 	margin: 1.47% 0 0 0;
-	}
-.m-menu a{
 	background-color:#FFF;
+	}
+.m-menu a:link, .m-menu a:visited{
 	padding:2.5% 0;	
 	}
 .menu-imagen a{
 	padding:1% 0 !important;	
 	}	
 .m-menu img{
-	width: 14.2%;
-	}		
+	width: 16%;
+    float: left;
+    margin: 0.5% 0 0.5% 20%;
+	}
+.menu-imagen span{
+	float:left;
+	margin:2% 0 0 3%;
+	}			
 /* anim-menu */
 /* Bounce To Top */
 .hvr-bounce-to-top {
@@ -192,17 +198,23 @@ nav ul li a:link, nav ul li a:visited{
 	width:150% !important;
 	position:absolute;
 	top:100%;
-	left:0;
+	left:-25%;
 	display:none;
+	padding:0;
+	background-color:#d8d6d2;
+	z-index:1000;
 	}	
 #submenu-chaide li{
 	width:100% !important;
 	float:left;
+	margin:0;
+	padding:0;
+	border-top:1px solid #C4BFBF
 	}	
 #submenu-chaide li a:link, .submenu-chaide li a:visited{
 	width:100%;
 	padding:2% 0;
-	background-color:#d8d6d2;
+	background-color:#d8d6d2 !important;
 	color:#645f54;
 	font-size:0.8em;
 	}
@@ -259,7 +271,11 @@ nav ul li a:link, nav ul li a:visited{
 	position:relative;
 	text-align:center;	
 	font-family: 'dosislight';
-	}	
+	}
+.inf-home h1{
+	font-size:2em;
+	color:#888170;
+	}		
 .borde-externo{
 	width:100%;
 	float:left;
@@ -354,7 +370,7 @@ nav ul li a:link, nav ul li a:visited{
 .txt-secciones{
 	width:90%;
 	min-height:80px;
-	padding:3% 5%;
+	padding:2% 5%;
 	color:#FFF;
 	font-size:1.1em;
 	}	
@@ -402,7 +418,7 @@ nav ul li a:link, nav ul li a:visited{
 	width:30%;
 	float:left;
 	position:absolute;
-	top:60%;
+	top:40%;
 	left:10%;
 	}
 #linea-s{
@@ -423,12 +439,14 @@ nav ul li a:link, nav ul li a:visited{
 	}
 #txt-linea{
 	width:90%;
-	padding:1% 5% 0 5%;
+	padding:1% 5% 1% 5%;
 	position:relative;
-	border-top:1px solid #FFF;
+	/*border-top:1px solid #FFF;*/
 	float:left;
 	color:#FFF;
 	margin: 35px 0 0 0;
+	background-color: rgba(0,0,0,0.3);
+	border-radius:10px;
 	}
 /* footer */
 footer{
@@ -629,11 +647,12 @@ footer{
 	float:left;
 	top:13%;
 	left:2%;
+	display:none;
 	}
 .cont-compra{
-	width:20%;
+	width:22%;
 	position:absolute;
-	top:20%;
+	top:18%;
 	right:5%;
 	}	
 .info-colchon{
@@ -702,6 +721,7 @@ footer{
 	padding:5px 5px;
 	color:#645f54;
 	margin: 15px 0 0 10px;
+	cursor:pointer;
 	}		
 .footter-intcolchon{
 	width:100%;
@@ -783,12 +803,26 @@ footer{
 	}
 .cont-colchon360{
 	width:60%;
-	float:left;
+	height:100%;
+	position:absolute;
+	top:5%;
+	left:0;
+	overflow:hidden;
 	}
+.cont-colchon360 iframe{
+	width:100%;
+	height:100%;
+	top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: -15px;
+    overflow: auto;
+	}	
 .txt-estructura-interna{
 	width:35%;
 	padding:0 2.5%;
 	float:left;
+	margin:0 0 0 60%;
 	}	
 .txt-estructura-interna h1{
 	color:#645f54;
@@ -808,8 +842,9 @@ footer{
 	list-style:square;
 	}
 .cont-medidas50{
-	width:49.9%;
+	width:100%;
 	float:left;
+	margin:2% 0 0 0;
 	}
 .border-der{
 	border-right:1px dotted #645f54;
@@ -884,12 +919,31 @@ footer{
 	}
 /* ASESOR DE COMPRA */
 #asesor-compra{
-	width:1.5%;
+	width:2.3%;
 	position:fixed;
 	background-color:#00809d;
 	right:0;
 	top:30%;
 	}	
+#asesor-compra ul{
+	width:100%;
+	margin:0;
+	padding:0;
+	}
+#asesor-compra ul li{
+	width:100%;
+	float:left;
+	margin:0 0 3px 0;
+	list-style:none;
+	}	
+#asesor-compra ul li a:link, #asesor-compra ul li a:visited{
+	width:100%;
+	float:left;
+	background-color:#00809d;
+	}	
+#asesor-compra ul li a:hover{
+	background-color:#04535b;
+	}		
 .btn-comprara{
 	width:60%;
 	margin:2% 20% 0 20%;
@@ -1612,5 +1666,71 @@ ul.publiciad-abj li{
 .n-footer{
 	margin:1% 0 0 0 !important;
 	}	
-		
-	
+/**/
+.img-propiedad{
+	width: 25%;
+    position: absolute;
+    top: -15%;
+    left: -10%;
+	}	
+
+#h1-home-2{
+	color:#a6a19e !important;
+	}	
+.txt-secciones h1{
+	padding:0 !important;
+	}
+.txt-secciones span{
+	width:100%;
+	float:left;
+	text-align:center;
+	}	
+/**/
+#submenu-chaide li:hover > #productos-submenu{
+	display:block;
+	}
+#productos-submenu{
+	width:100%;
+	position:absolute;
+	top:0;
+	left:100%;
+	text-transform:uppercase;
+	display:none;
+	}
+#productos-submenu li a:visited, #productos-submenu	li a:link{
+	background-color:#635f54;
+	color:#FFFFFF;
+	}
+#productos-submenu li a:hover{
+	background-color:#d8d6d2 !important;
+	color:#645f54 !important;
+	}	
+.btn-vermas-m:link, .btn-vermas-m:visited{
+	background-color:#00809d !important;
+	color:#FFFFFF;
+	font-family: 'dosismedium';
+	font-size:1.1em;
+	font-weight:bold;
+	}
+.btn-vermas-m:hover{
+	background-color:#00809d !important;
+	color:#FFFFFF !important;
+	}		
+.cont-imgref{
+	width:50%;
+	float:left;
+	margin:0 25%;
+	}	
+/**/
+.html-3dproductos{
+	width:100%;
+	height:100%;
+	position:relative;
+	}
+.cont-img3d{
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	position:fixed;
+	}	
