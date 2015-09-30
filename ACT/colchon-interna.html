@@ -22,7 +22,18 @@ $("#menu-chaide").click(function(){
 		$(this).toggleClass("active");
 		$("#menu-mobile").toggleClass("menu-active");
 		$("#general").toggleClass("general-active");
-	});   
+	}); 
+//
+$("#play").click(function(){
+		$("#video-colchon-interna").get(0).play();	
+		$("#play").fadeOut();
+		$("#stop").show();
+	});
+$("#stop").click(function(){
+		$("#stop").hide();
+		$("#video-colchon-interna").get(0).pause();	
+		$("#play").fadeIn();
+	});		  
 });
 
 </script>	
@@ -191,14 +202,24 @@ $("#menu-chaide").click(function(){
 	</div>-->
 </section>
 <!-- -->
-<section class="cont-secciones int-colchon">
-	<img src="images/img-elaboradalatex.jpg" alt="img elaborada latex"/>
+<section class="cont-secciones">
+	<!--<img src="images/img-elaboradalatex.jpg" alt="img elaborada latex"/>
     <div class="txt-colchonint">
     	<h1>EXTRA SOFT <br/> <font>BOX TOP</font></h1>
         <p>
         Sobrecapa elaborada con látex, material de extraordinaria elasticidad que se adapta perfectamente a la forma del cuerpo, brindando soporte óptimo a cada parte y curva de éste, sin crearpuntos de presión.
         </p>
+    </div>-->
+    <video loop id="video-colchon-interna">
+      <source src="videos/chaide maqueta_2.ogv" type="video/ogg">
+      <source src="video/chaide maqueta_2.mp4" type="video/mp4">
+      <source src="video/chaide maqueta_2.webm" type="video/webm">
+      Your browser does not support the video tag.
+    </video>
+    <div class="cont-video" id="play">
+    	<img src="images/btn-play.svg" id="btn_play"/>
     </div>
+    <div class="cont-video" id="stop"></div>
 </section>
 <!-- -->
 <section class="cont-colchonint2">
@@ -261,9 +282,10 @@ $("#menu-chaide").click(function(){
         </ul>
         <div class="cont-medidas50">
             <div class="barra-azul">
-                ESCALA DE CONFORT
+                NIVEL DE SOPORTE Y CONFORT
             </div>
             <div class="img-comfort"><img src="images/b-confort.jpg" alt="escala confort"/></div>
+            <span class="span-estructura-c">Recomendado para personas con peso máximo individual de 220lb.</span>
             <div class="txt-altura">10 Años de Garantía</div>
         </div>
     </div>

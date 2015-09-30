@@ -437,6 +437,10 @@ nav ul li a:link, nav ul li a:visited{
 	float:left;
 	line-height:0.5em;
 	}
+#tipo-colchon{
+	width:80%;
+	float:left;
+	}	
 #txt-linea{
 	width:90%;
 	padding:1% 5% 1% 5%;
@@ -444,7 +448,7 @@ nav ul li a:link, nav ul li a:visited{
 	/*border-top:1px solid #FFF;*/
 	float:left;
 	color:#FFF;
-	margin: 35px 0 0 0;
+	margin: -2% 0 0 0;
 	background-color: rgba(0,0,0,0.3);
 	border-radius:10px;
 	}
@@ -802,7 +806,7 @@ footer{
 	background-color:#FFF;
 	}
 .cont-colchon360{
-	width:60%;
+	width:56%;
 	height:100%;
 	position:absolute;
 	top:5%;
@@ -819,10 +823,10 @@ footer{
     overflow: auto;
 	}	
 .txt-estructura-interna{
-	width:35%;
+	width:37%;
 	padding:0 2.5%;
 	float:left;
-	margin:0 0 0 60%;
+	margin:0 0 0 56%;
 	}	
 .txt-estructura-interna h1{
 	color:#645f54;
@@ -839,7 +843,8 @@ footer{
 	float:left;
 	padding:0.5% 0;
 	color:#645f54;
-	list-style:square;
+	list-style:decimal;
+	text-align:justify;
 	}
 .cont-medidas50{
 	width:100%;
@@ -1733,4 +1738,32 @@ ul.publiciad-abj li{
 	top:0;
 	left:0;
 	position:fixed;
+	}	
+.span-estructura-c{
+	width:100%;
+	font-size:1em;
+	text-align:center;
+	color: #645f54;
+	float:left;
+	}
+/**/
+.cont-video{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	background-color:rgba(0,0,0,0.5);
+	}
+#stop{
+	background-color:rgba(0,0,0,0) !important;
+	display:none;
+	}	
+.cont-video img{
+	width:10%;
+	margin:25% 45% 10% 45%;
+	}	
+#video-colchon-interna{
+	width:100%;
+	float:left;
 	}	
