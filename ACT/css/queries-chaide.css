@@ -103,7 +103,36 @@ body{
 .footter-intcolchon ul{
 	width:90%;
 	margin:0 5%;
+	}
+/* B */
+.btn-comprara{
+	width:100%;
+	clear:both;
+	float:left;
+	margin:10% 0 0 0;
+	align-self:auto;
+	azimuth:behind;
+	}
+#productos-submenu{
+	border-bottom-color:1px solid #C94B4D;
 	}	
+.footter-home{
+	min-width:100px;
+	align-self:flex-end;
+	stress:inherit;
+	}	
+.menu-imagen{
+	marquee-speed:fast;
+	break-before:left;	
+	}	
+.btn-comprara{
+	drop-initial-after-adjust:mathematical
+	}	
+.menu-imagen{
+	align-items:flex-start;
+	appearance:desktop
+	}
+/**/		
 .cont-colchon360 {
   width: 50%;
 }
@@ -115,6 +144,7 @@ body{
 .img-comfort {
   width: 70%;
   margin: 2% 15% 0 15%;
+  
 }
 .header-int {
     height: 15%;
