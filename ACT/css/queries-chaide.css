@@ -13,7 +13,7 @@
   margin: 2% 0 0 0;
 }
 #asesor-compra{
-	width:2%;
+	width:2.3%;
 	}		
 }
 @media screen and (max-width: 1700px){
@@ -30,6 +30,11 @@
 }
 .header-int {
     height: 17%;
+}
+header {
+    width: 80%;
+    left: 10%;
+    top: 1%;
 }
 }
 @media screen and (max-width: 1480px){
@@ -98,17 +103,48 @@ body{
 .footter-intcolchon ul{
 	width:90%;
 	margin:0 5%;
+	}
+/* B */
+.btn-comprara{
+	width:100%;
+	clear:both;
+	float:left;
+	margin:10% 0 0 0;
+	align-self:auto;
+	azimuth:behind;
+	}
+#productos-submenu{
+	border-bottom-color:1px solid #C94B4D;
 	}	
+.footter-home{
+	min-width:100px;
+	align-self:flex-end;
+	stress:inherit;
+	}	
+.menu-imagen{
+	marquee-speed:fast;
+	break-before:left;	
+	}	
+.btn-comprara{
+	drop-initial-after-adjust:mathematical
+	}	
+.menu-imagen{
+	align-items:flex-start;
+	appearance:desktop
+	}
+/**/		
 .cont-colchon360 {
-  width: 51%;
+  width: 50%;
 }
 .txt-estructura-interna {
-  width: 45%;
+  width: 44%;
   padding: 0 2% 2% 2%;
+  margin:0 0 0 50%
 }	
 .img-comfort {
   width: 70%;
   margin: 2% 15% 0 15%;
+  
 }
 .header-int {
     height: 15%;
@@ -145,6 +181,9 @@ body{
 .background-registro{
 	background-size:cover;
 	}	
+.img-propiedad {
+    top: -10%;
+}	
 }
 @media screen and (max-width: 1024px) {
 header{
@@ -213,6 +252,9 @@ body{
     width: 98%;
     padding: 10% 1% 1% 1%;
 }	
+.cont-video{
+	display:none;
+	}
 }
 /* TAMAÑO TABLETS */
 @media screen and (max-width:960px){
@@ -278,6 +320,21 @@ ul.secciones-noticias{
 	padding:0;
 	font-size: 1em;
 	}
+.cont-colchon360 {
+    width: 100%;
+	height:450px;
+	position:relative;
+}	
+.txt-estructura-interna {
+    width: 94%;
+    padding: 0 2% 2% 4%;
+    margin: 0 0 0 0;
+}
+.img-comfort {
+    width: 60%;
+    margin: 2% 20% 2% 20%;
+}
+
 }
 @media screen and (max-width: 800px) {
 .footter-home ul{
@@ -406,7 +463,32 @@ nav ul li{
     float: left;
     padding: 1% 1%;
 }
-
+.secc-intcolchon{
+	position:relative;
+	height:auto;
+	float:left;
+	}
+.secc-intcolchon ul li {
+  width: 96%;
+  margin: 5% 1%;
+  padding: 0 1%;
+}		
+.colchon-celular{
+	display:block;
+	}
+.cont-colchonint2{
+	background-image:none;
+	height:auto;
+	}	
+.secc-intcolchon ul li {
+    width: 96%;
+    margin: 2% 1%;
+}	
+.img-propiedad {
+    width: 10%;
+    top: -32%;
+    left: -2%;
+}
 }
 @media screen and (max-width: 720px) {
 #home-chaide {
@@ -434,10 +516,7 @@ nav ul li{
 .cont-colchonint2 {
   background-attachment: scroll;
 }
-.cont-colchon360 {
-  width: 70%;
-  margin: 0 15% 2% 15%;
-}
+
 .txt-estructura-interna {
   width: 80%;
   padding: 0 10% 2% 10%;
@@ -491,22 +570,6 @@ nav ul li{
   width: 60%;
   margin: 0 20%;
 }
-.colchon-celular{
-	display:block;
-	}
-.secc-intcolchon{
-	position:relative;
-	height:auto;
-	float:left;
-	}
-.cont-colchonint2{
-	height:auto;
-	}	
-.secc-intcolchon ul li {
-  width: 96%;
-  margin: 0 1%;
-  padding: 0 1%;
-}	
 .secc-intcolchon ul li p {
   width: 100%;
   padding: 10px 0 ;
@@ -535,6 +598,22 @@ ul.secciones-noticias li{
     width: 100%;
     height: 300px;
 }	
+.img-propiedad {
+    width: 12%;
+    top: -28%;
+    left: 0;
+}
+.cont-colchon360 {
+    width: 100%;
+    height: 360px;
+}
+.secc-intcolchon ul li {
+    margin: 3% 1%;
+}
+.txt-secciones {
+    float: left;
+	min-height: 120px;
+}
 }
 /* TAMAÑO TABLETS */
 @media screen and (max-width:500px){
@@ -546,6 +625,10 @@ ul.secciones-noticias li{
   color: #FFF;
   padding:10px 10%;
   background:rgba(0,0,0,0.8);
+  float:left;
+}
+#interna-chaide {
+    min-height: auto;
 }
 .border-der {
   border-right:none;
@@ -569,6 +652,22 @@ ul.secciones-noticias li{
     width: 60%;
     margin: 0 20%;
 }
+.cont-colchon360 {
+    height: 280px;
+}
+nav ul li {
+    width: 150%;
+}
+#barra-mobile {
+    width: 78%;
+}
+.img-propiedad {
+    width: 13%;
+    top: -25%;
+}
+.cont-secciones h1{
+	font-size:1.5em;
+	}
 	}
 @media screen and (max-width: 430px) {
 .footer-cierre ul {
@@ -624,6 +723,16 @@ nav ul {
 .cont-maps iframe {
     min-height: 350px;
 }
+.cont-colchon360 {
+    height: 240px;
+}
+nav ul li {
+    width: 100%;
+}
+.img-propiedad {
+    width: 14%;
+    top: -20%;
+}
 }
 @media screen and (max-width: 360px) {
 .footer-cierre ul {
@@ -665,6 +774,19 @@ nav ul {
     width: 90%;
     margin: 0 5%;
 }
+.cont-colchon360 {
+    height: 220px;
+}
+.img-propiedad {
+    width: 16%;
+    top: -15%;
+}
+.cont-secciones h1{
+	font-size:1.2em;
+	}
+.btn-comprar2 {
+    top: 35%;
+}	
 }
 /* PORTRAIT */
 @media screen and (max-width: 1024px) and (orientation:portrait){

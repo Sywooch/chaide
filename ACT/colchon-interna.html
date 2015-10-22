@@ -8,10 +8,13 @@
 
 <link rel="shortcut icon" href="images/favicon.ico">
 <title>Chaide | Sueña con un mundo mejor</title>
-<link href="css/css-chaide.css" rel="stylesheet">
-<link href="css/queries-chaide.css" rel="stylesheet">
+<link href="css/css-chaide.css" rel="stylesheet"/>
+<link href="css/queries-chaide.css" rel="stylesheet"/>
+<link href="css/jquery.fancybox.css" rel="stylesheet" />
 
 <script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+
 <script>
 $(document).ready(function() {
  //	
@@ -19,7 +22,18 @@ $("#menu-chaide").click(function(){
 		$(this).toggleClass("active");
 		$("#menu-mobile").toggleClass("menu-active");
 		$("#general").toggleClass("general-active");
-	});   
+	}); 
+//
+$("#play").click(function(){
+		$("#video-colchon-interna").get(0).play();	
+		$("#play").fadeOut();
+		$("#stop").show();
+	});
+$("#stop").click(function(){
+		$("#stop").hide();
+		$("#video-colchon-interna").get(0).pause();	
+		$("#play").fadeIn();
+	});		  
 });
 
 </script>	
@@ -31,13 +45,87 @@ $("#menu-chaide").click(function(){
 	<header>
     	<nav>
         	<ul>
-            	<li class="m-menu"><a href="productos.html" class="hvr-bounce-to-top">PRODUCTOS</a></li>
-                <li class="m-menu"><a href="trayectoria.html" class="hvr-bounce-to-top">NOSOTROS</a></li>
-                <li class="m-menu"><a href="noticias.html" class="hvr-bounce-to-top">NOTICIAS</a></li>
-                <li><a href="index.html"><img src="images/logo-chaide.svg" alt="logotipo chaide"/></a></li>
+            	<li class="m-menu"><a href="#" class="hvr-bounce-to-top">ASESOR DE COMPRA</a></li>
+            	<li class="m-menu"><a href="productos.html" class="hvr-bounce-to-top">PRODUCTOS</a>
+                	 <ul id="submenu-chaide">
+                    	<li>
+                        	<a href="#" class="hvr-bounce-to-top">LÍNEA RESTONIC</a>
+                            <ul id="productos-submenu">
+                            	<li><a href="colchon-interna.html">Symphony</a></li>
+                                <li><a href="colchon-interna.html">Caressa</a></li>
+                                <li><a href="colchon-interna.html">Escape</a></li>
+                                <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                        	<a href="#" class="hvr-bounce-to-top">LÍNEA CHAIDE</a>
+                            <ul id="productos-submenu">
+                            	<li><a href="colchon-interna.html">Conforex Non Flip</a></li>
+                                <li><a href="colchon-interna.html">Continental De Lujo Non Flip</a></li>
+                                <li><a href="colchon-interna.html">Continental De Lujo Non Flip</a></li>
+                                <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                        	<a href="#" class="hvr-bounce-to-top">BASES Y CABECEROS</a>
+                            <ul id="productos-submenu">
+                            	<li><a href="colchon-interna.html">Base Premium</a></li>
+                                <li><a href="colchon-interna.html">Base Standard</a></li>
+                                <li><a href="colchon-interna.html">Base Duo</a></li>
+                                <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                        	<a href="#" class="hvr-bounce-to-top">ALMOHADAS</a>
+                            <ul id="productos-submenu">
+                            	<li><a href="colchon-interna.html">Restonic Memory Foam</a></li>
+                                <li><a href="colchon-interna.html">Cervical Memory Foam</a></li>
+                                <li><a href="colchon-interna.html">Almohadas Health & Support</a></li>
+                                <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                        	<a href="#" class="hvr-bounce-to-top">PROTECTORES</a>
+                            <ul id="productos-submenu">
+                            	<li><a href="colchon-interna.html">Protector de Colchón Impermeable</a></li>
+                                <li><a href="colchon-interna.html">Protector  de Colchón de Plumón</a></li>
+                                <li><a href="colchon-interna.html">Protector de almohada</a></li>
+                                <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                        	<a href="#" class="hvr-bounce-to-top">LENCERÍA</a>
+                            <ul id="productos-submenu">
+                            	<li><a href="colchon-interna.html">Sábanas Fioré</a></li>
+                                <li><a href="colchon-interna.html">Sábanas Sun set</a></li>
+                                <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                        	<a href="#" class="hvr-bounce-to-top">SOFÁS CAMAS</a>
+                            <ul id="productos-submenu">
+                            	<li><a href="colchon-interna.html">Malibú</a></li>
+                                <li><a href="colchon-interna.html">Milano</a></li>
+                                <li><a href="colchon-interna.html">Matisse</a></li>
+                                <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                        	<a href="#" class="hvr-bounce-to-top">BABY CHAIDE</a>
+                            <ul id="productos-submenu">
+                            	<li><a href="colchon-interna.html">Colchón Baby Chaide</a></li>
+                                <li><a href="colchon-interna.html">Colchón Anti asfixia</a></li>
+                                <li><a href="colchon-interna.html">Almohada Látex de bebé</a></li>
+                                <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
+                            </ul>
+                        </li>
+                	</ul>
+                </li>
                 <li class="m-menu"><a href="locales.html" class="hvr-bounce-to-top">LOCALES</a></li>
+                <li><a href="index.html"><img src="images/logo-chaide.svg" alt="logotipo chaide"/></a></li>
+                <li class="m-menu"><a href="noticias.html" class="hvr-bounce-to-top">NOTICIAS</a></li>
                 <li class="m-menu"><a href="#" class="hvr-bounce-to-top">INNOVACIÓN</a></li>
-                <li class="m-menu menu-imagen"><a href="registro.html" class="hvr-bounce-to-top"><img src="images/ico-compras.svg"/> COMPRAS</a></li>
+                <li class="m-menu menu-imagen"><a href="carrito.html" class="hvr-bounce-to-top"><img src="images/ico-compras.svg"/><span>COMPRAS</span></a></li>               
             </ul>
             <div id="barra-mobile">
             	<a id="menu-chaide"><span></span></a>
@@ -45,7 +133,7 @@ $("#menu-chaide").click(function(){
         </nav>
     </header>
 <!-- -->
-<section id="home-chaide" class="background-colchonint">
+<section id="interna-chaide" class="background-colchonint">
 	<img src="images/int-colchon.jpg" alt="img carresa" class="colchon-celular"/> 
 	<div class="n-colchon"><img src="images/tit-caressa.svg"/></div>
     <div class="cont-compra">
@@ -54,6 +142,10 @@ $("#menu-chaide").click(function(){
         </div>
         <div class="info-colchon">
         	<div class="cont-fcompra">
+            	<!--<span>Colchon Caressa</span>-->
+                <div class="cont-imgref">
+                	<a href="images/productos/colchon1-grande.png" class="fancybox"><img src="images/productos/colchon1.png" alt="imagen-producto"/></a>
+                </div>
                 <span>Telas Disponibles:</span>
                 <ul>
                     <li><img src="images/telas.jpg"/></li>
@@ -64,6 +156,7 @@ $("#menu-chaide").click(function(){
                 </ul>
             </div>
             <div class="cont-fcompra">
+            	<form action="carrito.html">
             	<span>Medidas Disponibles:</span>
                 <select>
                     <option>1 Plaza y Media</option>
@@ -95,8 +188,9 @@ $("#menu-chaide").click(function(){
         	<div class="precio-colchon">$1662.22<br/><span>(No incluye IVA)</span></div>
             <div class="cont-input"><input type="submit" value="Comprar ahora" /></div>
         </div>
+        </form>
     </div>
-	<div class="footter-intcolchon">
+	<!--<div class="footter-intcolchon">
    	 	<ul>
     		<li><img src="images/propiedades-colchon/extrasoft.jpg" alt="colchon extra soft"/></li>
             <li><img src="images/propiedades-colchon/latex.jpg" alt="tela latex"/></li>
@@ -105,17 +199,27 @@ $("#menu-chaide").click(function(){
             <li><img src="images/propiedades-colchon/pocketcoil.jpg" alt="Pocketcoil"/></li>
             <li><img src="images/propiedades-colchon/ionesplata.jpg" alt="tela iones de plata"/></li>
      	</ul>
-	</div>
+	</div>-->
 </section>
 <!-- -->
-<section class="cont-secciones int-colchon">
-	<img src="images/img-elaboradalatex.jpg" alt="img elaborada latex"/>
+<section class="cont-secciones">
+	<!--<img src="images/img-elaboradalatex.jpg" alt="img elaborada latex"/>
     <div class="txt-colchonint">
     	<h1>EXTRA SOFT <br/> <font>BOX TOP</font></h1>
         <p>
         Sobrecapa elaborada con látex, material de extraordinaria elasticidad que se adapta perfectamente a la forma del cuerpo, brindando soporte óptimo a cada parte y curva de éste, sin crearpuntos de presión.
         </p>
+    </div>-->
+    <video loop id="video-colchon-interna">
+      <source src="videos/chaide maqueta_2.ogv" type="video/ogg">
+      <source src="video/chaide maqueta_2.mp4" type="video/mp4">
+      <source src="video/chaide maqueta_2.webm" type="video/webm">
+      Your browser does not support the video tag.
+    </video>
+    <div class="cont-video" id="play">
+    	<img src="images/btn-play.svg" id="btn_play"/>
     </div>
+    <div class="cont-video" id="stop"></div>
 </section>
 <!-- -->
 <section class="cont-colchonint2">
@@ -127,30 +231,35 @@ $("#menu-chaide").click(function(){
                 <p>
                 Material de extraordinaria elasticidad que se adapta perfectamente a la forma del cuerpo, brindando soporte óptimo a cada parte y curva de éste, sin crear puntos de presión. Tiene celdas abiertas que permite una excelente ventilación y oxigenación. Antibacterial natural que repele bacterias, ácaros, hongos y otros microorganismos.
                 </p>
+                <img src="images/propiedades-colchon/latex.png" class="img-propiedad"/>
             </li>
             <li>
             	<h1>NON FLIP</h1>
                 <p>
                 Estructura interior diseñada para no dar la vuelta al colchón, todos los componentes mejorados se encuentran en un solo lado, para disfrutar el 100% de descanso.
                 </p>
+                <img src="images/propiedades-colchon/nonflip.png" class="img-propiedad"/>
             </li>
             <li>
             	<h1>TELA ANTI ÁCAROS</h1>
                 <p>
                 Salud gracias a la protección contra microorganismos. Tela con tratamiento anti acaros, anti hongos y anti bacterias que evita la proliferación de estos microorganismos en la tela.
                 </p>
+                <img src="images/propiedades-colchon/antiacaros.png" class="img-propiedad"/>
             </li>
             <li>
             	<h1>TELA IONES DE PLATA</h1>
                 <p>
                 Tela elaborada con iones de plata que repelen naturalmente la proliferación de microorganismos.
                 </p>
-            </li>
+                <img src="images/propiedades-colchon/ionesplata.png" class="img-propiedad"/>
+            </li> 
             <li>
             	<h1>POCKET COIL</h1>
                 <p>
                 Panel de resortes enfundados individualmente que impide la transmisión de movimiento.
                 </p>
+                <img src="images/propiedades-colchon/pocketcoil.png" class="img-propiedad"/>
             </li>
         </ul>	
     </div>
@@ -158,7 +267,7 @@ $("#menu-chaide").click(function(){
 <!-- -->
 <section class="cont-colchonint3">
 	<div class="cont-colchon360">
-    	<img src="images/colchon360.jpg" alt="colchon 360"/>
+    	<iframe src="3d-caressa.html"></iframe>
     </div>
     <div class="txt-estructura-interna">
     	<h1>ESTRUCTURA INTERNA</h1>
@@ -171,8 +280,16 @@ $("#menu-chaide").click(function(){
             <li>Marco de espuma Foam Encasement que protege los bordes laterales del colchón.</li>
             <li>Espuma de soporte de alta densidad.</li>
         </ul>
+        <div class="cont-medidas50">
+            <div class="barra-azul">
+                NIVEL DE SOPORTE Y CONFORT
+            </div>
+            <div class="img-comfort"><img src="images/b-confort.jpg" alt="escala confort"/></div>
+            <span class="span-estructura-c">Recomendado para personas con peso máximo individual de 220lb.</span>
+            <div class="txt-altura">10 Años de Garantía</div>
+        </div>
     </div>
-    <div class="cont-medidas50 border-der">
+    <!--<div class="cont-medidas50 border-der">
         <div class="barra-azul">
         	MEDIDAS DISPONIBLES
         </div>
@@ -182,14 +299,8 @@ $("#menu-chaide").click(function(){
             <li><span>2 plazas</span> 135 cm x 190 cm</li>
         </ul>
         <div class="txt-altura">Altura &nbsp;&nbsp;&nbsp;&nbsp;30cm</div>
-    </div>
-    <div class="cont-medidas50">
-        <div class="barra-azul">
-        	ESCALA DE CONFORT
-        </div>
-        <div class="img-comfort"><img src="images/b-confort.jpg" alt="escala confort"/></div>
-        <div class="txt-altura">10 Años de Garantía</div>
-    </div>
+    </div>-->
+    
 </section>
 <!-- -->
 <footer>
@@ -248,7 +359,7 @@ $("#menu-chaide").click(function(){
             </ul> 
             <h1 class="h1-footer">NOSOTROS</h1> 
             <ul class="n-footer">
-               <li><a href="#">La Empresa</a></li>
+               <li><a href="trayectoria.html">La Empresa</a></li>
             </ul>   
         </div>
     </div>
@@ -263,6 +374,14 @@ $("#menu-chaide").click(function(){
 </footer>
 <!-- -->
 </div>
+<div id="asesor-compra">
+	<ul>
+    	<li><a href="#"><img src="images/ico-contacto.svg"/></a></li>
+        <li><a href="https://www.facebook.com/ChaideOficial?fref=ts" target="_blank"><img src="images/ico-facebook2.svg"/></a></li>
+        <li><a href="#"><img src="images/ico-twitter2.svg"/></a></li>
+        <li><a href="#"><img src="images/ico-youtube2.svg"/></a></li>
+    </ul>
+</div>
 <!-- menu mobile -->
 <div id="menu-mobile">
 	<ul>
@@ -276,5 +395,10 @@ $("#menu-chaide").click(function(){
         <li><a href="#">ASESOR DE COMPRA</a></li>
    </ul>
 </div>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox").fancybox();
+	});
+</script>
 </body>
 </html>
