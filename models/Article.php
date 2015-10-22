@@ -1,7 +1,7 @@
 <?php
 
 namespace app\models;
-
+use yii\db\ActiveRecord;
 use Yii;
 
 /**
@@ -14,7 +14,7 @@ use Yii;
  * @property string $type
  * @property string $creation_date
  */
-class Article extends \yii\db\ActiveRecord
+class Article extends ActiveRecord
 {
     /**
      * @inheritdoc

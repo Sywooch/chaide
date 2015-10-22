@@ -1,7 +1,7 @@
 <?php
 
 namespace app\models;
-
+use yii\db\ActiveRecord;
 use Yii;
 
 /**
@@ -12,7 +12,7 @@ use Yii;
  * @property string $icon
  * @property string $creation_date
  */
-class Color extends \yii\db\ActiveRecord
+class Color extends ActiveRecord
 {
     /**
      * @inheritdoc

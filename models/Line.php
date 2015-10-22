@@ -1,7 +1,7 @@
 <?php
 
 namespace app\models;
-
+use yii\db\ActiveRecord;
 use Yii;
 
 /**
@@ -11,7 +11,7 @@ use Yii;
  * @property integer $type_id
  * @property string $description
  */
-class Line extends \yii\db\ActiveRecord
+class Line extends ActiveRecord
 {
     /**
      * @inheritdoc

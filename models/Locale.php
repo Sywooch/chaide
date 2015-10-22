@@ -1,7 +1,7 @@
 <?php
 
 namespace app\models;
-
+use yii\db\ActiveRecord;
 use Yii;
 
 /**
@@ -15,7 +15,7 @@ use Yii;
  *
  * @property City $city
  */
-class Locale extends \yii\db\ActiveRecord
+class Locale extends ActiveRecord
 {
     /**
      * @inheritdoc

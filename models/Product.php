@@ -1,7 +1,7 @@
 <?php
 
 namespace app\models;
-
+use yii\db\ActiveRecord;
 use Yii;
 
 /**
@@ -25,7 +25,7 @@ use Yii;
  * @property Detail[] $details
  * @property ProductColor[] $productColors
  */
-class Product extends \yii\db\ActiveRecord
+class Product extends ActiveRecord
 {
     /**
      * @inheritdoc

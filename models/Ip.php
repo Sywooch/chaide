@@ -1,7 +1,7 @@
 <?php
 
 namespace app\models;
-
+use yii\db\ActiveRecord;
 use Yii;
 
 /**
@@ -12,7 +12,7 @@ use Yii;
  *
  * @property ProductIp[] $productIps
  */
-class Ip extends \yii\db\ActiveRecord
+class Ip extends ActiveRecord
 {
     /**
      * @inheritdoc

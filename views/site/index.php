@@ -3,7 +3,7 @@ use yii\helpers\Url;
 /* @var $this yii\web\View */
 $this->title = 'Chaide';
 ?>
-<!-- -->º
+<!-- -->
 <section id="home-chaide" class="background-home">
     <div class="inf-home">
         <div class="borde-externo">
@@ -49,7 +49,7 @@ $this->title = 'Chaide';
                 <h1>ALMOHADAS</h1>
                 <span>Nuestras líneas de almohadas chaide te darán el confort que necesitas al dormir.</span>
             </div>
-        </div>
+        </div> 
         <a href="#" class="flecha-l"><img src="images/flecha-seccL.svg" alt="flecha"/></a>
     </section>
     <section class="sect-productos">
