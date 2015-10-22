@@ -36,7 +36,6 @@ AppAsset::register($this);
     <header>
         <nav>
             <ul>
-<<<<<<< HEAD
                  <li class="m-menu"><a href="<?= Url::to(['site/asesor']) ?>" class="hvr-bounce-to-top">ASESOR DE COMPRAS</a></li>
                                 <li class="m-menu"><a href="productos.html" class="hvr-bounce-to-top">PRODUCTOS</a>
                     <!-- -->
