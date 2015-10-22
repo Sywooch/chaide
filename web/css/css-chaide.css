@@ -101,7 +101,7 @@ h1{
 	}			
 /* MENU HEADER */
 header{
-	position:fixed;
+	position:absolute;
 	width:70%;
 	left:15%;
 	top:1%;
@@ -262,12 +262,13 @@ nav ul li a:link, nav ul li a:visited{
 	background-attachment:fixed;
 	background-position:top center;
 	background-repeat:no-repeat;
+	padding:0 0 3% 0;
 	}	
 /**/	
 .inf-home{
 	width:40%;
 	padding:1% 0;
-	margin:30% 30% 0 30%;
+	margin:25% 30% 0 30%;
 	position:relative;
 	text-align:center;	
 	font-family: 'dosislight';
@@ -862,6 +863,7 @@ footer{
 	color:#FFF;
 	font-size:1.2em;
 	text-align:center;
+	text-transform:uppercase;
 	}
 .cont-medidas50 ul, .txt-altura{
 	width:30%;
@@ -926,7 +928,6 @@ footer{
 #asesor-compra{
 	width:2.3%;
 	position:fixed;
-	background-color:#00809d;
 	right:0;
 	top:30%;
 	}	
@@ -944,11 +945,31 @@ footer{
 #asesor-compra ul li a:link, #asesor-compra ul li a:visited{
 	width:100%;
 	float:left;
-	background-color:#00809d;
 	}	
-#asesor-compra ul li a:hover{
-	background-color:#04535b;
+#b-contacto{
+	background-color:#3d322e;
+	}	
+#b-contacto:hover{
+	background-color:#3d322e;
 	}		
+#b-facebook{
+	background-color:#3d322e;
+	}
+#b-facebook:hover{
+	background-color:#3d322e;
+	}	
+#b-twitter{
+	background-color:#3d322e;
+	}
+#b-twitter:hover{
+	background-color:#3d322e;
+	}		
+#b-youtube{
+	background-color:#3d322e;
+	}
+#b-youtube:hover{
+	background-color:#3d322e;
+	}	
 .btn-comprara{
 	width:60%;
 	margin:2% 20% 0 20%;
@@ -1140,11 +1161,16 @@ footer{
 	padding:1% 2%;
 	background-color:rgba(0,0,0,0.75);
 	}
-.cont-campos{
+
+.cont-campos, .cont-campos-header{
 	width:100%;
 	float:left;
-	margin:0 0 1% 0;
-	}	
+	margin:0 0 0.5% 0;
+	}
+.cont-campos{
+	background-color:#FFFFFF;
+	display:table;
+	}		
 .cont-campos label{
 	width:25%;
 	float:left;
@@ -1187,7 +1213,16 @@ footer{
 	margin:0 2% 0 0;
 	background-color:#ffffff;
 	color:#645f54;
+	}
+.cont-txt span{
+	width:78%;
+	float:left;
+	margin:0 0 0 2%;	
 	}	
+.thumb-carrito{
+	width:20%;
+	float:left;
+	}			
 .cont-cant{
 	width:18%;
 	float:left;
@@ -1196,6 +1231,9 @@ footer{
 	background-color:#ffffff;
 	text-align:center;
     color:#645f54;
+	text-align: center;
+    display: table-cell;
+    vertical-align: middle;
 	}	
 .cont-valor{
 	width:18%;
@@ -1204,6 +1242,9 @@ footer{
 	background-color:#ffffff;
 	text-align:center;
 	color:#645f54;
+	text-align: center;
+    display: table-cell;
+    vertical-align: middle;
 	}																			
 .tit-carri{
 	background-color:#00809d !important;
@@ -1767,3 +1808,61 @@ ul.publiciad-abj li{
 	width:100%;
 	float:left;
 	}	
+/* ASESOR DE COMPRA */
+.cont-asesorc{
+	width:22%;
+	position:absolute;
+	top:18%;
+	right:5%;
+	background-color:rgba(255,255,255,1.00);
+	padding:0 0 0.5% 0;
+	}
+.cont-asesorc span{
+	width:96%;
+	color: #645f54;
+	float:left;
+	text-align:center;
+	padding:0 2%;
+	}	
+#asesor-pag1{
+	width:100%;
+	float:left;
+	}		
+#asesor-pag1 ul{
+	width:96%;
+	float:left;
+	margin:0;
+	padding:0 1%;
+	}	
+#asesor-pag1 ul li{
+	width:48%;
+	float:left;
+	padding:1%;
+	list-style:none;
+	}	
+#asesor-pag1 ul li span{
+	width:100%;
+	background-color: #333333!important;
+    color: #FFFFFF !important;
+	float:left;
+	text-align:center;
+	margin:5px 0 0 0;
+	padding:5px 0;
+	}	
+.cont-botonesac{
+	width:96%;
+	margin:1% 2% 0 2%;
+	padding:1% 0 0 0;
+	border-top:1px solid #645f54;
+	float:left;
+	}	
+.btn-sac{
+	width:30%;
+	float:left;
+	background-color:#00809d;
+	text-align:center;
+	color:#FFFFFF;
+	padding:3px 0;
+	float:right;
+	}	
+
