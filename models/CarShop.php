@@ -1,7 +1,7 @@
 <?php
 
 namespace app\models;
-
+use yii\db\ActiveRecord;
 use Yii;
 
 /**
@@ -12,7 +12,7 @@ use Yii;
  *
  * @property Product $product
  */
-class CarShop extends \yii\db\ActiveRecord
+class CarShop extends ActiveRecord
 {
     /**
      * @inheritdoc

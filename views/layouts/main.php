@@ -9,7 +9,6 @@ use yii\helpers\Url;
 /* @var $this \yii\web\View */
 /* @var $content string */
 $script='$(document).ready(function() {
- // 
 $("#menu-chaide").click(function(){
         $(this).toggleClass("active");
         $("#menu-mobile").toggleClass("menu-active");
@@ -37,90 +36,94 @@ AppAsset::register($this);
     <header>
         <nav>
             <ul>
-            	<li class="m-menu"><a href="#" class="hvr-bounce-to-top">ASESOR DE COMPRA</a></li>
-                <li class="m-menu"><a href="productos.html" class="hvr-bounce-to-top">PRODUCTOS</a>
-                	<!-- -->
+<<<<<<< HEAD
+                 <li class="m-menu"><a href="<?= Url::to(['site/asesor']) ?>" class="hvr-bounce-to-top">ASESOR DE COMPRAS</a></li>
+                                <li class="m-menu"><a href="productos.html" class="hvr-bounce-to-top">PRODUCTOS</a>
+                    <!-- -->
                     <ul id="submenu-chaide">
-                    	<li>
-                        	<a href="#" class="hvr-bounce-to-top">LÍNEA RESTONIC</a>
+                        <li>
+                            <a href="#" class="hvr-bounce-to-top">LÍNEA RESTONIC</a>
                             <ul id="productos-submenu">
-                            	<li><a href="colchon-interna.html">Symphony</a></li>
+                                <li><a href="colchon-interna.html">Symphony</a></li>
                                 <li><a href="colchon-interna.html">Caressa</a></li>
                                 <li><a href="colchon-interna.html">Escape</a></li>
                                 <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
                             </ul>
                         </li>
                         <li>
-                        	<a href="#" class="hvr-bounce-to-top">LÍNEA CHAIDE</a>
+                            <a href="#" class="hvr-bounce-to-top">LÍNEA CHAIDE</a>
                             <ul id="productos-submenu">
-                            	<li><a href="colchon-interna.html">Conforex Non Flip</a></li>
+                                <li><a href="colchon-interna.html">Conforex Non Flip</a></li>
                                 <li><a href="colchon-interna.html">Continental De Lujo Non Flip</a></li>
                                 <li><a href="colchon-interna.html">Continental De Lujo Non Flip</a></li>
                                 <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
                             </ul>
                         </li>
                         <li>
-                        	<a href="#" class="hvr-bounce-to-top">BASES Y CABECEROS</a>
+                            <a href="#" class="hvr-bounce-to-top">BASES Y CABECEROS</a>
                             <ul id="productos-submenu">
-                            	<li><a href="colchon-interna.html">Base Premium</a></li>
+                                <li><a href="colchon-interna.html">Base Premium</a></li>
                                 <li><a href="colchon-interna.html">Base Standard</a></li>
                                 <li><a href="colchon-interna.html">Base Duo</a></li>
                                 <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
                             </ul>
                         </li>
                         <li>
-                        	<a href="#" class="hvr-bounce-to-top">ALMOHADAS</a>
+                            <a href="#" class="hvr-bounce-to-top">ALMOHADAS</a>
                             <ul id="productos-submenu">
-                            	<li><a href="colchon-interna.html">Restonic Memory Foam</a></li>
+                                <li><a href="colchon-interna.html">Restonic Memory Foam</a></li>
                                 <li><a href="colchon-interna.html">Cervical Memory Foam</a></li>
                                 <li><a href="colchon-interna.html">Almohadas Health & Support</a></li>
                                 <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
                             </ul>
                         </li>
                         <li>
-                        	<a href="#" class="hvr-bounce-to-top">PROTECTORES</a>
+                            <a href="#" class="hvr-bounce-to-top">PROTECTORES</a>
                             <ul id="productos-submenu">
-                            	<li><a href="colchon-interna.html">Protector de Colchón Impermeable</a></li>
+                                <li><a href="colchon-interna.html">Protector de Colchón Impermeable</a></li>
                                 <li><a href="colchon-interna.html">Protector  de Colchón de Plumón</a></li>
                                 <li><a href="colchon-interna.html">Protector de almohada</a></li>
                                 <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
                             </ul>
                         </li>
                         <li>
-                        	<a href="#" class="hvr-bounce-to-top">LENCERÍA</a>
+                            <a href="#" class="hvr-bounce-to-top">LENCERÍA</a>
                             <ul id="productos-submenu">
-                            	<li><a href="colchon-interna.html">Sábanas Fioré</a></li>
+                                <li><a href="colchon-interna.html">Sábanas Fioré</a></li>
                                 <li><a href="colchon-interna.html">Sábanas Sun set</a></li>
                                 <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
                             </ul>
                         </li>
                         <li>
-                        	<a href="#" class="hvr-bounce-to-top">SOFÁS CAMAS</a>
+                            <a href="#" class="hvr-bounce-to-top">SOFÁS CAMAS</a>
                             <ul id="productos-submenu">
-                            	<li><a href="colchon-interna.html">Malibú</a></li>
+                                <li><a href="colchon-interna.html">Malibú</a></li>
                                 <li><a href="colchon-interna.html">Milano</a></li>
                                 <li><a href="colchon-interna.html">Matisse</a></li>
                                 <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
                             </ul>
                         </li>
                         <li>
-                        	<a href="#" class="hvr-bounce-to-top">BABY CHAIDE</a>
+                            <a href="#" class="hvr-bounce-to-top">BABY CHAIDE</a>
                             <ul id="productos-submenu">
-                            	<li><a href="colchon-interna.html">Colchón Baby Chaide</a></li>
+                                <li><a href="colchon-interna.html">Colchón Baby Chaide</a></li>
                                 <li><a href="colchon-interna.html">Colchón Anti asfixia</a></li>
                                 <li><a href="colchon-interna.html">Almohada Látex de bebé</a></li>
                                 <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
                             </ul>
                         </li>
-                	</ul>
+                    </ul>
                     <!-- -->
                 </li>
-                <li class="m-menu"><a href="locales.html" class="hvr-bounce-to-top">LOCALES</a></li>
-                <!--<li class="m-menu"><a href="<?= Url::to(['site/about']) ?>" class="hvr-bounce-to-top">NOSOTROS</a></li>-->
-                <li><a href="<?= Url::home() ?>"><img src="images/logo-chaide.svg" alt="logotipo chaide"/></a></li>
-                <li class="m-menu"><a href="noticias.html" class="hvr-bounce-to-top">NOTICIAS</a></li>
+                <li class="m-menu"><a href="<?= Url::to(['news/index']) ?>" class="hvr-bounce-to-top">NOTICIAS</a></li>
+                <li><a href="<?= Url::home() ?>"><img src="<?= URL::base() ?>/images/logo-chaide.svg" alt="logotipo chaide"/></a></li>
+                <li class="m-menu"><a href="<?= Url::to(['locale/index']) ?>" class="hvr-bounce-to-top">LOCALES</a></li>
                 <li class="m-menu"><a href="#" class="hvr-bounce-to-top">INNOVACIÓN</a></li>
-                <li class="m-menu menu-imagen"><a href="registro.html" class="hvr-bounce-to-top"><img src="images/ico-compras.svg"/><span>COMPRAS</span></a></li>
+                <?php if(Yii::$app->user->isGuest){ ?>
+                <li class="m-menu"><a href="<?= Url::to(['user/create']) ?>" class="hvr-bounce-to-top"><img src="<?= URL::base() ?>/images/ico-compras.svg"/> COMPRAS</a></li>
+                <?php }else{ ?>
+                 <li class="m-menu menu-imagen"><a href="<?= Url::to(['user/index']) ?>" class="hvr-bounce-to-top"><img src="<?= URL::base() ?>/images/ico-compras.svg"/> COMPRAS</a></li>
+                <?php } ?>
             </ul>
             <div id="barra-mobile">
                 <a id="menu-chaide"><span></span></a>
@@ -192,27 +195,26 @@ AppAsset::register($this);
     </div>
     <div class="footer-cierre">
         <ul>
-            <li><img src="images/ico-facebook.svg" alt="facebook"/></li>
-            <li><img src="images/ico-twitter.svg" alt="twitter"/></li>
-            <li><img src="images/ico-youtube.svg" alt="youtube"/></li>
+            <li><img src="<?= URL::base() ?>/images/ico-facebook.svg" alt="facebook"/></li>
+            <li><img src="<?= URL::base() ?>/images/ico-twitter.svg" alt="twitter"/></li>
+            <li><img src="<?= URL::base() ?>/images/ico-youtube.svg" alt="youtube"/></li>
         </ul>
         ® 2015 CHAIDE, Todos los Derechos Reservados.   Desarrollado por <a href="http://share.com.ec/" target="_blank">SHARE DIGITAL AGENCY.</a>  
     </div>
 </footer>
 <!-- -->
 </div>
-<div id="asesor-compra"><img src="images/asesor-compra.png"/></div>
+<div id="asesor-compra"><img src="<?= URL::base() ?>/images/asesor-compra.png"/></div>
 <!-- menu mobile -->
 <div id="menu-mobile">
     <ul>
-        <li><a href="<?= Url::home() ?>">HOME</a></li>
-        <li><a href="#">ASESOR DE COMPRA</a></li>
-        <li><a href="productos.html">PRODUCTOS</a></li>
-        <li><a href="locales.html">LOCALES</a></li>
-        <li><a href="noticias.html">NOTICIAS</a></li>
+       <li><a href="#">ASESOR DE COMPRA</a></li>
+        <li><a href="<?= Url::to(['product/index']) ?>">PRODUCTOS</a></li>
+        <li><a href="<?= Url::to(['site/about']) ?>">NOSOTROS</a></li>
+        <li><a href="<?= Url::to(['news/index']) ?>">NOTICIAS</a></li>
+        <li><a href="<?= Url::to(['locals/index']) ?>">LOCALES</a></li>
         <li><a href="#">INNOVACIÓN</a></li>
         <li><a href="registro.html">COMPRAS</a></li>
-        <li><a href="<?= Url::to(['site/about']) ?>">NOSOTROS</a></li>
    </ul>
 </div>
 <?php $this->endBody() ?>

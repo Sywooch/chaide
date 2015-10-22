@@ -1,7 +1,7 @@
 <?php
 
 namespace app\models;
-
+use yii\db\ActiveRecord;
 use Yii;
 
 /**
@@ -14,7 +14,7 @@ use Yii;
  *
  * @property ProductCharacteristic[] $productCharacteristics
  */
-class Characteristic extends \yii\db\ActiveRecord
+class Characteristic extends ActiveRecord
 {
     /**
      * @inheritdoc
