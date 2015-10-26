@@ -99,10 +99,7 @@ class Product extends ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getProductColors()
-    {
-        return $this->hasMany(ProductColor::className(), ['product_id' => 'id']);
-    }
+  
 
     public function getMesures()
     {

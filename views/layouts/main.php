@@ -6,8 +6,12 @@ use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 use yii\web\View;
 use yii\helpers\Url;
+use app\models\Line;
+use app\models\City;
 /* @var $this \yii\web\View */
 /* @var $content string */
+$lines= Line::find()->where(['status'=>'ACTIVE'])->all();
+$cities=City::find()->all();
 $script='$(document).ready(function() {
 $("#menu-chaide").click(function(){
         $(this).toggleClass("active");
@@ -37,80 +41,23 @@ AppAsset::register($this);
         <nav>
             <ul>
                  <li class="m-menu"><a href="<?= Url::to(['site/asesor']) ?>" class="hvr-bounce-to-top">ASESOR DE COMPRAS</a></li>
-                                <li class="m-menu"><a href="productos.html" class="hvr-bounce-to-top">PRODUCTOS</a>
+                                <li class="m-menu"><a href="<?= Url::to(['line/index']) ?>" class="hvr-bounce-to-top">PRODUCTOS</a>
                     <!-- -->
                     <ul id="submenu-chaide">
+                        <?php foreach($lines as $line): ?>
                         <li>
-                            <a href="#" class="hvr-bounce-to-top">LÍNEA RESTONIC</a>
+                            <a href="#" class="hvr-bounce-to-top"><?= strtoupper($line->description) ?></a>
                             <ul id="productos-submenu">
-                                <li><a href="colchon-interna.html">Symphony</a></li>
-                                <li><a href="colchon-interna.html">Caressa</a></li>
-                                <li><a href="colchon-interna.html">Escape</a></li>
-                                <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
+                                <?php foreach($line->products as $k => $product): ?>
+                                    <?php 
+                                    if($k==3) break;
+                                     ?>
+                                    <li><a href="<?= Url::to(['product/view','id'=>$product->id,'#'=>strtoupper($product->title)]) ?>"><?= $product->title ?></a></li>
+                                <?php endforeach; ?>
+                                <li><a href="<?= Url::to(['line/view','id'=>$line->id,'#'=>strtoupper($line->description)]) ?>" class="btn-vermas-m">Ver más +</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="#" class="hvr-bounce-to-top">LÍNEA CHAIDE</a>
-                            <ul id="productos-submenu">
-                                <li><a href="colchon-interna.html">Conforex Non Flip</a></li>
-                                <li><a href="colchon-interna.html">Continental De Lujo Non Flip</a></li>
-                                <li><a href="colchon-interna.html">Continental De Lujo Non Flip</a></li>
-                                <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="hvr-bounce-to-top">BASES Y CABECEROS</a>
-                            <ul id="productos-submenu">
-                                <li><a href="colchon-interna.html">Base Premium</a></li>
-                                <li><a href="colchon-interna.html">Base Standard</a></li>
-                                <li><a href="colchon-interna.html">Base Duo</a></li>
-                                <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="hvr-bounce-to-top">ALMOHADAS</a>
-                            <ul id="productos-submenu">
-                                <li><a href="colchon-interna.html">Restonic Memory Foam</a></li>
-                                <li><a href="colchon-interna.html">Cervical Memory Foam</a></li>
-                                <li><a href="colchon-interna.html">Almohadas Health & Support</a></li>
-                                <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="hvr-bounce-to-top">PROTECTORES</a>
-                            <ul id="productos-submenu">
-                                <li><a href="colchon-interna.html">Protector de Colchón Impermeable</a></li>
-                                <li><a href="colchon-interna.html">Protector  de Colchón de Plumón</a></li>
-                                <li><a href="colchon-interna.html">Protector de almohada</a></li>
-                                <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="hvr-bounce-to-top">LENCERÍA</a>
-                            <ul id="productos-submenu">
-                                <li><a href="colchon-interna.html">Sábanas Fioré</a></li>
-                                <li><a href="colchon-interna.html">Sábanas Sun set</a></li>
-                                <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="hvr-bounce-to-top">SOFÁS CAMAS</a>
-                            <ul id="productos-submenu">
-                                <li><a href="colchon-interna.html">Malibú</a></li>
-                                <li><a href="colchon-interna.html">Milano</a></li>
-                                <li><a href="colchon-interna.html">Matisse</a></li>
-                                <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="hvr-bounce-to-top">BABY CHAIDE</a>
-                            <ul id="productos-submenu">
-                                <li><a href="colchon-interna.html">Colchón Baby Chaide</a></li>
-                                <li><a href="colchon-interna.html">Colchón Anti asfixia</a></li>
-                                <li><a href="colchon-interna.html">Almohada Látex de bebé</a></li>
-                                <li><a href="colchon-interna.html" class="btn-vermas-m">Ver más +</a></li>
-                            </ul>
-                        </li>
+                    <?php endforeach; ?>
                     </ul>
                     <!-- -->
                 </li>
@@ -137,42 +84,34 @@ AppAsset::register($this);
             <h1>COMPRA</h1>
             <h2>NUESTROS PRODUCTOS</h2>  
             <ul>
-                <li><a href="#">Línea Restonic</a></li>
-                <li><a href="#">Línea Chaide</a></li>
-                <li><a href="#">Bases y Cabeceros</a></li>
-                <li><a href="#">Almohadas</a></li>
-                <li><a href="#">Protectores</a></li>
-                <li><a href="#">Lencería</a></li>
-                <li><a href="#">Sofás Cama</a></li>
-                <li><a href="#">Muebles</a></li>
+                <?php foreach($lines as $line): ?>
+                <li><a href="<?= Url::to(['line/view','id'=>$line->id,'#'=>strtoupper($line->description)]) ?>"><?= strtoupper($line->description) ?></a></li>
+                <?php endforeach; ?>
             </ul>  
         </div>
         <div class="secc-footer">
             <h1>VISITA</h1>
             <h2>NUESTROS LOCALES</h2> 
             <div class="footer-con2">
-                <h2>QUITO</h2>
+                <?php foreach($cities as $city): ?>
+                <h2><?= strtoupper($city->description) ?></h2>
                 <ul>
-                    <li><a href="#">C.C. El Bosque</a></li>
-                    <li><a href="#">C.C Multicentro</a></li>
-                    <li><a href="#">C.C. Condado Shopping</a></li>
-                    <li><a href="#">C.C. Scala Shopping</a></li>
-                    <li><a href="#">C.C. Paseo San Francisco</a></li>
-                    <li><a href="#">C.C. San Luis Shopping</a></li>
-                    <li><a href="#">C.C. Quicentro Sur</a></li>                
+                    <?php foreach($city->locales as $locale): ?>
+                    <li><a href="#"><?= $locale->address ?></a></li>
+                    <?php endforeach; ?>               
                 </ul>
+                <?php break; 
+                endforeach; ?>
             </div>
             <div class="footer-con2">
-                <h2>GUAYAQUIL</h2>
+                <?php foreach($cities as $z => $city): if($z==0) continue; ?>
+                <h2><?= strtoupper($city->description) ?></h2>
                 <ul>
-                    <li><a href="#">C.C. Mall del Sol</a></li>
-                    <li><a href="#">C.C. Village Plaza</a></li>
-                    <li><a href="#">C.C. Mall del Sur</a></li>
+                    <?php foreach($city->locales as $locale): ?>
+                    <li><a href="#"><?= $locale->address ?></a></li>
+                    <?php endforeach; ?>
                 </ul>
-                <h2>CUENCA</h2>
-                <ul>
-                    <li><a href="#">C.C. Gran Colombia</a></li>
-                </ul>
+            <?php endforeach; ?>
             </div>   
         </div>
         <div class="secc-footer">

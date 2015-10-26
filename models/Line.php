@@ -44,4 +44,8 @@ class Line extends ActiveRecord
             'description' => 'Description',
         ];
     }
+  public function getProducts()
+    {
+        return $this->hasMany(Product::className(), ['line_id' => 'id']);
+    }
 }
