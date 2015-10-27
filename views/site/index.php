@@ -50,7 +50,7 @@ $this->title = 'Chaide';
                 <span>Nuestras líneas de almohadas chaide te darán el confort que necesitas al dormir.</span>
             </div>
         </div> 
-        <a href="#" class="flecha-l"><img src="images/flecha-seccL.svg" alt="flecha"/></a>
+        <!-- <a href="#" class="flecha-l"><img src="images/flecha-seccL.svg" alt="flecha"/></a> -->
     </section>
     <section class="sect-productos">
         <div id="secc-edredones">
@@ -61,7 +61,7 @@ $this->title = 'Chaide';
                 <span>La mejor calidad y comodidad que necesitas para esos momentos únicos.</span>
             </div>
         </div>
-        <a href="#" class="flecha-r"><img src="images/flecha-seccR.svg" alt="flecha"/></a>
+        <!-- <a href="#" class="flecha-r"><img src="images/flecha-seccR.svg" alt="flecha"/></a> -->
     </section>
 </section>
 <!-- -->

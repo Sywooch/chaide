@@ -108,7 +108,7 @@ AppAsset::register($this);
                 <h2><?= strtoupper($city->description) ?></h2>
                 <ul>
                     <?php foreach($city->locales as $locale): ?>
-                    <li><a href="#"><?= $locale->address ?></a></li>
+                    <li><a href="<?= Url::to(['locale/index']) ?>"><?= $locale->address ?></a></li>
                     <?php endforeach; ?>
                 </ul>
             <?php endforeach; ?>
@@ -133,9 +133,9 @@ AppAsset::register($this);
     </div>
     <div class="footer-cierre">
         <ul>
-            <li><img src="<?= URL::base() ?>/images/ico-facebook.svg" alt="facebook"/></li>
-            <li><img src="<?= URL::base() ?>/images/ico-twitter.svg" alt="twitter"/></li>
-            <li><img src="<?= URL::base() ?>/images/ico-youtube.svg" alt="youtube"/></li>
+            <li><a href="https://www.facebook.com/Chaide-y-Chaide-152254991498995/?ref=ts"><img src="<?= URL::base() ?>/images/ico-facebook.svg" alt="facebook"/></a></li>
+          <!--   <li><img src="<?= URL::base() ?>/images/ico-twitter.svg" alt="twitter"/></li> -->
+            <li><a href="https://www.youtube.com/user/ChaideyChaide"><img src="<?= URL::base() ?>/images/ico-youtube.svg" alt="youtube"/></a></li>
         </ul>
         ® 2015 CHAIDE, Todos los Derechos Reservados.   Desarrollado por <a href="http://share.com.ec/" target="_blank">SHARE DIGITAL AGENCY.</a>  
     </div>
@@ -150,7 +150,7 @@ AppAsset::register($this);
         <li><a href="<?= Url::to(['product/index']) ?>">PRODUCTOS</a></li>
         <li><a href="<?= Url::to(['site/about']) ?>">NOSOTROS</a></li>
         <li><a href="<?= Url::to(['news/index']) ?>">NOTICIAS</a></li>
-        <li><a href="<?= Url::to(['locals/index']) ?>">LOCALES</a></li>
+        <li><a href="<?= Url::to(['locale/index']) ?>">LOCALES</a></li>
         <li><a href="#">INNOVACIÓN</a></li>
         <li><a href="registro.html">COMPRAS</a></li>
    </ul>
