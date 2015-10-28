@@ -54,7 +54,7 @@ AppAsset::register($this);
                                      ?>
                                     <li><a href="<?= Url::to(['product/view','id'=>$product->id,'#'=>strtoupper($product->title)]) ?>"><?= $product->title ?></a></li>
                                 <?php endforeach; ?>
-                                <li><a href="<?= Url::to(['line/view','id'=>$line->id,'#'=>strtoupper($line->description)]) ?>" class="btn-vermas-m">Ver más +</a></li>
+                                <!--<li><a href="<?= Url::to(['line/view','id'=>$line->id,'#'=>strtoupper($line->description)]) ?>" class="btn-vermas-m">Ver más +</a></li>-->
                             </ul>
                         </li>
                     <?php endforeach; ?>
@@ -142,7 +142,15 @@ AppAsset::register($this);
 </footer>
 <!-- -->
 </div>
-<div id="asesor-compra"><img src="<?= URL::base() ?>/images/asesor-compra.png"/></div>
+<div id="asesor-compra">
+	<!--<img src="<?= URL::base() ?>/images/asesor-compra.png"/>-->
+	<ul>
+    	<li><a href="#" id="b-contacto"><img src="<?= URL::base() ?>/images/ico-contacto.svg"/></a></li>
+        <li><a href="https://www.facebook.com/ChaideOficial?fref=ts" target="_blank"  id="b-facebook"><img src="<?= URL::base() ?>/images/ico-facebook2.svg"/></a></li>
+        <li><a href="#"  id="b-twitter"><img src="<?= URL::base() ?>/images/ico-twitter2.svg"/></a></li>
+        <li><a href="#"  id="b-youtube"><img src="<?= URL::base() ?>/images/ico-youtube2.svg"/></a></li>
+    </ul>
+</div>
 <!-- menu mobile -->
 <div id="menu-mobile">
     <ul>
