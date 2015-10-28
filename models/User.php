@@ -49,8 +49,8 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            [['city_id'], 'integer'],
-            [['identity', 'names', 'lastnames', 'birthday', 'address', 'billing_address', 'username', 'password', 'phone', 'cellphone', 'sex', 'creation_date'], 'required'],
+            
+            [['identity', 'names', 'lastnames', 'birthday', 'username', 'password', 'phone', 'cellphone', 'sex', 'creation_date'], 'required'],
             [['birthday', 'creation_date'], 'safe'],
             [['sex'], 'string'],
             [['identity', 'cellphone'], 'string', 'max' => 10],
@@ -68,13 +68,13 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return [
             'id' => 'ID',
-            'city_id' => 'City ID',
+           
             'identity' => 'Identity',
             'names' => 'Names',
             'lastnames' => 'Lastnames',
             'birthday' => 'Birthday',
-            'address' => 'Address',
-            'billing_address' => 'Billing Address',
+            // 'address' => 'Address',
+            // 'billing_address' => 'Billing Address',
             'username' => 'Username',
             'password' => 'Password',
             'phone' => 'Phone',
@@ -215,4 +215,17 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return $this->hasMany(Sell::className(), ['user_id' => 'id']);
     }
+        public function getBillingAddresses()
+    {
+        return $this->hasMany(BillingAddress::className(), ['user_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getDeliveryAddresses()
+    {
+        return $this->hasMany(DeliveryAddress::className(), ['user_id' => 'id']);
+    }
+
 }
