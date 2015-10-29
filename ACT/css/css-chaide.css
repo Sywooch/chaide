@@ -1168,7 +1168,7 @@ footer{
 	margin:0 0 0.5% 0;
 	}
 .cont-campos{
-	background-color:#FFFFFF;
+	/*background-color:#FFFFFF;*/
 	display:table;
 	}		
 .cont-campos label{
@@ -1865,4 +1865,20 @@ ul.publiciad-abj li{
 	padding:3px 0;
 	float:right;
 	}	
-
+/***/
+.div-registro{
+	width:100%;
+	margin:1% 0 0 0;
+	padding:1% 0 0 0;
+	border-top:1px solid rgba(255,255,255,1.00);
+	color:rgba(255,255,255,1.00);
+	font-size:0.9em;
+	text-align:center;
+	float:left;
+	}
+.div-registro a:link, .div-registro a:visited{
+	color:#08819d;
+	text-decoration:none;
+	font-weight:bold;
+	}
+	

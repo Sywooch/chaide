@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="75.706px" height="73px" viewBox="0 0 75.706 73" enable-background="new 0 0 75.706 73" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="367.7002" y1="41.5801" x2="399.7422" y2="41.5801" gradientTransform="matrix(1 0 0 1 -367.7002 0)">
+	<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+	<stop  offset="0.0997" style="stop-color:#FAFAFA;stop-opacity:0.0997"/>
+	<stop  offset="0.2237" style="stop-color:#EAEAEA;stop-opacity:0.2237"/>
+	<stop  offset="0.3608" style="stop-color:#D1D1D1;stop-opacity:0.3608"/>
+	<stop  offset="0.5073" style="stop-color:#ADADAD;stop-opacity:0.5073"/>
+	<stop  offset="0.6613" style="stop-color:#808080;stop-opacity:0.6613"/>
+	<stop  offset="0.8216" style="stop-color:#484848;stop-opacity:0.8216"/>
+	<stop  offset="0.9842" style="stop-color:#080808;stop-opacity:0.9842"/>
+	<stop  offset="1" style="stop-color:#010101"/>
+</linearGradient>
+<rect y="21.867" opacity="0.4" fill="url(#SVGID_1_)" width="32.042" height="39.427"/>
+<g>
+	<g>
+		<circle fill="#655F54" cx="37.957" cy="36.812" r="31.325"/>
+		<g>
+			<g>
+				<g>
+					<path fill="#FFFFFF" d="M58.309,26.334H24.815l3.63,18.551c0.313,0.935,1.746,0.77,1.746,0.77l23.556-0.02
+						c0.572-0.13,0.894-0.771,0.894-0.771l2.702-16.855h0.966C59.163,27.123,58.309,26.334,58.309,26.334L58.309,26.334z
+						 M26.813,27.989h3.301l0.043,6.987H28.01L26.813,27.989L26.813,27.989z M30.2,43.424h-0.728l-1.154-7.331H30.2V43.424
+						L30.2,43.424z M33.801,43.514h-2.184v-7.421h2.184V43.514L33.801,43.514z M33.801,34.936h-2.143v-6.819h2.143V34.936
+						L33.801,34.936z M45.683,28.117h2.142v6.819h-2.142V28.117L45.683,28.117z M35.007,28.117h2.14v6.819h-2.14V28.117
+						L35.007,28.117z M37.233,43.514h-2.188v-7.421h2.188V43.514L37.233,43.514z M38.691,28.117h2.144v6.819h-2.144V28.117
+						L38.691,28.117z M40.922,43.514h-2.188v-7.421h2.188V43.514L40.922,43.514z M44.266,43.514h-2.185v-7.421h2.185V43.514
+						L44.266,43.514z M44.266,34.936h-2.142v-6.819h2.142V34.936L44.266,34.936z M47.865,43.514h-2.183v-7.421h2.183V43.514
+						L47.865,43.514z M51.255,43.514h-2.188v-7.421h2.188V43.514L51.255,43.514z M51.342,34.936H49.2v-6.819h2.142V34.936
+						L51.342,34.936z M53.355,43.381h-1.027l0.043-7.288h2.101L53.355,43.381L53.355,43.381z M54.598,34.85l-2.186,0.046
+						l-0.041-6.907h3.34L54.598,34.85L54.598,34.85z"/>
+				</g>
+				<g>
+					<path fill="#FFFFFF" d="M56.37,48.725H26.79c-0.288,0-0.537-0.199-0.597-0.479l-5.466-24.121h-2.885
+						c-0.341,0-0.615-0.273-0.615-0.611c0-0.341,0.274-0.613,0.615-0.613h3.375c0.288,0,0.538,0.194,0.598,0.477l5.463,24.119H56.37
+						c0.344,0,0.614,0.278,0.614,0.616C56.984,48.455,56.714,48.725,56.37,48.725z"/>
+				</g>
+				<g>
+					<circle fill="#FFFFFF" cx="33.315" cy="53.022" r="2.414"/>
+				</g>
+				<g>
+					<path fill="#FFFFFF" d="M50.102,53.022c0,1.333-1.074,2.414-2.409,2.414c-1.334,0-2.418-1.08-2.418-2.414
+						c0-1.334,1.084-2.415,2.418-2.415C49.027,50.607,50.102,51.688,50.102,53.022z"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

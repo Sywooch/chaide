@@ -449,7 +449,7 @@ nav ul li a:link, nav ul li a:visited{
 	/*border-top:1px solid #FFF;*/
 	float:left;
 	color:#FFF;
-	margin: -2% 0 0 0;
+	margin: 2% 0 0 0;
 	background-color: rgba(0,0,0,0.3);
 	border-radius:10px;
 	}
@@ -1864,5 +1864,8 @@ ul.publiciad-abj li{
 	color:#FFFFFF;
 	padding:3px 0;
 	float:right;
+	}	
+.background-edredones h1{
+	color:#a6a19e !important;
 	}	
 
