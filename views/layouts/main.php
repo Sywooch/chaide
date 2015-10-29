@@ -46,12 +46,9 @@ AppAsset::register($this);
                     <ul id="submenu-chaide">
                         <?php foreach($lines as $line): ?>
                         <li>
-                            <a href="#" class="hvr-bounce-to-top"><?= strtoupper($line->description) ?></a>
+                            <a href="#" class="hvr-bounce-to-top"><?= mb_strtoupper($line->description) ?></a>
                             <ul id="productos-submenu">
                                 <?php foreach($line->products as $k => $product): ?>
-                                    <?php 
-                                    if($k==3) break;
-                                     ?>
                                     <li><a href="<?= Url::to(['product/view','id'=>$product->id,'#'=>strtoupper($product->title)]) ?>"><?= $product->title ?></a></li>
                                 <?php endforeach; ?>
                                 <!--<li><a href="<?= Url::to(['line/view','id'=>$line->id,'#'=>strtoupper($line->description)]) ?>" class="btn-vermas-m">Ver más +</a></li>-->
@@ -63,7 +60,7 @@ AppAsset::register($this);
                 </li>
                 <li class="m-menu"><a href="<?= Url::to(['locale/index']) ?>" class="hvr-bounce-to-top">LOCALES</a></li>
                 <li><a href="<?= Url::home() ?>"><img src="<?= URL::base() ?>/images/logo-chaide.svg" alt="logotipo chaide"/></a></li>
-                <li class="m-menu"><a href="<?= Url::to(['news/index']) ?>" class="hvr-bounce-to-top">NOTICIAS</a></li>
+                <li class="m-menu"><a href="<?= Url::to(['article/index']) ?>" class="hvr-bounce-to-top">NOTICIAS</a></li>
                 <li class="m-menu"><a href="#" class="hvr-bounce-to-top">INNOVACIÓN</a></li>
                 <?php if(Yii::$app->user->isGuest){ ?>
                 <li class="m-menu"><a href="<?= Url::to(['user/create']) ?>" class="hvr-bounce-to-top"><img src="<?= URL::base() ?>/images/ico-compras.svg"/> COMPRAS</a></li>
