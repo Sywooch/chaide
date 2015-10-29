@@ -36,6 +36,7 @@ class LocaleController extends Controller
     {
         // $searchModel = new LocaleSearch();
         // $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+         $this->layout = 'main2';
         $model= City::find()->all();
         return $this->render('index', [
        'model' => $model,

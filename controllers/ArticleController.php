@@ -32,6 +32,7 @@ class ArticleController extends Controller
      */
     public function actionIndex()
     {
+        
         $principal= Article::find()->where(['important'=>'YES','status'=>'ACTIVE','type'=>'NEWS'])->one();
         $vida=Article::find()->where(['important'=>'NO','status'=>'ACTIVE','type'=>'NEWS','category'=>'VIDA'])->limit(2)->all();
         $materiales=Article::find()->where(['important'=>'NO','status'=>'ACTIVE','type'=>'NEWS','category'=>'MATERIALES'])->limit(2)->all();
@@ -54,6 +55,7 @@ class ArticleController extends Controller
      */
     public function actionView($id)
     {
+        $this->layout = 'main2';
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);

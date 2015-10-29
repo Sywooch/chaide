@@ -16,7 +16,7 @@ $float_izq="float-izq";
         <img src="<?= URL::base() ?>/images/news/<?= $principal->picture ?>"/>
         <div class="inf-notprincipal">
             <h1><?= $principal->title ?></h1>
-            <a href="<?= Url::to(['article/view','id'=>$principal->id,'#'=>strtoupper($principal->title)]) ?>">CONOCE MÁS</a>
+            <a href="<?= Url::to(['article/view','id'=>$principal->id,'#'=>mb_strtoupper($principal->title)]) ?>">CONOCE MÁS</a>
         </div>
     </div>
     <div class="art-interes">ARTÍCULOS DE INTERES</div>
@@ -34,11 +34,11 @@ $float_izq="float-izq";
         <div class="cont-noticia">
             <img src="<?= URL::base() ?>/images/news/<?= $vi->picture ?>" class="<?= $float ?>"/>
             <div class="txt-noticia <?= $float ?>">
-                <h1><?= strtoupper($vi->title) ?></h1>
+                <h1><?= mb_strtoupper($vi->title) ?></h1>
                 <p>
                     <?= substr($vi->description, 0,150); ?>
                 </p>
-                <a href="<?= Url::to(['article/view','id'=>$vi->id,'#'=>strtoupper($vi->title)]) ?>">Leer más >></a>
+                <a href="<?= Url::to(['article/view','id'=>$vi->id,'#'=>mb_strtoupper($vi->title)]) ?>">Leer más >></a>
             </div>
         </div>
     <?php endforeach; ?>
@@ -50,11 +50,11 @@ $float_izq="float-izq";
         <div class="cont-noticia">
             <img src="<?= URL::base() ?>/images/news/<?= $vi->picture ?>" class="<?= $float ?>"/>
             <div class="txt-noticia <?= $float ?>">
-                <h1><?= strtoupper($vi->title) ?></h1>
+                <h1><?= mb_strtoupper($vi->title) ?></h1>
                 <p>
                     <?= substr($vi->description, 0,150); ?>
                 </p>
-                <a href="<?= Url::to(['article/view','id'=>$vi->id,'#'=>strtoupper($vi->title)]) ?>">Leer más >></a>
+                <a href="<?= Url::to(['article/view','id'=>$vi->id,'#'=>mb_strtoupper($vi->title)]) ?>">Leer más >></a>
             </div>
         </div>
     <?php endforeach; ?>
@@ -66,11 +66,11 @@ $float_izq="float-izq";
         <div class="cont-noticia">
             <img src="<?= URL::base() ?>/images/news/<?= $vi->picture ?>" class="<?= $float ?>"/>
             <div class="txt-noticia <?= $float ?>">
-                <h1><?= strtoupper($vi->title) ?></h1>
+                <h1><?= mb_strtoupper($vi->title) ?></h1>
                 <p>
                     <?= substr($vi->description, 0,150); ?>
                 </p>
-                <a href="<?= Url::to(['article/view','id'=>$vi->id,'#'=>strtoupper($vi->title)]) ?>">Leer más >></a>
+                <a href="<?= Url::to(['article/view','id'=>$vi->id,'#'=>mb_strtoupper($vi->title)]) ?>">Leer más >></a>
             </div>
         </div>
     <?php endforeach; ?>
@@ -82,11 +82,11 @@ $float_izq="float-izq";
         <div class="cont-noticia">
             <img src="<?= URL::base() ?>/images/news/<?= $vi->picture ?>" class="<?= $float ?>"/>
             <div class="txt-noticia <?= $float ?>">
-                <h1><?= strtoupper($vi->title) ?></h1>
+                <h1><?= mb_strtoupper($vi->title) ?></h1>
                 <p>
                     <?= substr($vi->description, 0,150); ?>
                 </p>
-                <a href="<?= Url::to(['article/view','id'=>$vi->id,'#'=>strtoupper($vi->title)]) ?>">Leer más >></a>
+                <a href="<?= Url::to(['article/view','id'=>$vi->id,'#'=>mb_strtoupper($vi->title)]) ?>">Leer más >></a>
             </div>
         </div>
     <?php endforeach; ?>
