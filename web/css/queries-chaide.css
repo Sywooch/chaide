@@ -187,9 +187,12 @@ body{
 }
 @media screen and (max-width: 1024px) {
 header{
-	width:96%;
-	left:2%;
+	width:100%;
+	left:0;
 	}
+nav ul li {
+    width: 14.28%;
+}	
 body{
 	font-size:0.9em;
 	}	
