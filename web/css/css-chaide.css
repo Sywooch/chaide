@@ -552,7 +552,7 @@ footer{
 	top:0;
 	left:100%;
 	background-color:#FFF;
-	z-index:100;
+	z-index:50;
 	transition: all 500ms ease-in-out;
 	}
 .menu-active{
@@ -930,6 +930,7 @@ footer{
 	position:fixed;
 	right:0;
 	top:30%;
+	z-index:1000;
 	}	
 #asesor-compra ul{
 	width:100%;
@@ -1033,7 +1034,7 @@ footer{
 	background-color:#ecebe9;
 	width:100%;
 	float:left;
-	position:fixed;
+	position:absolute;
 	height:17%;
 	top:0;
 	left:0;
@@ -1611,7 +1612,7 @@ ul.publiciad-abj li{
 .conte-local{
 	width:40%;
 	position:relative;
-	z-index:100;
+	z-index:2;
 	margin:1% 0 0 5%;
 	float:left;
 	}	

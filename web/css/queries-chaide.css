@@ -489,6 +489,9 @@ nav ul li{
     top: -32%;
     left: -2%;
 }
+header {
+    position:fixed;
+}
 }
 @media screen and (max-width: 720px) {
 #home-chaide {
