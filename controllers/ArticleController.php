@@ -4,7 +4,6 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Article;
-use app\models\Category;
 use app\models\ArticleSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
