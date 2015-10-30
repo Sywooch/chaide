@@ -82,7 +82,7 @@ AppAsset::register($this);
             <h2>NUESTROS PRODUCTOS</h2>  
             <ul>
                 <?php foreach($lines as $line): ?>
-                <li><a href="<?= Url::to(['line/view','id'=>$line->id,'#'=>strtoupper($line->description)]) ?>"><?= strtoupper($line->description) ?></a></li>
+                <li><a href="<?= Url::to(['line/view','id'=>$line->id,'#'=>strtoupper($line->description)]) ?>"><?= mb_strtoupper($line->description) ?></a></li>
                 <?php endforeach; ?>
             </ul>  
         </div>
@@ -91,7 +91,7 @@ AppAsset::register($this);
             <h2>NUESTROS LOCALES</h2> 
             <div class="footer-con2">
                 <?php foreach($cities as $city): ?>
-                <h2><?= strtoupper($city->description) ?></h2>
+                <h2><?= mb_strtoupper($city->description) ?></h2>
                 <ul>
                     <?php foreach($city->locales as $locale): ?>
                     <li><a href="#"><?= $locale->address ?></a></li>
@@ -102,7 +102,7 @@ AppAsset::register($this);
             </div>
             <div class="footer-con2">
                 <?php foreach($cities as $z => $city): if($z==0) continue; ?>
-                <h2><?= strtoupper($city->description) ?></h2>
+                <h2><?= mb_strtoupper($city->description) ?></h2>
                 <ul>
                     <?php foreach($city->locales as $locale): ?>
                     <li><a href="<?= Url::to(['locale/index']) ?>"><?= $locale->address ?></a></li>
