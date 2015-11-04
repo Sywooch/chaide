@@ -1869,4 +1869,117 @@ ul.publiciad-abj li{
 .background-edredones h1{
 	color:#a6a19e !important;
 	}	
+/**/
+#cont-asesorCompras{
+	width:100%;
+	float:left;
+	position:relative;
+	padding:0 0 20px 0;
+	}	
+#cont-asesorCompras h1, #cont-preguntasf h1{
+	color:#00809d;
+	background-image:url(../images/separador.svg);
+	background-size:50%;
+	background-position:bottom center;
+	padding:0 0 1% 0;
+	margin:3% 0 1% 0;
+	background-repeat:no-repeat;
+	width:100%;
+	text-align:center;
+	float:left;
+	font-size:2em;
+	}
+#cont-asesorCompras span, #cont-preguntasf span{
+	width:100%;
+	text-align:center;
+	margin:3px 0;
+	color: #645f54;
+    font-size: 1.2em;
+	float:left;
+	}	
+.productos-asesor{
+	border-top:1px dashed #645f54
+	}	
+.tit-asesor{
+	color:#00809d !important;
+	background-image:url(../images/separador.svg);
+	background-size:50%;
+	background-position:bottom center;
+	padding:0 0 1% 0;
+	margin:3% 0 1% 0;
+	background-repeat:no-repeat;
+	width:100%;
+	text-align:center;
+	float:left;
+	font-size:1.6em !important;
+	}
+.btn-asesor:link, .btn-asesor:visited{
+	width:50%;
+	margin:5px 25%;
+	text-align:center;
+	padding:3px 0;
+	color:rgba(255,255,255,1.00);
+	background-color:#00809d;
+	float:left;
+	}	
+.btn-asesor:hover{
+	background-color:#085263;
+	}	
+#asesor-pag2 span, #asesor-pag3 span, #asesor-pag4 span, #asesor-pag5 span, #asesor-pag6 span, #asesor-pag7 span{
+	width:100%;
+	background-color: #333333!important;
+    color: #FFFFFF !important;
+	float:left;
+	text-align:center;
+	margin:5px 0 0 0;
+	padding:5px 0;
+	}	
+#asesor-pag2 ul li img{
+	width:40% !important;
+	margin:0 30% !important;
+	}	
+.peso-parejas{
+	width:100%;
+	float:left;
+	}	
+.btn-aseror-next{
+	float:right;
+	padding:4px 20px;
+	color:#FFFFFF; 
+	background-color: #00809d;
+	}
+.btn-aseror-back{
+	float:left;
+	padding:4px 20px;
+	color:#FFFFFF; 
+	background-color: #00809d;
+	}		
+/* PREGUNTAS FRECUENTES */
+#cont-preguntasf{
+	width:100%;
+	float:left;
+	position:relative;
+	padding:0 0 20px 0;
+	}	
+.cont-pregunta{
+	width:80%;
+	float:left;
+	margin:20px 10%;
+	}
+.cont-pregunta h1{
+	background-color: #333333!important;
+    color: #FFFFFF !important;
+	width:90%;
+	padding:5px 5% !important;
+	text-align:left !important;
+	background-image:none !important;
+	font-size:1.1em !important;
+	margin:0 !important;
+	}	
+.resp-pre{
+	width:90%;
+	padding:10px 5% 0 5%;
+	color: #645f54;
+	float:left;
+	}			
 
