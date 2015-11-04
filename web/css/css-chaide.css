@@ -2105,3 +2105,11 @@ ul.publiciad-abj li{
 	z-index:1000;
 	font-size:0.8em;
 	}	
+#cont-iniciarsesion a:link, #cont-iniciarsesion a:visited{
+	color:inherit;
+	text-decoration:none;
+	}	
+#cont-iniciarsesion a:hover{
+	color:#B5B5B5;
+	text-decoration:underline;
+	}	
