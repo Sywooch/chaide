@@ -36,6 +36,9 @@ AppAsset::register($this);
 
 <?php $this->beginBody() ?>
 <div id="general">
+	<!-- -->
+    <div id="cont-iniciarsesion">Federico / Cerrar sesión</div>
+    <!-- -->
 <!-- MENU CHAIDE -->
     <header>
         <nav>
