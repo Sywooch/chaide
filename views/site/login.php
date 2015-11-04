@@ -24,7 +24,7 @@ $this->title = 'Login';
             'template' => "<div class=\"cont-campos\">{label}{input}{error}</div>",
                'options' => [
                             'tag'=>'div'
-                           
+
                         ]
             //'labelOptions' => ['class' => 'col-lg-1 control-label'],
         ],
@@ -34,7 +34,7 @@ $this->title = 'Login';
 
 
             <?= $form->field($model, 'password')->passwordInput()->label('Password') ?>
-     
+            
         <input type="submit" value="Iniciar Sesión"/>
            <?php ActiveForm::end(); ?>
         <div class="div-registro">
