@@ -25,30 +25,14 @@ $this->title = $model->title;
 </div>
 <!-- -->
 <section class="cont-notinternas">
+    <?php foreach($articles as $article): ?>
     <div class="noticia-int">
-        <img src="<?= URL::base() ?>/images/noticia-int.jpg"/>
-        <h1>¿CÓMO DECORAR TU HABITACIÓN?</h1>
-        <p>Nuestro cuarto es el rincón de la casa dedicado a nosotras mismas, nuestro propio espacio, aquel que nos gusta personalizar y adornar a nuestro gusto.</p>
-        <a href="#">Leer más >></a>
+        <img src="<?= URL::base() ?>/images/news/<?= $article->picture ?>"/>
+        <h1><?= mb_strtoupper($article->title) ?></h1>
+        <p><?= $article->description ?></p>
+        <a href="<?= Url::to(['article/view','id'=>$article->id,'#'=>mb_strtoupper($article->title)]) ?>">Leer más >></a>
     </div>
-    <div class="noticia-int">
-        <img src="<?= URL::base() ?>/images/noticia-int2.jpg"/>
-        <h1>DESAYUNO DE PAPÁ EN SU DÍA</h1>
-        <p>¡Qué delicia una taza de chocolate caliente amargo! En especial si los primeros días invernales ya están golpeando la puerta. Desayunar una reconfortante taza de chocolate caliente sin duda no vendría nada mal para sacar el frío. ¡Intenta esta delicia para papá!</p>
-        <a href="#">Leer más >></a>
-    </div>
-    <div class="noticia-int">
-        <img src="<?= URL::base() ?>/images/noticia-int.jpg"/>
-        <h1>SUEÑO Y FELICIDAD</h1>
-        <p>Parece evidente, ¿Verdad? ¿No te levantas de mejor humor cuando has dormido bien? O al contrario, ¿no te parece que vas a tener el peor día de tu vida cuando te levantas después de una mala noche o pocas horas de descanso?</p>
-        <a href="#">Leer más >></a>
-    </div>
-    <div class="noticia-int">
-        <img src="<?= URL::base() ?>/images/noticia-int2.jpg"/>
-        <h1>¿CÓMO DECORAR TU HABITACIÓN?</h1>
-        <p>Nuestro cuarto es el rincón de la casa dedicado a nosotras mismas, nuestro propio espacio, aquel que nos gusta personalizar y adornar a nuestro gusto.</p>
-        <a href="#">Leer más >></a>
-    </div>
+<?php endforeach; ?>
 </section>
 <!-- -->
 <div class="footter-home">

@@ -56,8 +56,11 @@ class ArticleController extends Controller
     public function actionView($id)
     {
         $this->layout = 'main2';
+        $model=$this->findModel($id);
+        $articles=Article::find()->where(['status'=>'ACTIVE','type'=>'NEWS','category'=>$model->category])->limit(4)->all();
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
+            'articles' => $articles,
         ]);
     }
 
