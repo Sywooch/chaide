@@ -52,12 +52,12 @@ AppAsset::register($this);
         <nav>
             <ul>
                  <li class="m-menu"><a href="<?= Url::to(['site/asesor']) ?>" class="hvr-bounce-to-top">ASESOR DE COMPRAS</a></li>
-                                <li class="m-menu"><a href="<?= Url::to(['line/index']) ?>" class="hvr-bounce-to-top">PRODUCTOS</a>
+                                <li class="m-menu"><a href="#" class="hvr-bounce-to-top">PRODUCTOS</a>
                     <!-- -->
                     <ul id="submenu-chaide">
                         <?php foreach($lines as $line): ?>
                         <li>
-                            <a href="#" class="hvr-bounce-to-top"><?= mb_strtoupper($line->description) ?></a>
+                            <a href="<?= Url::to(['line/view','id'=>$line->id,'#'=>strtoupper($line->description)]) ?>" class="hvr-bounce-to-top"><?= mb_strtoupper($line->description) ?></a>
                             <ul id="productos-submenu">
                                 <?php foreach($line->products as $k => $product): ?>
                                     <li><a href="<?= Url::to(['product/view','id'=>$product->id,'#'=>strtoupper($product->title)]) ?>"><?= $product->title ?></a></li>
