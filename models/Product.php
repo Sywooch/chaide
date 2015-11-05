@@ -100,7 +100,9 @@ class Product extends ActiveRecord
      * @return \yii\db\ActiveQuery
      */
   
-
+    public function getSapCodes(){
+      return $this->hasMany(SapCode::className(), ['product_id' => 'id']);  
+    }
     public function getMesures()
     {
         return $this->hasMany(Mesure::className(),['id' => 'mesure_id'])->viaTable('product_mesure',['product_id' => 'id']);

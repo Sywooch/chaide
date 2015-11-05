@@ -7,39 +7,58 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\ProductSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Products';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Productos';
 ?>
-<div class="product-index">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?= Html::a('Create Product', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'line_id',
-            'title',
-            'description:ntext',
-            'price',
-            // '3d',
-            // 'picture',
-            // 'background1',
-            // 'background2',
-            // 'background3',
-            // 'status',
-            // 'creation_date',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
-
-</div>
+<section class="cont-paginternas productos">
+    <div class="secciones-productos">
+        <div class="tit-productos"><img src="<?= URL::base() ?>/images/tit-linearestonic.svg"/></div>
+        <h2>Desde <strong>$776.92</strong> (No incluye IVA)</h2>
+        <ul>
+            <li>
+                <a href="colchon-interna.html"><img src="<?= URL::base() ?>/images/productos/colchon1.png" alt="productos chaide"/><h1>CARRESA</h1><h2>Desde <strong>$776.92</strong> (No incluye IVA)</h2></a>
+                <a href="colchon-interna.html" class="link-comprar">Comprar</a>
+                <div class="c-comparar">
+                    <input type="checkbox" /><label>Comparar</label>
+                </div>
+            </li>
+            <li>
+                <img src="<?= URL::base() ?>/images/productos/colchon2.png" alt="productos chaide"/><h1>ESCAPE</h1><h2>Desde <strong>$776.92</strong> (No incluye IVA)</h2>
+                <a href="colchon-interna.html" class="link-comprar">Comprar</a>
+                <div class="c-comparar">
+                    <input type="checkbox" /><label>Comparar</label>
+                </div>
+            </li>
+            <li>
+                <img src="<?= URL::base() ?>/images/productos/colchon3.png" alt="productos chaide"/><h1>GRAND PALAIS</h1><h2>Desde <strong>$776.92</strong> (No incluye IVA)</h2>
+                <a href="colchon-interna.html" class="link-comprar">Comprar</a>
+                <div class="c-comparar">
+                    <input type="checkbox" /><label>Comparar</label>
+                </div>
+            </li>
+            <li>
+                <img src="<?= URL::base() ?>/images/productos/colchon4.png" alt="productos chaide"/><h1>RESTONIC EXCELLENCE</h1><h2>Desde <strong>$776.92</strong> (No incluye IVA)</h2>
+                <a href="colchon-interna.html" class="link-comprar">Comprar</a>
+                <div class="c-comparar">
+                    <input type="checkbox" /><label>Comparar</label>
+                </div>
+            </li>
+            <li>
+                <img src="<?= URL::base() ?>/images/productos/colchon5.png" alt="productos chaide"/><h1>RESTONIC GOLD</h1><h2>Desde <strong>$776.92</strong> (No incluye IVA)</h2>
+                <a href="colchon-interna.html" class="link-comprar">Comprar</a>
+                <div class="c-comparar">
+                    <input type="checkbox" /><label>Comparar</label>
+                </div>
+            </li>
+            <li>
+                <img src="<?= URL::base() ?>/images/productos/colchon6.png" alt="productos chaide"/><h1>SYMPHONY</h1><h2>Desde <strong>$776.92</strong> (No incluye IVA)</h2>
+                <a href="colchon-interna.html" class="link-comprar">Comprar</a>
+                <div class="c-comparar">
+                    <input type="checkbox" /><label>Comparar</label>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- SEPARADOR -->
+    <div class="separador-p"><img src="<?= URL::base() ?>/images/separador.jpg"/></div>
+    <!-- -->
+</section>
