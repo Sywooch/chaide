@@ -37,7 +37,15 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 <div id="general">
 	<!-- -->
-    <div id="cont-iniciarsesion"><a href="#">Federico</a> / <a href="#">Cerrar sesión</a></div>
+
+    <div id="cont-iniciarsesion">
+                <?php if(Yii::$app->user->isGuest){ ?>
+                <a href="<?= Url::to(['site/login']) ?>">Iniciar Sesión</a>
+                <?php }else{ ?>
+                <a href="<?= Url::to(['user/index']) ?>"><?= Yii::$app->user->identity->names ?></a> / <a href="<?= Url::to(['site/logout']) ?>">Cerrar Sesión</a>
+                <?php } ?>
+    </div>
+
     <!-- -->
 <!-- MENU CHAIDE -->
     <header>
