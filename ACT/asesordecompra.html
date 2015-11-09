@@ -11,7 +11,12 @@
 <link href="css/css-chaide.css" rel="stylesheet">
 <link href="css/queries-chaide.css" rel="stylesheet">
 
+<link href="css/ion.rangeSlider.css" rel="stylesheet" />
+<link href="css/ion.rangeSlider.skinHTML5.css" rel="stylesheet"/>
+
 <script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/ion.rangeSlider.min.js"></script>
+
 <script>
 $(document).ready(function() {
  //	
@@ -20,6 +25,18 @@ $("#menu-chaide").click(function(){
 		$("#menu-mobile").toggleClass("menu-active");
 		$("#general").toggleClass("general-active");
 	});   
+	//Slider
+
+	$(".slider-bar").ionRangeSlider({
+		type: "single",
+		min: 80,
+		max: 280,
+		step: 10,
+		grid: true,
+		grid_snap: true,
+	});
+	
+	//
 });
 
 </script>	
@@ -146,7 +163,7 @@ $("#menu-chaide").click(function(){
 <section class="cont-paginternas productos">
 	<div id="cont-asesorCompras">
    		<h1>ASESOR DE COMPRA</h1>
-        <span>¿Desea conocer el colchón o almohada recomendados para usted?, nosotros te ayudamos</span>
+        <span class="tit-asesorcompra">¿Desea conocer el colchón o almohada recomendados para usted?, nosotros te ayudamos</span>
         <!-- -->
         <div class="pag-inicial">
            <div id="asesor-pag1" class="asesor-2opc">
@@ -157,7 +174,7 @@ $("#menu-chaide").click(function(){
            </div>
            <!-- -->
            <div id="asesor-pag2" class="asesor-2opc">
-               <span>Indique si el uso del colchón será:</span>
+               <span  class="tit-asesorcompra">Indique si el uso del colchón será:</span>
                <ul>
                   <li><img src="images/asesor/ico-individual.svg" alt="Asesor Colchon"/><a href="#" class="btn-asesor">SELECCIONAR</a></li>
                   <li><img src="images/asesor/ico-pareja.svg" alt="Asesor Almohada"/><a href="#" class="btn-asesor">SELECCIONAR</a></li>
@@ -185,42 +202,35 @@ $("#menu-chaide").click(function(){
            <!-- -->
            <div id="asesor-pag5" class="peso-corporal">
                <div class="peso-individual">
-                   <span>Ingrese su peso corporal:</span>
+                   <font>Ingrese su peso corporal:</font>
                    <ul>
-                      <li><img src="images/peso.png" alt="Asesor Colchon"/><div class="inf-peso"><input type="text"/><label>libras (ejemplo: 126 lb)</label></div></li>
+                      <li><div class="slider-bar"></div><div class="inf-peso"><input type="text" id="input-slider"/><label>libras (ejemplo: 126 lb)</label></div></li>
                   </ul>
                    <a href="#" class="btn-aseror-back">&lt;&lt; Anterior</a>
                   <a href="#" class="btn-aseror-next">Siguiente >></a>
               </div>
                <div class="peso-parejas">
-                   <span>Ingrese su peso corporal:</span>
+                   <font>Ingrese su peso corporal:</font>
                    <ul>
-                      <li><font>Tú:</font><img src="images/peso.png" alt="Asesor Colchon"/><div class="inf-peso"><input type="text"/><label>libras (ejemplo: 126 lb)</label></div></li>
-                      <li><font>Tu pareja:</font><img src="images/peso.png" alt="Asesor Colchon"/><div class="inf-peso"><input type="text"/><label>libras (ejemplo: 126 lb)</label></div></li>
+                      <li><font>Tú:</font><div class="slider-bar"></div><div class="inf-peso"><input type="text"/><label>libras (ejemplo: 126 lb)</label></div></li>
+                      <li><font>Tu pareja:</font><div class="slider-bar"></div><div class="inf-peso"><input type="text"/><label>libras (ejemplo: 126 lb)</label></div></li>
                   </ul>
                   <a href="#" class="btn-aseror-back">&lt;&lt; Anterior</a>
                   <a href="#" class="btn-aseror-next">Siguiente >></a>
               </div>
            </div>
            <!-- -->
-           <div id="asesor-pag6" class="peso-corporal">
-               <div class="peso-individual">
+           <div id="asesor-pag6" class="asesor-5opc">
                    <span>¿Cuál es el nivel de confort que busca?:</span>
                    <ul>
-                      <li><img src="images/peso.png" alt="Asesor Colchon"/><div class="inf-peso"></li>
+                      <li><img src="images/asesor/c-muyduro.svg" alt="Asesor Colchon"/><a href="#" class="btn-asesor">SELECCIONAR</a></li>
+                      <li><img src="images/asesor/c-duro.svg" alt="Asesor Almohada"/><a href="#" class="btn-asesor">SELECCIONAR</a></li>
+                      <li><img src="images/asesor/c-intermedio.svg" alt="Asesor Colchon"/><a href="#" class="btn-asesor">SELECCIONAR</a></li>
+                      <li><img src="images/asesor/c-suave.svg" alt="Asesor Almohada"/><a href="#" class="btn-asesor">SELECCIONAR</a></li>
+                      <li><img src="images/asesor/c-muysuave.svg" alt="Asesor Almohada"/><a href="#" class="btn-asesor">SELECCIONAR</a></li>
                   </ul>
                    <a href="#" class="btn-aseror-back">&lt;&lt; Anterior</a>
                   <a href="#" class="btn-aseror-next">Siguiente >></a>
-              </div>
-               <div class="peso-parejas">
-                   <span>¿Cuál es el nivel de confort que busca?:</span>
-                   <ul>
-                      <li><font>Tú:</font><img src="images/peso.png" alt="Asesor Colchon"/></li>
-                      <li><font>Tu pareja:</font><img src="images/peso.png" alt="Asesor Colchon"/></li>
-                  </ul>
-                  <a href="#" class="btn-aseror-back">&lt;&lt; Anterior</a>
-                  <a href="#" class="btn-aseror-next">Siguiente >></a>
-              </div>
            </div>
            <!-- -->
            <div id="asesor-pag7" class="asesor-6opc">

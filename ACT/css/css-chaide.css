@@ -1852,7 +1852,7 @@ ul.publiciad-abj li{
 	float:left;
 	margin:10px 20%;
 	}			
-.asesor-2opc ul, .asesor-3opc ul, .asesor-4opc ul, .peso-corporal ul, .asesor-6opc ul{
+.asesor-2opc ul, .asesor-3opc ul, .asesor-4opc ul, .peso-corporal ul, .asesor-6opc ul, .asesor-5opc ul{
 	width:96%;
 	float:left;
 	margin:0;
@@ -1956,7 +1956,22 @@ ul.publiciad-abj li{
 .asesor-6opc a:link, .asesor-4opc a:visited{
 	width: 100% !important;
     margin: 5px 0 !important;
-	}					
+	}	
+/* 5 opciones*/
+.asesor-5opc ul li{
+	width:19%;
+	float:left;
+	padding:1% 0.5%;
+	list-style:none;
+	}
+.asesor-5opc ul li img{
+	width:90%;
+	margin:0 5%;
+	}		
+.asesor-5opc ul li a:link, .asesor-5opc ul li a:visited{
+	width: 100% !important;
+    margin: 5px 0 !important;
+	}						
 /*//**/
 .cont-botonesac{
 	width:96%;
@@ -1993,7 +2008,7 @@ ul.publiciad-abj li{
 	float:left;
 	font-size:2em;
 	}
-#cont-asesorCompras span, #cont-preguntasf span{
+.tit-asesorcompra, #cont-preguntasf span{
 	width:100%;
 	text-align:center;
 	margin:3px 0;
@@ -2029,7 +2044,7 @@ ul.publiciad-abj li{
 .btn-asesor:hover{
 	background-color:#085263;
 	}	
-#asesor-pag2 span, #asesor-pag3 span, #asesor-pag4 span, #asesor-pag5 span, #asesor-pag6 span, #asesor-pag7 span{
+#asesor-pag2 span, #asesor-pag3 span, #asesor-pag4 span, #asesor-pag5 font, #asesor-pag6 span, #asesor-pag7 span{
 	width:100%;
 	background-color: #333333!important;
     color: #FFFFFF !important;
@@ -2086,3 +2101,13 @@ ul.publiciad-abj li{
 	color: #645f54;
 	float:left;
 	}		
+	/**/
+.cont-barra{
+	width:100%;
+	position:relative;
+	}
+#slider-bar{
+		width:100%;
+		float:left;
+		margin:7px 0;
+		}
