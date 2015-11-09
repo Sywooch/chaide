@@ -15,48 +15,15 @@ $this->title = $model->description;
         <div class="tit-productos"><img src="<?= URL::base() ?>/images/tit-linearestonic.svg"/></div>
         <h2>Desde <strong>$776.92</strong> (No incluye IVA)</h2>
         <ul>
+            <?php foreach($model->products as $product): ?>
             <li>
-                <a href="colchon-interna.html"><img src="<?= URL::base() ?>/images/productos/colchon1.png" alt="productos chaide"/><h1>CARRESA</h1><h2>Desde <strong>$776.92</strong> (No incluye IVA)</h2></a>
+                <a href="<?= Url::to(['product/view','id'=>$product->id,'#'=>strtoupper($product->title)]) ?>"><img src="<?= URL::base() ?>/images/productos/<?= $product->picture ?>" alt="productos chaide"/><h1><?= $product->title ?></h1><h2>Desde <strong>$<?= $product->price ?></strong> (No incluye IVA)</h2></a>
                 <a href="colchon-interna.html" class="link-comprar">Comprar</a>
                 <div class="c-comparar">
                     <input type="checkbox" /><label>Comparar</label>
                 </div>
             </li>
-            <li>
-                <img src="<?= URL::base() ?>/images/productos/colchon2.png" alt="productos chaide"/><h1>ESCAPE</h1><h2>Desde <strong>$776.92</strong> (No incluye IVA)</h2>
-                <a href="colchon-interna.html" class="link-comprar">Comprar</a>
-                <div class="c-comparar">
-                    <input type="checkbox" /><label>Comparar</label>
-                </div>
-            </li>
-            <li>
-                <img src="<?= URL::base() ?>/images/productos/colchon3.png" alt="productos chaide"/><h1>GRAND PALAIS</h1><h2>Desde <strong>$776.92</strong> (No incluye IVA)</h2>
-                <a href="colchon-interna.html" class="link-comprar">Comprar</a>
-                <div class="c-comparar">
-                    <input type="checkbox" /><label>Comparar</label>
-                </div>
-            </li>
-            <li>
-                <img src="<?= URL::base() ?>/images/productos/colchon4.png" alt="productos chaide"/><h1>RESTONIC EXCELLENCE</h1><h2>Desde <strong>$776.92</strong> (No incluye IVA)</h2>
-                <a href="colchon-interna.html" class="link-comprar">Comprar</a>
-                <div class="c-comparar">
-                    <input type="checkbox" /><label>Comparar</label>
-                </div>
-            </li>
-            <li>
-                <img src="<?= URL::base() ?>/images/productos/colchon5.png" alt="productos chaide"/><h1>RESTONIC GOLD</h1><h2>Desde <strong>$776.92</strong> (No incluye IVA)</h2>
-                <a href="colchon-interna.html" class="link-comprar">Comprar</a>
-                <div class="c-comparar">
-                    <input type="checkbox" /><label>Comparar</label>
-                </div>
-            </li>
-            <li>
-                <img src="<?= URL::base() ?>/images/productos/colchon6.png" alt="productos chaide"/><h1>SYMPHONY</h1><h2>Desde <strong>$776.92</strong> (No incluye IVA)</h2>
-                <a href="colchon-interna.html" class="link-comprar">Comprar</a>
-                <div class="c-comparar">
-                    <input type="checkbox" /><label>Comparar</label>
-                </div>
-            </li>
+            <?php endforeach; ?>
         </ul>
     </div>
     <!-- SEPARADOR -->

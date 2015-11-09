@@ -22,7 +22,7 @@ class AppAsset extends AssetBundle
         'css/queries-chaide.css',
     ];
     public $js = [
-    //'https://www.google.com/jsapi'
+    'js/ion.rangeSlider.min.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
