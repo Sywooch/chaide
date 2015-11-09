@@ -3,15 +3,31 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 use yii\helpers\Url;
+use yii\web\View;
 /* @var $this yii\web\View */
 /* @var $model app\models\Product */
+$script =
+<<< JS
+$(document).ready(function() {
+//Slider
+	$(".slider-bar").ionRangeSlider({
+		type: "single",
+		min: 80,
+		max: 280,
+		step: 10,
+		grid: true,
+		grid_snap: true,
+	});
+});	
 
+JS;
+$this->registerJs($script,View::POS_END);
 $this->title = 'Asesor de Compras';
 ?>
 <section class="cont-paginternas productos">
 	<div id="cont-asesorCompras">
    		<h1>ASESOR DE COMPRA</h1>
-        <span>¿Desea conocer el colchón o almohada recomendados para usted?, nosotros te ayudamos</span>
+        <span class="tit-asesorcompra">¿Desea conocer el colchón o almohada recomendados para usted?, nosotros te ayudamos</span>
         <!-- -->
         <div class="pag-inicial">
            <div id="asesor-pag1" class="asesor-2opc">
@@ -50,7 +66,7 @@ $this->title = 'Asesor de Compras';
            <!-- -->
            <div id="asesor-pag5" class="peso-corporal">
                <div class="peso-individual">
-                   <span>Ingrese su peso corporal:</span>
+                   <font>Ingrese su peso corporal:</font>
                    <ul>
                       <li><div class="slider-bar"></div><div class="inf-peso"><input type="text"/><label>libras (ejemplo: 126 lb)</label></div></li>
                   </ul>
@@ -58,34 +74,27 @@ $this->title = 'Asesor de Compras';
                   <a href="#" class="btn-aseror-next">Siguiente >></a>
               </div>
                <div class="peso-parejas">
-                   <span>Ingrese su peso corporal:</span>
+                   <font>Ingrese su peso corporal:</font>
                    <ul>
-                      <li><font>Tú:</font><img src="<?= URL::base() ?>/images/peso.png" alt="Asesor Colchon"/><div class="inf-peso"><input type="text"/><label>libras (ejemplo: 126 lb)</label></div></li>
-                      <li><font>Tu pareja:</font><img src="<?= URL::base() ?>/images/peso.png" alt="Asesor Colchon"/><div class="inf-peso"><input type="text"/><label>libras (ejemplo: 126 lb)</label></div></li>
+                      <li><font>Tú:</font><div class="slider-bar"></div><div class="inf-peso"><input type="text"/><label>libras (ejemplo: 126 lb)</label></div></li>
+                      <li><font>Tu pareja:</font><div class="slider-bar"></div><div class="inf-peso"><input type="text"/><label>libras (ejemplo: 126 lb)</label></div></li>
                   </ul>
                   <a href="#" class="btn-aseror-back">&lt;&lt; Anterior</a>
                   <a href="#" class="btn-aseror-next">Siguiente >></a>
               </div>
            </div>
            <!-- -->
-           <div id="asesor-pag6" class="peso-corporal">
-               <div class="peso-individual">
+           <div id="asesor-pag6" class="asesor-5opc">
                    <span>¿Cuál es el nivel de confort que busca?:</span>
                    <ul>
-                      <li><img src="<?= URL::base() ?>/images/peso.png" alt="Asesor Colchon"/><div class="inf-peso"></li>
+                      <li><img src="<?= URL::base() ?>/images/asesor/c-muyduro.svg" alt="Asesor Colchon"/><a href="#" class="btn-asesor">SELECCIONAR</a></li>
+                      <li><img src="<?= URL::base() ?>/images/asesor/c-duro.svg" alt="Asesor Almohada"/><a href="#" class="btn-asesor">SELECCIONAR</a></li>
+                      <li><img src="<?= URL::base() ?>/images/asesor/c-intermedio.svg" alt="Asesor Colchon"/><a href="#" class="btn-asesor">SELECCIONAR</a></li>
+                      <li><img src="<?= URL::base() ?>/images/asesor/c-suave.svg" alt="Asesor Almohada"/><a href="#" class="btn-asesor">SELECCIONAR</a></li>
+                      <li><img src="<?= URL::base() ?>/images/asesor/c-muysuave.svg" alt="Asesor Almohada"/><a href="#" class="btn-asesor">SELECCIONAR</a></li>
                   </ul>
                    <a href="#" class="btn-aseror-back">&lt;&lt; Anterior</a>
                   <a href="#" class="btn-aseror-next">Siguiente >></a>
-              </div>
-               <div class="peso-parejas">
-                   <span>¿Cuál es el nivel de confort que busca?:</span>
-                   <ul>
-                      <li><font>Tú:</font><img src="<?= URL::base() ?>/images/peso.png" alt="Asesor Colchon"/></li>
-                      <li><font>Tu pareja:</font><img src="<?= URL::base() ?>/images/peso.png" alt="Asesor Colchon"/></li>
-                  </ul>
-                  <a href="#" class="btn-aseror-back">&lt;&lt; Anterior</a>
-                  <a href="#" class="btn-aseror-next">Siguiente >></a>
-              </div>
            </div>
            <!-- -->
            <div id="asesor-pag7" class="asesor-6opc">
@@ -153,16 +162,3 @@ $this->title = 'Asesor de Compras';
     <div class="separador-p"><img src="<?= URL::base() ?>/images/separador.jpg"/></div>
     <!-- -->
 </section>
-<script>
-$(document).ready(function() {
-//Slider
-	$(".slider-bar").ionRangeSlider({
-		type: "single",
-		min: 80,
-		max: 280,
-		step: 10,
-		grid: true,
-		grid_snap: true,
-	});
-});	
-</script>
