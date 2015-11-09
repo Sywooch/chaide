@@ -88,7 +88,9 @@ class SiteController extends Controller
             ]);
         }
     }
-
+    public function actionAsesor(){
+         return $this->render('asesor');
+    }
     public function actionAbout()
     {
         return $this->render('about');
