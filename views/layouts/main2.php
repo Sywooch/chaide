@@ -37,6 +37,13 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 <div id="general">
 <!-- MENU CHAIDE -->
+    <div id="cont-iniciarsesion">
+                <?php if(Yii::$app->user->isGuest){ ?>
+                <a href="<?= Url::to(['site/login']) ?>">Iniciar Sesión</a>
+                <?php }else{ ?>
+                <a href="<?= Url::to(['user/index']) ?>"><?= Yii::$app->user->identity->names ?></a> / <a href="<?= Url::to(['site/logout']) ?>">Cerrar Sesión</a>
+                <?php } ?>
+    </div>
 <div class="header-int">
     <header>
         <nav>
@@ -47,7 +54,7 @@ AppAsset::register($this);
                     <ul id="submenu-chaide">
                         <?php foreach($lines as $line): ?>
                         <li>
-                            <a href="#" class="hvr-bounce-to-top"><?= mb_strtoupper($line->description) ?></a>
+                            <a href="<?= Url::to(['line/view','id'=>$line->id,'#'=>strtoupper($line->description)]) ?>" class="hvr-bounce-to-top"><?= mb_strtoupper($line->description) ?></a>
                             <ul id="productos-submenu">
                                 <?php foreach($line->products as $k => $product): ?>
                                     <li><a href="<?= Url::to(['product/view','id'=>$product->id,'#'=>strtoupper($product->title)]) ?>"><?= $product->title ?></a></li>
@@ -83,7 +90,7 @@ AppAsset::register($this);
             <h1>COMPRA</h1>
             <h2>NUESTROS PRODUCTOS</h2>  
             <ul>
-                <?php foreach($lines as $line): ?>
+               <?php foreach($lines as $line): ?>
                 <li><a href="<?= Url::to(['line/view','id'=>$line->id,'#'=>strtoupper($line->description)]) ?>"><?= mb_strtoupper($line->description) ?></a></li>
                 <?php endforeach; ?>
             </ul>  

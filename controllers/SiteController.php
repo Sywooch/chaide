@@ -89,6 +89,7 @@ class SiteController extends Controller
         }
     }
     public function actionAsesor(){
+        $this->layout = 'main2';
          return $this->render('asesor');
     }
     public function actionAbout()

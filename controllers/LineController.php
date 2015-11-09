@@ -48,6 +48,7 @@ class LineController extends Controller
      */
     public function actionView($id)
     {
+        $this->layout = 'main2';
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
