@@ -449,7 +449,7 @@ nav ul li a:link, nav ul li a:visited{
 	/*border-top:1px solid #FFF;*/
 	float:left;
 	color:#FFF;
-	margin: -2% 0 0 0;
+	margin:2% 0 0 0;
 	background-color: rgba(0,0,0,0.3);
 	border-radius:10px;
 	}
@@ -1073,6 +1073,7 @@ footer{
     float: left;
     font-size: 2.5em;
 	font-family: 'dosismedium';
+	text-transform:uppercase;
 	}
 .productos h1, .cont-secciones h1{
 	width:100%;
@@ -2147,4 +2148,7 @@ ul.publiciad-abj li{
 		width:100%;
 		float:left;
 		margin:7px 0;
+		}	
+.background-edredones h1{
+		color:#a6a19e !important;
 		}		
