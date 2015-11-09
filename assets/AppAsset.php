@@ -20,6 +20,8 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/css-chaide.css',
         'css/queries-chaide.css',
+		'css/ion.rangeSlider.css',
+		'css/ion.rangeSlider.skinHTML5.css',
     ];
     public $js = [
     'js/ion.rangeSlider.min.js',

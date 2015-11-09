@@ -52,7 +52,7 @@ $this->title = 'Asesor de Compras';
                <div class="peso-individual">
                    <span>Ingrese su peso corporal:</span>
                    <ul>
-                      <li><img src="<?= URL::base() ?>/images/peso.png" alt="Asesor Colchon"/><div class="inf-peso"><input type="text"/><label>libras (ejemplo: 126 lb)</label></div></li>
+                      <li><div class="slider-bar"></div><div class="inf-peso"><input type="text"/><label>libras (ejemplo: 126 lb)</label></div></li>
                   </ul>
                    <a href="#" class="btn-aseror-back">&lt;&lt; Anterior</a>
                   <a href="#" class="btn-aseror-next">Siguiente >></a>
@@ -153,3 +153,16 @@ $this->title = 'Asesor de Compras';
     <div class="separador-p"><img src="<?= URL::base() ?>/images/separador.jpg"/></div>
     <!-- -->
 </section>
+<script>
+$(document).ready(function() {
+//Slider
+	$(".slider-bar").ionRangeSlider({
+		type: "single",
+		min: 80,
+		max: 280,
+		step: 10,
+		grid: true,
+		grid_snap: true,
+	});
+});	
+</script>
