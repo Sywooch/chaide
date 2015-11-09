@@ -9,9 +9,7 @@
     </style>
   </head>
   <body>
-  	<div style="width:100%; height:100%; float:left; position:fixed;">
-    	<canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" style="position:relative; width:100%; height:100%;"></canvas>
-    </div>
+    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="600px" width="960px"></canvas>
     <script type='text/javascript'>
   // connect to canvas
   var Module = {
@@ -58,11 +56,11 @@
 <script src="Release/fileloader.js"></script>
 <script>if (!(!Math.fround)) {
   var script = document.createElement('script');
-  script.src = "Release/colchon7.js";
+  script.src = "Release/colchon9.js";
   document.body.appendChild(script);
 } else {
   var codeXHR = new XMLHttpRequest();
-  codeXHR.open('GET', 'Release/colchon7.js', true);
+  codeXHR.open('GET', 'Release/colchon9.js', true);
   codeXHR.onload = function() {
     var code = codeXHR.responseText;
     if (!Math.fround) { 
