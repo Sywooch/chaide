@@ -30,14 +30,14 @@ class ArticleController extends Controller
      * Lists all Article models.
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($type)
     {
         
-        $principal= Article::find()->where(['important'=>'YES','status'=>'ACTIVE','type'=>'NEWS'])->one();
-        $vida=Article::find()->where(['important'=>'NO','status'=>'ACTIVE','type'=>'NEWS','category'=>'VIDA'])->limit(2)->all();
-        $materiales=Article::find()->where(['important'=>'NO','status'=>'ACTIVE','type'=>'NEWS','category'=>'MATERIALES'])->limit(2)->all();
-        $telas=Article::find()->where(['important'=>'NO','status'=>'ACTIVE','type'=>'NEWS','category'=>'TELA'])->limit(2)->all();
-        $estructura=Article::find()->where(['important'=>'NO','status'=>'ACTIVE','type'=>'NEWS','category'=>'ESTRUCTURA'])->limit(2)->all();
+        $principal= Article::find()->where(['important'=>'YES','status'=>'ACTIVE','type'=>$type])->one();
+        $vida=Article::find()->where(['important'=>'NO','status'=>'ACTIVE','type'=>$type,'category'=>'VIDA'])->limit(2)->all();
+        $materiales=Article::find()->where(['important'=>'NO','status'=>'ACTIVE','type'=>$type,'category'=>'MATERIALES'])->limit(2)->all();
+        $telas=Article::find()->where(['important'=>'NO','status'=>'ACTIVE','type'=>$type,'category'=>'TELA'])->limit(2)->all();
+        $estructura=Article::find()->where(['important'=>'NO','status'=>'ACTIVE','type'=>$type,'category'=>'ESTRUCTURA'])->limit(2)->all();
         return $this->render('index', [
             'principal' => $principal,
             'vida' => $vida,
