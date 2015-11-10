@@ -1479,7 +1479,10 @@ ul.secciones-noticias li a:hover, .b-selected{
 	width:49%;
 	float:left;
 	position:relative;
-	}		
+	}
+.cont-noticia{
+	min-height:220px;
+	}			
 .cont-noticia img{
 	width:47%;
 	}	
@@ -1502,13 +1505,12 @@ ul.secciones-noticias li a:hover, .b-selected{
 	margin:3% 0 0 0;
 	}	
 .float-der{
-	float:left;
-	margin:0 2% 0 0;
+	right:0;
 	}
 .float-izq{
 	float:right;
 	margin:0 0 0 2%;
-	}	
+	}
 ul.publiciad-abj{
 	width:80%;
 	float:left;
@@ -2151,4 +2153,20 @@ ul.publiciad-abj li{
 		}	
 .background-edredones h1{
 		color:#a6a19e !important;
-		}		
+		}	
+	/**/
+.thumb-noticias{
+	width:47%;
+	height:100%;
+	float:left;
+	overflow:hidden;
+	position:absolute;
+	}	
+.img-der{
+	right:0;
+	}	
+.thumb-noticias img{
+	position:absolute;
+	width:130%;
+	height:100%;
+	}			

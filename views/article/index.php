@@ -32,7 +32,9 @@ $float_izq="float-izq";
             if($k%2){ $float=$float_izq; }else{ $float=$float_der;  }
          ?>
         <div class="cont-noticia">
-            <img src="<?= URL::base() ?>/images/news/<?= $vi->picture ?>" class="<?= $float ?>"/>
+            <div class="thumb-noticias <?= $float ?>">
+            	<img src="<?= URL::base() ?>/images/news/<?= $vi->picture ?>" />
+            </div>
             <div class="txt-noticia <?= $float ?>">
                 <h1><?= mb_strtoupper($vi->title) ?></h1>
                 <p>
@@ -48,7 +50,9 @@ $float_izq="float-izq";
             if($k%2){ $float=$float_izq; }else{ $float=$float_der;  }
          ?>
         <div class="cont-noticia">
-            <img src="<?= URL::base() ?>/images/news/<?= $vi->picture ?>" class="<?= $float ?>"/>
+            <div class="thumb-noticias <?= $float ?>">
+            	<img src="<?= URL::base() ?>/images/news/<?= $vi->picture ?>" />
+            </div>
             <div class="txt-noticia <?= $float ?>">
                 <h1><?= mb_strtoupper($vi->title) ?></h1>
                 <p>
@@ -64,7 +68,9 @@ $float_izq="float-izq";
             if($k%2){ $float=$float_izq; }else{ $float=$float_der;  }
          ?>
         <div class="cont-noticia">
-            <img src="<?= URL::base() ?>/images/news/<?= $vi->picture ?>" class="<?= $float ?>"/>
+            <div class="thumb-noticias <?= $float ?>">
+            	<img src="<?= URL::base() ?>/images/news/<?= $vi->picture ?>" />
+            </div>
             <div class="txt-noticia <?= $float ?>">
                 <h1><?= mb_strtoupper($vi->title) ?></h1>
                 <p>
@@ -80,7 +86,9 @@ $float_izq="float-izq";
             if($k%2){ $float=$float_izq; }else{ $float=$float_der;  }
          ?>
         <div class="cont-noticia">
-            <img src="<?= URL::base() ?>/images/news/<?= $vi->picture ?>" class="<?= $float ?>"/>
+            <div class="thumb-noticias <?= $float ?>">
+            	<img src="<?= URL::base() ?>/images/news/<?= $vi->picture ?>" />
+            </div>
             <div class="txt-noticia <?= $float ?>">
                 <h1><?= mb_strtoupper($vi->title) ?></h1>
                 <p>

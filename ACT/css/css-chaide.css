@@ -1470,8 +1470,21 @@ ul.secciones-noticias li a:hover, .b-selected{
 	float:left;
 	position:relative;
 	}		
-.cont-noticia img{
+	
+.thumb-noticias{
 	width:47%;
+	height:100%;
+	float:left;
+	overflow:hidden;
+	position:absolute;
+	}	
+.img-der{
+	right:0;
+	}	
+.thumb-noticias img{
+	position:absolute;
+	width:130%;
+	height:100%;
 	}	
 .cont-noticia h1{
 	font-size:1.1em;
