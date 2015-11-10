@@ -1756,7 +1756,7 @@ ul.publiciad-abj li{
 	display:none;
 	}
 #productos-submenu li a:visited, #productos-submenu	li a:link{
-	background-color:#635f54;
+	background-color:#635f54 !important;
 	color:#FFFFFF;
 	}
 #productos-submenu li a:hover{
