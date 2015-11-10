@@ -68,8 +68,8 @@ AppAsset::register($this);
                 </li>
                 <li class="m-menu"><a href="<?= Url::to(['locale/index']) ?>" class="hvr-bounce-to-top">LOCALES</a></li>
                 <li><a href="<?= Url::home() ?>"><img src="<?= URL::base() ?>/images/logo-chaide.svg" alt="logotipo chaide"/></a></li>
-                <li class="m-menu"><a href="<?= Url::to(['article/index']) ?>" class="hvr-bounce-to-top">NOTICIAS</a></li>
-                <li class="m-menu"><a href="#" class="hvr-bounce-to-top">INNOVACIÓN</a></li>
+              <li class="m-menu"><a href="<?= Url::to(['article/index','type'=>'news']) ?>" class="hvr-bounce-to-top">NOTICIAS</a></li>
+                <li class="m-menu"><a href="<?= Url::to(['article/index','type'=>'innovation']) ?>" class="hvr-bounce-to-top">INNOVACIÓN</a></li>
                 <?php if(Yii::$app->user->isGuest){ ?>
                 <li class="m-menu menu-imagen"><a href="<?= Url::to(['user/create']) ?>" class="hvr-bounce-to-top"><img src="<?= URL::base() ?>/images/ico-compras.svg"/> COMPRAS</a></li>
                 <?php }else{ ?>
