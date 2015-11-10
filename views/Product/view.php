@@ -31,25 +31,28 @@ $this->title = $model->title;
                 </ul>
                 <?php } ?>
             </div>
+            <form action="carrito.html">
+         
             <div class="cont-fcompra">
-                <form action="carrito.html">
                 <span>Medidas Disponibles:</span>
                 <select>
-                    <option>1 Plaza y Media</option>
-                    <option>2 Plazas </option>
-                    <option>2 Plaza y Media</option>
-                    <option>3 Plazas</option>
+                   <?php foreach($model->sapCodes as $code): ?>
+                    <?php if($code->mesure){ ?>
+                    <option value="<?= $code->mesure->id ?>"><?= $code->mesure->description ?></option>
+                                <?php } 
+                                endforeach; ?>
                 </select>
             </div>
+            <?php if($model->colors){  ?>
             <div class="cont-fcompra">
                 <span>Color:</span>
                 <select>
-                    <option>Gris</option>
-                    <option>Negro</option>
-                    <option>Azul</option>
-                    <option>Café</option>
+                      <?php foreach($model->colors as $color): ?>
+                    <option value="<?= $color->id ?>"><?= $color->description ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
+            <?php }  ?>
             <div class="cont-fcompra">
             <span>Cantidad:</span>
                 <select>
