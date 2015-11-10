@@ -12,7 +12,7 @@ $this->title = $model->title;
 ?>
 <!-- -->
 <section class="cont-noticias">
-    <div class="img-noticia" style="background:url(<?= URL::base() ?>/images/<?= $model->picture ?>); background-size:cover;">&nbsp;</div>
+    <div class="img-noticia" style="background:url(<?= URL::base() ?>/images/news/<?= $model->picture ?>); background-size:cover;">&nbsp;</div>
     <div class="desc-noticia">
         <h1><?= mb_strtoupper($model->title) ?></h1>
         <?= $model->description ?>
@@ -29,7 +29,7 @@ $this->title = $model->title;
     <div class="noticia-int">
         <img src="<?= URL::base() ?>/images/news/<?= $article->picture ?>"/>
         <h1><?= mb_strtoupper($article->title) ?></h1>
-        <p><?= $article->description ?></p>
+        <p> <?= substr($article->description, 0,150); ?></p>
         <a href="<?= Url::to(['article/view','id'=>$article->id,'#'=>mb_strtoupper($article->title)]) ?>">Leer más >></a>
     </div>
 <?php endforeach; ?>
