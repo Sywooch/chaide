@@ -12,7 +12,7 @@ $this->title = $model->description;
 ?>
 <section class="cont-paginternas productos">
     <div class="secciones-productos">
-        <div class="tit-productos">LÍNEA RESTONIC</div>
+        <div class="tit-productos"><?= $model->description ?></div>
         <h2>Desde <strong>$776.92</strong> (No incluye IVA)</h2>
         <ul>
             <?php foreach($model->products as $product): ?>

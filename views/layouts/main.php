@@ -52,7 +52,7 @@ AppAsset::register($this);
         <nav>
             <ul>
                  <li class="m-menu"><a href="<?= Url::to(['site/asesor']) ?>" class="hvr-bounce-to-top">ASESOR DE COMPRAS</a></li>
-                                <li class="m-menu"><a href="#" class="hvr-bounce-to-top">PRODUCTOS</a>
+                                <li class="m-menu"><a href="<?= Url::to(['line/index']) ?>" class="hvr-bounce-to-top">PRODUCTOS</a>
                     <!-- -->
                     <ul id="submenu-chaide">
                         <?php foreach($lines as $line): ?>
@@ -71,10 +71,14 @@ AppAsset::register($this);
                 </li>
                 <li class="m-menu"><a href="<?= Url::to(['locale/index']) ?>" class="hvr-bounce-to-top">LOCALES</a></li>
                 <li><a href="<?= Url::home() ?>"><img src="<?= URL::base() ?>/images/logo-chaide.svg" alt="logotipo chaide"/></a></li>
-                <li class="m-menu"><a href="<?= Url::to(['article/index','type'=>'news']) ?>" class="hvr-bounce-to-top">NOTICIAS</a></li>
-                <li class="m-menu"><a href="<?= Url::to(['article/index','type'=>'innovation']) ?>" class="hvr-bounce-to-top">INNOVACIÓN</a></li>
+                <li class="m-menu"><a href="<?= Url::to(['article/index']) ?>" class="hvr-bounce-to-top">NOTICIAS</a></li>
+                <li class="m-menu"><a href="#" class="hvr-bounce-to-top">INNOVACIÓN</a></li>
                 <?php if(Yii::$app->user->isGuest){ ?>
+<<<<<<< HEAD
                 <li class="m-menu menu-imagen"><a href="<?= Url::to(['site/login']) ?>" class="hvr-bounce-to-top"><img src="<?= URL::base() ?>/images/ico-compras.svg"/> COMPRAS</a></li>
+=======
+                <li class="m-menu"><a href="<?= Url::to(['user/create']) ?>" class="hvr-bounce-to-top"><img src="<?= URL::base() ?>/images/ico-compras.svg"/> COMPRAS</a></li>
+>>>>>>> b941f649481aa06d1e8ba3f00734efa6f75fd706
                 <?php }else{ ?>
                  <li class="m-menu menu-imagen"><a href="<?= Url::to(['user/index']) ?>" class="hvr-bounce-to-top"><img src="<?= URL::base() ?>/images/ico-compras.svg"/> COMPRAS</a></li>
                 <?php } ?>
