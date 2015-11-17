@@ -108,7 +108,8 @@ $this->title = $model->title;
         </ul>   
     </div>
 </section>
-<!-- -->
+<?php if($model->line->id==1 || $model->line->id==2 ){ ?>
+
 <section class="cont-colchonint3">
     <div class="cont-colchon360">
         <iframe src="<?= URL::base() ?>/render/<?= $model->render ?>/index.html"></iframe>
@@ -132,3 +133,4 @@ $this->title = $model->title;
 
     
 </section>
+<?php } ?>

@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Product;
 
 class SiteController extends Controller
 {
@@ -49,7 +50,9 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        
+           $product=Product::findOne(6); 
+         return $this->render('index',['product'=>$product]);
     }
 
     public function actionLogin()
