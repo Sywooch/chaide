@@ -1033,7 +1033,7 @@ footer{
 	background-color:#ecebe9;
 	width:100%;
 	float:left;
-	position:fixed;
+	position:absolute;
 	height:17%;
 	top:0;
 	left:0;

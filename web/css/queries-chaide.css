@@ -51,6 +51,10 @@ header {
 	width: 52%;
     margin: 1% 0 0 2%;
 	}
+header{
+	width:84%;
+	left:8%;
+	}	
 }
 @media screen and (max-width: 1435px){
 .secc-intcolchon {
