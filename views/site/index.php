@@ -65,10 +65,11 @@ $this->title = 'Chaide';
     </section>
 </section>
 <!-- -->
-<section class="cont-servicios">
+<section class="cont-servicios" style="background-image:url('<?= URL::base() ?>/images/productos-interna/<?= $product->background1 ?>')">
     <div class="txt-secc">
-        <span id="linea-s">línea</span>
-        <span id="linea-c">Caressa</span>
+        <span id="linea-s"><?= $product->title ?></span>
+<!--         <span id="linea-s">línea</span>
+        <span id="linea-c">Caressa</span> -->
         <span id="txt-linea">Accede a nuestras promociones, ahorra tu tiempo.
 Nosotros nos encargamos de tu comodidad.</span>
         <div class="btn-comprar3">Comprar</div> 

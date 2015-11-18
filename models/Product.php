@@ -95,7 +95,10 @@ class Product extends ActiveRecord
     {
         return $this->hasMany(Detail::className(), ['product_id' => 'id']);
     }
-
+   public function getLine()
+    {
+        return $this->hasOne(Line::className(), ['id' => 'line_id']);
+    }
     /**
      * @return \yii\db\ActiveQuery
      */
