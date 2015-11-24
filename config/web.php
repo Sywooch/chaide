@@ -13,6 +13,10 @@ $config = [
           'showScriptName' => false,
           'enablePrettyUrl' => true
         ], 
+            'cart' => [
+            'class' => 'yz\shoppingcart\ShoppingCart',
+            'cartId' => 'my_application_cart',
+        ],
 
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation

@@ -14,7 +14,7 @@ $this->title = $model->title;
     <div class="n-colchon"><img src="<?= URL::base() ?>/images/tit-caressa.svg"/></div>
     <div class="cont-compra">
         <div class="barra-azul">
-            ESCOGE TU COLCHÓN IDEAL
+            <?= strtoupper($model->title) ?>
         </div>
         <div class="info-colchon">
             <div class="cont-fcompra">

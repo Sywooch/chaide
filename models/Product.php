@@ -3,7 +3,8 @@
 namespace app\models;
 use yii\db\ActiveRecord;
 use Yii;
-
+use yz\shoppingcart\CartPositionInterface;
+use yz\shoppingcart\CartPositionTrait;
 /**
  * This is the model class for table "product".
  *
@@ -25,11 +26,21 @@ use Yii;
  * @property Detail[] $details
  * @property ProductColor[] $productColors
  */
-class Product extends ActiveRecord
+class Product extends ActiveRecord implements CartPositionInterface
 {
     /**
      * @inheritdoc
      */
+    use CartPositionTrait;
+           public function getPrice()
+    {
+        return $this->price;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
     public static function tableName()
     {
         return 'product';
@@ -75,6 +86,7 @@ class Product extends ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
+
     public function getCarShops()
     {
         return $this->hasMany(CarShop::className(), ['product_id' => 'id']);
