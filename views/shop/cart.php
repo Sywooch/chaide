@@ -1,7 +1,6 @@
 <?php 
 use yii\helpers\Url;
-$total=0;
-$cantidad=1;
+$this->title = 'Carrito de compras';
 ?>
  <section id="home-chaide" class="background-registro">
 	<div class="cont-titulos">
@@ -21,8 +20,7 @@ $cantidad=1;
    foreach(Yii::$app->cart->positions as $position){
           echo $this->render('_cart_item',['position'=>$position]);
           //var_dump($position);
-          $total+=$position->price;
-          $cantidad+=$position->quantity;
+   
         }
  ?>
   
@@ -30,8 +28,7 @@ $cantidad=1;
         <div class="cont-campos-header">
         	<div class="cont-txt tit-carrit">&nbsp;</div>
             <div class="cont-cant c-gris">TOTAL</div>
-            <div class="cont-valor c-gris">$<?= $total*$cantidad ?></div>
-        </div>
+            <div class="cont-valor c-gris">$<?= Yii::$app->cart->getCost() ?></div>
 
         	<input type="submit" value="Pagar Ahora"/>
         </form>

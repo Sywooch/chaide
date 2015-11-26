@@ -72,6 +72,7 @@ $this->title = $model->title;
 
 </section>
 <!-- -->
+<?php if($model->line->id==1): ?>
 <section class="cont-secciones">
     <!--<img src="<?= URL::base() ?>/images/img-elaboradalatex.jpg" alt="img elaborada latex"/>
     <div class="txt-colchonint">
@@ -91,6 +92,7 @@ $this->title = $model->title;
     </div>
     <div class="cont-video" id="stop"></div>
 </section>
+<?php endif; ?>
 <!-- -->
 <section class="cont-colchonint2">
     <img src="<?= URL::base() ?>/images/int-colchon2.jpg" class="colchon-celular"/>
@@ -112,7 +114,11 @@ $this->title = $model->title;
 
 <section class="cont-colchonint3">
     <div class="cont-colchon360">
+        <?php if($model->render){ ?>
         <iframe src="<?= URL::base() ?>/render/<?= $model->render ?>/index.html"></iframe>
+        <?php }else{ ?>
+        <img src="<?= URL::base() ?>/images/productos/<?= $model->picture ?>" alt="img carresa" /> 
+        <?php } ?>
     </div>
     <div class="txt-estructura-interna">
         <h1>ESTRUCTURA INTERNA</h1>

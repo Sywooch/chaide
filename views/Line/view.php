@@ -18,7 +18,7 @@ $this->title = $model->description;
             <?php foreach($model->products as $product): ?>
             <li>
                 <a href="<?= Url::to(['product/view','id'=>$product->id,'#'=>strtoupper($product->title)]) ?>"><img src="<?= URL::base() ?>/images/productos/<?= $product->picture ?>" alt="productos chaide"/><h1><?= $product->title ?></h1><h2>Desde <strong>$<?= $product->price ?></strong> (No incluye IVA)</h2></a>
-                <a href="colchon-interna.html" class="link-comprar">Comprar</a>
+                <a href="<?= Url::to(['shop/addtocart','id'=>$product->id]) ?> ?>" class="link-comprar">Añadir al carrito</a>
                 <div class="c-comparar">
                     <input type="checkbox" /><label>Comparar</label>
                 </div>
