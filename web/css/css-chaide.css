@@ -125,7 +125,7 @@ nav ul li a:link, nav ul li a:visited{
 	width:100%;
 	float:left;
 	text-decoration:none;
-	color:#645f54;
+	color:#58595b;
 	text-align:center;
 	}	
 .m-menu{
@@ -172,7 +172,7 @@ nav ul li a:link, nav ul li a:visited{
   left: 0;
   right: 0;
   bottom: 0;
-  background: #645f54;
+  background: #005f92;
   -webkit-transform: scaleY(0);
   transform: scaleY(0);
   -webkit-transform-origin: 50% 100%;
@@ -209,13 +209,14 @@ nav ul li a:link, nav ul li a:visited{
 	float:left;
 	margin:0;
 	padding:0;
-	border-top:1px solid #C4BFBF
+	border-top:1px solid #C4BFBF;
+	color:#FFF !important;
 	}	
-#submenu-chaide li a:link, .submenu-chaide li a:visited{
+#submenu-chaide li a:link, #submenu-chaide li a:visited{
 	width:100%;
 	padding:2% 0;
-	background-color:#d8d6d2 !important;
-	color:#645f54;
+	background-color:#005f92 !important;
+	color:#FFF !important;
 	font-size:0.8em;
 	}
 #submenu-chaide li a:hover{
@@ -287,7 +288,7 @@ nav ul li a:link, nav ul li a:visited{
 	background:rgba(255,255,255,0.5);
 	text-align:center;
 	font-size:1.5em;
-	color:#645f54;
+	color:#58595b;
 	margin:1%;
 	float:left;
 	padding:0.5% 0;
@@ -376,10 +377,10 @@ nav ul li a:link, nav ul li a:visited{
 	font-size:1.1em;
 	}	
 .background-almohadas{
-	background-color:#a6a19e;
+	background-color:#bcbec0;
 	}
 .background-edredones{
-	background-color:#6c6662;
+	background-color:#58595b;
 	}
 .flecha-l{
 	width:8%;
@@ -414,6 +415,7 @@ nav ul li a:link, nav ul li a:visited{
 	float:left;
 	background-image:url(../images/f-contacto.jpg);
 	background-attachment:fixed;
+	background-size:cover;
 	}
 .txt-secc{
 	width:30%;
@@ -465,11 +467,12 @@ footer{
 	padding:0 15%;
 	position:relative;
 	float:left;
+	background-color:#bcbec0;
 	}	
 .secc-footer{
 	width:33.3%;
 	float:left;
-	color:#645f54;
+	color:#58595b;
 	padding:2% 0;
 	}
 .secc-footer h1{
@@ -499,10 +502,10 @@ footer{
 	width:100%;
 	float:left;
 	text-align:center;
-	color:#645f54;
+	color:#58595b;
 	}
 .secc-footer ul li a:hover{
-	background-color:#645f54;
+	background-color:#58595b;
 	color:#d8d6d2;
 	}
 .footer-cierre{
@@ -539,7 +542,7 @@ footer{
 .footer-con2 h2{
 	width:100%;
 	padding:7px 0 3px 0;
-	border-bottom:1px solid #645f54;
+	border-bottom:1px solid #58595b;
 	float:left;
 	font-size:1.1em;
 	}
@@ -560,9 +563,9 @@ footer{
 	}
 
 #menu-mobile h2{
-	color:#645f54;
+	color:#58595b;
 	font-size:1.3em;
-	border-bottom:1px solid #645f54;
+	border-bottom:1px solid #58595b;
 	padding:20% 0 5px 0;
 	text-align:center;
 	}	
@@ -576,7 +579,7 @@ footer{
 	width:100%;
 	float:left;
 	list-style:none;
-	border-bottom:1px solid #645f54;
+	border-bottom:1px solid #58595b;
 }
 #menu-mobile ul li:last-child{
 	border-bottom:none;
@@ -584,7 +587,7 @@ footer{
 #menu-mobile ul li a:link, #menu-mobile ul li:visited{
 	width:100%;
 	float:left;
-	color:#645f54;
+	color:#58595b;
 	font-size:1.1em;
 	padding:4% 0;
 
@@ -665,7 +668,7 @@ footer{
 	float:left;
 	padding:1% 2.5%;
 	background-color:#FFF;
-	color:#645f54;
+	color:#58595b;
 	}
 .cont-fcompra{
 	width:100%;
@@ -693,13 +696,13 @@ footer{
 	width:95%;
 	padding:1% 2.5%;
 	float:left;
-	color:#645f54;
+	color:#58595b;
 	margin:2% 0;
 	}	
 .cont-precio{
 	width:95%;
 	float:left;
-	padding: 2% 2.5% 3% 2.5%;
+	padding: 5% 2.5% 5% 2.5%;
 	background-color:#4a4a49;
 	}	
 .precio-colchon{
@@ -708,7 +711,8 @@ footer{
 	font-size:2em;
 	color:#FFF;
 	text-align:right;
-	padding:0 2%;	
+	padding:0 2%;
+	line-height:0.6em;
 	}
 .precio-colchon span{
 	font-size:0.4em !important;
@@ -724,7 +728,7 @@ footer{
 	border:none;
 	font-size:0.8em;
 	padding:5px 5px;
-	color:#645f54;
+	color:#58595b;
 	margin: 15px 0 0 10px;
 	cursor:pointer;
 	}		
@@ -830,7 +834,7 @@ footer{
 	margin:0 0 0 56%;
 	}	
 .txt-estructura-interna h1{
-	color:#645f54;
+	color:#58595b;
 	font-size:1.5em;
 	margin:7% 0 0 0;
 	}
@@ -843,7 +847,7 @@ footer{
 	width:100%;
 	float:left;
 	padding:0.5% 0;
-	color:#645f54;
+	color:#58595b;
 	list-style:decimal;
 	text-align:justify;
 	}
@@ -853,12 +857,12 @@ footer{
 	margin:2% 0 0 0;
 	}
 .border-der{
-	border-right:1px dotted #645f54;
+	border-right:1px dotted #58595b;
 	}		
 .barra-azul{
 	width:100%;
 	float:left;
-	background-color:#00809d;
+	background-color:#005f92;
 	padding:0.5% 0;
 	color:#FFF;
 	font-size:1.2em;
@@ -873,19 +877,19 @@ footer{
 .cont-medidas50 ul li{
 	width:100%;
 	padding:1% 0;
-	color:#645f54;
+	color:#58595b;
 	}
 .cont-medidas50 ul li span{
 	width:35%;
 	float:left;
-	border-right:1px solid #645f54;
+	border-right:1px solid #58595b;
 	margin:0 5% 0 0;
 	}
 .txt-altura{
 	width:30%;
 	float:left;
 	margin:2% 35%;
-	background-color:#645f54;
+	background-color:#58595b;
 	color:#FFF;	
 	padding:1% 0;
 	text-align:center;
@@ -947,28 +951,28 @@ footer{
 	float:left;
 	}	
 #b-contacto{
-	background-color:#3d322e;
+	background-color:#58595b;
 	}	
 #b-contacto:hover{
-	background-color:#3d322e;
+	background-color:#bcbec0;
 	}		
 #b-facebook{
-	background-color:#3d322e;
+	background-color:#58595b;
 	}
 #b-facebook:hover{
-	background-color:#3d322e;
+	background-color:#bcbec0;
 	}	
 #b-twitter{
-	background-color:#3d322e;
+	background-color:#58595b;
 	}
 #b-twitter:hover{
-	background-color:#3d322e;
+	background-color:#bcbec0;
 	}		
 #b-youtube{
-	background-color:#3d322e;
+	background-color:#58595b;
 	}
 #b-youtube:hover{
-	background-color:#3d322e;
+	background-color:#bcbec0;
 	}	
 .btn-comprara{
 	width:60%;
@@ -976,7 +980,7 @@ footer{
 	padding:2% 0;
 	text-align:center;
 	color:#FFF;
-	background-color:#635f54;
+	background-color:#58595b;
 	float:left;
 	}	
 .btn-comprara:hover{
@@ -993,13 +997,13 @@ footer{
 	top:70%;
 	left:37.5%;
 	width:25%;
-	color:#635f54;
+	color:#58595b;
 	background-color:#FFF;
 	text-align:center;
 	padding:1% 0;
 	}	
 .btn-comprar2:hover{
-	background-color:#635f54;
+	background-color:#58595b;
 	color:#FFF;
 	transition:0.3s;
 	-moz-transition:0.3s;
@@ -1011,7 +1015,7 @@ footer{
 .btn-comprar3{
 	position:relative;
 	width:40%;
-	color:#635f54;
+	color:#58595b;
 	background-color:#FFF;
 	text-align:center;
 	padding:1% 0;
@@ -1019,7 +1023,7 @@ footer{
 	float:left;
 	}
 .btn-comprar3:hover{
-	background-color:#635f54;
+	background-color:#58595b;
 	color:#FFF;
 	transition:0.3s;
 	-moz-transition:0.3s;
@@ -1079,14 +1083,14 @@ footer{
 	width:100%;
 	float:left;
 	text-align:center;
-	color:#645f54;
+	color:#58595b;
 	font-size:1.3em;
 	}
 .productos h2, .cont-secciones h2{
 	width:100%;
 	float:left;
 	text-align:center;
-	color:#645f54;
+	color:#58595b;
 	font-size:1.1em;
 	font-weight:500;
 	}	
@@ -1111,7 +1115,7 @@ footer{
 .link-comprar:link, .link-comprar:visited{
 	width:50%;
 	margin:2% 25% 1% 25%;
-	background-color:#645f54;
+	background-color:#58595b;
 	color:rgba(255,255,255,1.00);
 	padding:5px 0;
 	float:left;
@@ -1125,12 +1129,12 @@ footer{
 	margin:1% 25% 1% 25%;
 	float:left;
 	text-align:center;
-	color:#645f54;
+	color:#58595b;
 	font-size:1.1em;
 	}
 .c-comparar input[type='checkbox']{
 	background-color:rgba(255,255,255,1.00);
-	border:1px solid #645f54;
+	border:1px solid #58595b;
 	}	
 .separador-p{
 	width:100%;
@@ -1144,14 +1148,14 @@ footer{
 	float:left;
 	margin:7% 25% 0 25%;
 	padding:0.5% 0;
-	color:#645f54;
+	color:#58595b;
 	}
 .cont-titulos h1, .cont-secciones h1{
 	width:100%;
 	float:left;
 	font-size:2em;
 	text-align:center;
-	color:#645f54;
+	color:#58595b;
 	padding:1% 0 0 0;
 	}
 .cont-titulos p, .cont-secciones p{
@@ -1159,7 +1163,7 @@ footer{
 	float:left;
 	font-size:1.1em;
 	text-align:center;
-	color:#645f54;
+	color:#58595b;
 	}	
 .cont-secciones p{
 	margin:0 0 2% 0;
@@ -1193,7 +1197,7 @@ footer{
 	float:left;
 	background-color:rgba(255,255,255,1.00);
 	padding:4px 0 !important;
-	color:#645f54;
+	color:#58595b;
 	}	
 .cont-formulario input[type="submit"]{
 	width:25%;
@@ -1222,7 +1226,7 @@ footer{
 	padding:5px 1% 5px 1%;
 	margin:0 2% 0 0;
 	background-color:#ffffff;
-	color:#645f54;
+	color:#58595b;
 	}
 .cont-txt span{
 	width:78%;
@@ -1240,7 +1244,7 @@ footer{
 	margin:0 2% 0 0;
 	background-color:#ffffff;
 	text-align:center;
-    color:#645f54;
+    color:#58595b;
 	text-align: center;
     display: table-cell;
     vertical-align: middle;
@@ -1251,13 +1255,13 @@ footer{
 	padding:5px 1%;
 	background-color:#ffffff;
 	text-align:center;
-	color:#645f54;
+	color:#58595b;
 	text-align: center;
     display: table-cell;
     vertical-align: middle;
 	}																			
 .tit-carri{
-	background-color:#00809d !important;
+	background-color:#005f92 !important;
 	color:#FFFFFF !important;
 	}	
 .tit-carrit{
@@ -1299,14 +1303,14 @@ footer{
 	width:90%;
 	margin:2% 5%;
 	font-size:1.2em;
-	color:#645f54;
+	color:#58595b;
 	float:left;
 	position:relative;
 	z-index:104;
 	}	
 #txt-chaide span, #cont-1994 span, #cont-2003 span, #cont-ekos span, #cont-2007 span, #cont-2012 span, #cont-2013 span{
 	font-size:0.75em;
-	color:#645f54;
+	color:#58595b;
 	text-align:center;
 	width:100%;
 	float:left;
@@ -1419,13 +1423,13 @@ footer{
 	width:40%;
 	float:left;
 	margin:6% 30% 0 30%;
-	color:#645f54;
+	color:#58595b;
 	padding:5px 0;
 	text-align:center;
 	background-color:#FFFFFF;
 	}	
 .inf-notprincipal a:hover{
-	background-color:#645f54;
+	background-color:#58595b;
 	color:rgba(255,255,255,1.00);	
 	}	
 .art-interes{
@@ -1434,7 +1438,7 @@ footer{
 	padding:0.6% 0;
 	text-align:center;
 	color:rgba(255,255,255,1.00);
-	background-color:#645f54;
+	background-color:#005f92;
 	font-size:1.8em;
 	}	
 ul.secciones-noticias{
@@ -1452,14 +1456,15 @@ ul.secciones-noticias li a:link, ul.secciones-noticias li a:visited{
 	width:98%;
 	padding:2% 1%;
 	text-align:center;
-	color:#645f54;
+	color:#58595b;
 	text-align:center;
 	float:left;
-	background-color:#d8d6d2;
+	background-color:#bcbec0;
 	outline:1px solid #CCCCCC;
 	}	
 ul.secciones-noticias li a:hover, .b-selected{
-	background-color:#a9a29f !important;
+	background-color:#58595b !important;
+	color:#FFF !important;
 	}
 .secc-noticia{
 	width:80%;
@@ -1467,7 +1472,7 @@ ul.secciones-noticias li a:hover, .b-selected{
 	float:left;
 	}		
 .secc-noticia h1{
-	color:#00809d;
+	color:#005f92;
 	background-image:url(../images/separador.svg);
 	background-size:50%;
 	background-position:bottom center;
@@ -1488,7 +1493,7 @@ ul.secciones-noticias li a:hover, .b-selected{
 	}	
 .cont-noticia h1{
 	font-size:1.1em;
-	color:#645f54;
+	color:#58595b;
 	margin:0 0 1% 0 !important;
 	background-image:none !important;
 	}	
@@ -1496,11 +1501,11 @@ ul.secciones-noticias li a:hover, .b-selected{
 	width:100%;
 	font-size:0.8em;
 	text-align:justify;
-	color:#645f54;
+	color:#58595b;
 	}
 .cont-noticia a:link, .cont-noticia a:visited{
 	float:right;
-	color:#645f54;
+	color:#58595b;
 	font-size:0.9em;
 	margin:3% 0 0 0;
 	}	
@@ -1549,7 +1554,7 @@ ul.publiciad-abj li{
 	width:48%;
 	margin:0 48%;
 	padding:0 2%;
-	color:#645f54;
+	color:#58595b;
 	font-size:0.9em;
 	}	
 .desc-noticia h1{
@@ -1579,7 +1584,7 @@ ul.publiciad-abj li{
 	}	
 .noticia-int{
 	width: 23%;
-    color: #645f54;
+    color: #58595b;
     margin: 0 1%;
 	float:left;
 	}
@@ -1705,13 +1710,13 @@ ul.publiciad-abj li{
 	color:#535353;
 	}	
 .list-ciudades li a:hover, .c-selected{
-	background-color:#535353;
+	background-color:#005f92;
 	color:#FFF !important;
 	}	
 .info-local{
 	width:80%;
 	margin:2% 10%;
-	color:#645f54;
+	color:#58595b;
 	text-align:center;
 	font-size:0.9em;
 	float:left;
@@ -1756,12 +1761,12 @@ ul.publiciad-abj li{
 	display:none;
 	}
 #productos-submenu li a:visited, #productos-submenu	li a:link{
-	background-color:#635f54 !important;
+	background-color:#58595b !important;
 	color:#FFFFFF;
 	}
 #productos-submenu li a:hover{
-	background-color:#d8d6d2 !important;
-	color:#645f54 !important;
+	background-color:#bcbec0 !important;
+	color:#58595b !important;
 	}	
 .btn-vermas-m:link, .btn-vermas-m:visited{
 	background-color:#00809d !important;
@@ -1796,7 +1801,7 @@ ul.publiciad-abj li{
 	width:100%;
 	font-size:1em;
 	text-align:center;
-	color: #645f54;
+	color: #58595b;
 	float:left;
 	}
 /**/
@@ -1849,7 +1854,7 @@ ul.publiciad-abj li{
 	}
 .cont-asesorc span{
 	width:96%;
-	color: #645f54;
+	color: #58595b;
 	float:left;
 	text-align:center;
 	padding:0 2%;
@@ -1952,7 +1957,7 @@ ul.publiciad-abj li{
 	width:67%;
 	margin:0 0 0 2%;
 	float:left;
-	color: #645f54;
+	color: #58595b;
 	}
 /* 6 opciones */
 .asesor-6opc ul li{
@@ -1989,7 +1994,7 @@ ul.publiciad-abj li{
 	width:96%;
 	margin:1% 2% 0 2%;
 	padding:1% 0 0 0;
-	border-top:1px solid #645f54;
+	border-top:1px solid #58595b;
 	float:left;
 	}	
 .btn-sac{
@@ -2024,12 +2029,12 @@ ul.publiciad-abj li{
 	width:100%;
 	text-align:center;
 	margin:3px 0;
-	color: #645f54;
+	color: #58595b;
     font-size: 1.2em;
 	float:left;
 	}	
 .productos-asesor{
-	border-top:1px dashed #645f54
+	border-top:1px dashed #58595b
 	}	
 .tit-asesor{
 	color:#00809d !important;
@@ -2110,7 +2115,7 @@ ul.publiciad-abj li{
 .resp-pre{
 	width:90%;
 	padding:10px 5% 0 5%;
-	color: #645f54;
+	color: #58595b;
 	float:left;
 	}
 .help-block-error{
@@ -2152,7 +2157,7 @@ ul.publiciad-abj li{
 		margin:7px 0;
 		}	
 .background-edredones h1{
-		color:#a6a19e !important;
+		color:#bcbec0 !important;
 		}	
 	/**/
 .thumb-noticias{
@@ -2170,3 +2175,16 @@ ul.publiciad-abj li{
 	width:130%;
 	height:100%;
 	}			
+.shop-number{
+	width: 15px;
+    height: 15px;
+    background-color: #005f92;
+    color: #FFF;
+    position: absolute;
+    top: -5%;
+    right: -5%;
+    border-radius: 100%;
+    padding: 2px 5px 7px 5px;
+    font-size: 0.8em;
+    text-align: center;		
+	}	
