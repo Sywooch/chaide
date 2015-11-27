@@ -30,6 +30,7 @@ class ArticleController extends Controller
      * Lists all Article models.
      * @return mixed
      */
+
     public function actionIndex($type)
     {
         

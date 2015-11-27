@@ -73,11 +73,8 @@ AppAsset::register($this);
                 <li><a href="<?= Url::home() ?>"><img src="<?= URL::base() ?>/images/logo-chaide.svg" alt="logotipo chaide"/></a></li>
                 <li class="m-menu"><a href="<?= Url::to(['article/index','type'=>'news']) ?>" class="hvr-bounce-to-top">NOTICIAS</a></li>
                 <li class="m-menu"><a href="<?= Url::to(['article/index','type'=>'innovation']) ?>" class="hvr-bounce-to-top">INNOVACIÓN</a></li>
-                <?php if(Yii::$app->user->isGuest){ ?>
-                <li class="m-menu menu-imagen"><a href="<?= Url::to(['user/create']) ?>" class="hvr-bounce-to-top"><img src="<?= URL::base() ?>/images/ico-compras.svg"/> COMPRAS</a></li>
-                <?php }else{ ?>
-                 <li class="m-menu menu-imagen"><a href="<?= Url::to(['user/index']) ?>" class="hvr-bounce-to-top"><img src="<?= URL::base() ?>/images/ico-compras.svg"/> COMPRAS</a></li>
-                <?php } ?>
+                <li class="m-menu"><a href="<?= Url::to(['shop/viewcart']) ?>" class="hvr-bounce-to-top"><!-- <img src="<?= URL::base() ?>/images/ico-compras.svg"/> --> COMPRAS</a><div class="shop-number"><?php if(count(Yii::$app->cart->positions)>0) echo Yii::$app->cart->getCount() ?></div></li>
+          
             </ul>
             <div id="barra-mobile">
                 <a id="menu-chaide"><span></span></a>
