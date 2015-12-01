@@ -173,6 +173,12 @@ body{
     width: 90%;
     padding: 10% 5% 1% 5%;
 }
+.cont-perfil {
+    width: 70%;
+    float: left;
+    margin: 0% 13% 0 13%;
+    padding: 1% 2%;
+}
 }
 @media screen and (max-width: 1150px) {
 .background-home {
@@ -545,6 +551,16 @@ nav ul li{
     margin: 1%;
     float: none;
     display: inline-block;
+}
+.cont-perfil {
+    width: 96%;
+    float: left;
+    margin: 0% 1% 0 1%;
+    padding: 1% 1%;
+}
+.cont-infocamposf2 {
+    width: 98%;
+    margin: 0 0;
 }
 }
 @media screen and (max-width: 600px) {

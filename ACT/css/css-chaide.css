@@ -2124,3 +2124,136 @@ ul.publiciad-abj li{
 		float:left;
 		margin:7px 0;
 		}
+/* PERFIL DEL USUARIO */
+.cont-perfil{
+	width:50%; 
+	float:left;
+	margin:0% 23% 0 23%;
+	padding:1% 2%;
+	/*background-color:rgba(0,0,0,0.75);*/
+	}	
+#botonera-perfil{
+	width:85%;
+	float:left;
+	margin:0;
+	padding:0;
+	}	
+#botonera-perfil li{
+	width:32.3%;
+	float:left;
+	list-style:none;
+	box-shadow: 5px 2px 5px #888888;
+	border-right:1px solid #909090;
+	}	
+#botonera-perfil li a:link, #botonera-perfil li a:visited{
+	width:100%;
+	float:left;
+	padding:3px 0;
+	background-color:rgba(55,55,55,1.00);
+	color:#FFFFFF;
+	text-align:center;
+	font-family: 'dosismedium';
+	font-size:0.9em;
+	}
+#botonera-perfil li a:hover, .p-selected{
+	background-color:#005f92 !important;	
+	}	
+.cont-infor{
+	width:96%;
+	padding:10px 2%;
+	background-color:rgba(0,0,0,0.8);
+	float:left;
+	clear:both;
+	}	
+.cont-infocamposf1{
+	width:48%;
+	padding:1% 1% 0 1%;
+	float:left;
+	}
+.cont-infocamposf2{
+	width:68%;
+	padding:1% 1% 0 1%;
+	float:left;
+	margin:0 15%;
+	}	
+.cont-infocamposf2 h1{
+	background-color:#005f92;
+	text-align:center;
+	color:rgba(255,255,255,1.00);
+	text-align:center;
+	padding:3px 0;
+	}	
+.cont-infocampos{
+	width:98%;
+	padding:1% 1% 0 1%;
+	float:left;
+	}
+.cont-infocampos label{
+	width:100%;
+	float:left;
+	color:rgba(255,255,255,1.00);
+	font-size:0.8em;
+	}	
+.cont-infocampos input[type="text"], .cont-infocampos input[type="email"], .cont-infocampos select{
+	width:98%;
+	float:left;
+	color:rgba(26,26,26,1.00);
+	font-size:0.9em;
+	}	
+.btn-submit{
+	float:right;
+	padding:3px 25px;
+	background-color:rgba(55,55,55,1.00);
+	color:rgba(255,255,255,1.00);
+	text-align:center;
+	font-family: 'dosismedium';
+	font-size:0.9em;
+	margin:20px 5px 10px 5px !important;
+	border:none;
+	outline:none;
+	cursor:pointer;
+	}	
+.btn-submit:hover{
+	background-color:rgba(94,94,94,1.00);
+	}	
+#cont-datosp, #cont-facturacionp{
+	display:none;
+	}	
+.tit-compras{
+	width:77%;
+	float:left;
+	color:#FFFFFF;
+	font-size:0.9em;
+	margin:0 0 0 3%;
+	}	
+.btn-vercompras, .num-cifra{
+	width:20%;
+	color:#005f92;
+	padding:3px 0;
+	text-align:center;
+	float:left;
+	font-size:0.9em;
+	text-decoration:underline;
+	font-family: 'dosismedium';
+	font-weight:bold;
+	}
+.num-cifra{
+	text-align:right !important;
+	color:#FFFFFF !important;
+	font-weight:500 !important;
+	}		
+#listado-compra, #detalle-compra{
+	width:100%;
+	float:left;
+	}	
+.c-total{
+	border-top:1px dashed #FFFFFF;
+	}
+.conf-compra{
+	font-size:1.3em;
+	text-align:center;
+	color:#FFF;
+	}
+.conf-compra span{
+	font-size:3em;
+	}			
