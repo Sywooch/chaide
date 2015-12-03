@@ -10,7 +10,7 @@ $this->title = 'Chaide';
         <span>DISFRUTA DE UN NIVEL SUPERIOR DE CONFORT<br/>
         con la frescura del gel</span>
         </div>
-        <div class="btn-comprara">Comprar ahora</div>
+        <a href="<?= URl::to(['line/view','id'=>'1','#'=>'LÍNEA RESTONIC']) ?>"><div class="btn-comprara">Comprar ahora</div></a>
     </div>
 </section>
 <!-- -->
@@ -44,10 +44,10 @@ $this->title = 'Chaide';
     <section class="sect-productos">
         <div id="secc-almohadas">
             <img src="<?= URL::base() ?>/images/cont-seccion.jpg"/>
-            <div class="btn-comprar2">Comprar</div>
+            <a href="<?= URl::to(['line/view','id'=>'3','#'=>'ALMOHADAS']) ?>"><div class="btn-comprar2">Comprar</div></a>
             <div class="txt-secciones background-almohadas">
                 <h1>ALMOHADAS</h1>
-                <span>Nuestras líneas de almohadas chaide te darán el confort que necesitas al dormir.</span>
+                <span>El complemento ideal para tu descanso.</span>
             </div>
         </div> 
         <!-- <a href="#" class="flecha-l"><img src="<?= URL::base() ?>/images/flecha-seccL.svg" alt="flecha"/></a> -->
@@ -55,10 +55,10 @@ $this->title = 'Chaide';
     <section class="sect-productos">
         <div id="secc-edredones">
             <img src="<?= URL::base() ?>/images/cont-seccion2.jpg"/>
-            <div class="btn-comprar2">Comprar</div>
+            <a href="<?= URl::to(['line/view','id'=>'1','#'=>'LÍNEA RESTONIC']) ?>"><div class="btn-comprar2">Comprar</div></a>
             <div class="txt-secciones background-edredones">
-                <h1>EDREDONES</h1>
-                <span>La mejor calidad y comodidad que necesitas para esos momentos únicos.</span>
+                <h1>LÍNEA RESTONIC</h1>
+                <span>Innovamos para brindarte el mejor descanso. Conoce nuestra línea de colchones.</span>
             </div>
         </div>
         <!-- <a href="#" class="flecha-r"><img src="<?= URL::base() ?>/images/flecha-seccR.svg" alt="flecha"/></a> -->
@@ -72,7 +72,7 @@ $this->title = 'Chaide';
         <span id="linea-c">Caressa</span> -->
         <span id="txt-linea">Accede a nuestras promociones, ahorra tu tiempo.
 Nosotros nos encargamos de tu comodidad.</span>
-        <div class="btn-comprar3">Comprar</div> 
+        <a href="<?= URl::to(['product/view','id'=>'6','#'=>'Caressa']) ?>"><div class="btn-comprar3">Comprar</div></a>
     </div>
 </section>
 <!-- -->

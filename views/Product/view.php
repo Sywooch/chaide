@@ -65,7 +65,7 @@ $this->title = $model->title;
         </div>
         <div class="cont-precio">
             <div class="precio-colchon">$<?= $model->price ?><br/><span>(No incluye IVA)</span></div>
-            <div class="cont-input"><input type="submit" value="Comprar ahora" /></div>
+            <div class="cont-input"><a href="<?= Url::to(['shop/addtocart','id'=>$model->id]) ?> ?>" class="link-comprar">Comprar Ahora</a></div>
         </div>
         </form>
     </div>
