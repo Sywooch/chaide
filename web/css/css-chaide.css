@@ -723,6 +723,10 @@ footer{
 	padding:0 2%;
 	float:left;
 	}	
+.cont-input a:visited, .cont-input a:link{
+	width:100% !important;
+	margin:0 !important;
+	}	
 .cont-input input[type="submit"]{
 	background-color:#FFF;
 	border:none;
