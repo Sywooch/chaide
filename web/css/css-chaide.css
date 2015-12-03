@@ -1221,10 +1221,10 @@ footer{
 	}	
 /* CARRITO DE COMPRA */
 .cont-txt{
-	width:54%;
+	width:45%;
 	float:left;
-	padding:5px 1% 5px 1%;
-	margin:0 2% 0 0;
+	padding:5px 0.5% 5px 0.5%;
+	margin:0 1% 0 0;
 	background-color:#ffffff;
 	color:#58595b;
 	}
@@ -1238,10 +1238,9 @@ footer{
 	float:left;
 	}			
 .cont-cant{
-	width:18%;
+	width:16%;
 	float:left;
-	padding:5px 1%;
-	margin:0 2% 0 0;
+	padding:5px 0.5%;
 	background-color:#ffffff;
 	text-align:center;
     color:#58595b;
@@ -1250,9 +1249,10 @@ footer{
     vertical-align: middle;
 	}	
 .cont-valor{
-	width:18%;
+	width:16%;
 	float:left;
-	padding:5px 1%;
+	padding:5px 0.5%;
+	margin:0 0 0 1%;
 	background-color:#ffffff;
 	text-align:center;
 	color:#58595b;
