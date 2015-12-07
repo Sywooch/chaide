@@ -193,18 +193,18 @@ class User extends ActiveRecord implements IdentityInterface
     }
         public function validatePassword($password)
     {
-         return Yii::$app->security()->validatePassword($password, $this->password);
+         return Yii::$app->getSecurity()->validatePassword($password, $this->password);
     }
 
     public function hashPassword($password){
 
         //return hash('sha256',$password);
-        return Yii::$app->security()->generatePasswordHash($password);
+        return Yii::$app->getSecurity()->generatePasswordHash($password);
     }
     
     public function generateAuthKey()
     {
-        $this->auth_key = Yii::$app->security()->generateRandomKey();
+        $this->auth_key = Yii::$app->getSecurity()->generateRandomKey();
     }
 
     /**
@@ -212,7 +212,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function generatePasswordResetToken()
     {
-        $this->password_reset_token = Yii::$app->security()->generateRandomKey() . '_' . time();
+        $this->password_reset_token = Yii::$app->getSecurity()->generateRandomKey() . '_' . time();
     }
 
     /**
