@@ -30,10 +30,10 @@ $this->title = 'Login';
         ],
     ]); ?>
        
-            <?= $form->field($model, 'username')->input('email')->label('Usuario') ?>
+            <?= $form->field($model, 'username')->input('email')->label('Email') ?>
 
 
-            <?= $form->field($model, 'password')->passwordInput()->label('Password') ?>
+            <?= $form->field($model, 'password')->passwordInput()->label('Contraseña') ?>
             
         <input type="submit" value="Iniciar Sesión"/>
            <?php ActiveForm::end(); ?>
