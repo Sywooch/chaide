@@ -28,7 +28,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'cellphone')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'sex')->dropDownList([ 'MALE' => 'MALE', 'FEMALE' => 'FEMALE', ], ['prompt' => '']) ?>
+    <?= $form->field($model, 'sex')->dropDownList([ 'MALE' => 'HOMBRE', 'FEMALE' => 'MUJER', ], ['prompt' => 'Seleciona una Opción']) ?>
 
     <?= $form->field($model, 'creation_date')->textInput() ?>
 

@@ -5,7 +5,7 @@ namespace app\models;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\db\ActiveRecord;
-use yii\helpers\Security;
+use yii\base\Security;
 use yii\web\IdentityInterface;
 use yii\behaviors\TimestampBehavior;
 use yii\db\Expression;
@@ -34,10 +34,8 @@ class User extends ActiveRecord implements IdentityInterface
     /**
      * @inheritdoc
      */
-        public $authKey;
     public $accessToken;
     public $confirmPassword;
-
     public static function tableName()
     {
         return 'user';
@@ -50,14 +48,19 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return [
             
-            [['identity', 'names', 'lastnames', 'birthday', 'username', 'password', 'phone', 'cellphone', 'sex', 'creation_date'], 'required'],
+            [['identity', 'names', 'lastnames', 'birthday', 'username', 'password', 'phone', 'cellphone', 'sex', 'creation_date', 'confirmPassword'], 'required'],
             [['birthday', 'creation_date'], 'safe'],
-            [['sex'], 'string'],
-            [['identity', 'cellphone'], 'string', 'max' => 10],
-            [['names', 'lastnames', 'address', 'billing_address', 'password'], 'string', 'max' => 255],
-            [['username'], 'string', 'max' => 150],
+            ['sex', 'in', 'range' => ['MALE','FEMALE']],
+            [['cellphone'], 'string', 'max' => 10],
+            [['identity'], 'string', 'max' => 10, 'min'=>10],
+            [['identity','cellphone','phone'],'number', 'message'=>"Solo se aceptán números"],
+            [['names', 'lastnames', 'password'], 'string', 'max' => 255],
+            [['username'], 'email'],
+            [['username'], 'unique', 'message'=>"Ya existe ese email en el sistema."],
             [['phone'], 'string', 'max' => 9],
-            ['type', 'in', 'range' => ['CLIENT','ADMIN']]
+            ['confirmPassword', 'compare', 'compareAttribute'=>'password', 'message'=>"Las contraseñas deben ser iguales" ],
+            ['type', 'in', 'range' => ['CLIENT','ADMIN']],
+            ['status', 'in', 'range' => ['ACTIVE','INACTIVE']]
         ];
     }
 
@@ -69,17 +72,17 @@ class User extends ActiveRecord implements IdentityInterface
         return [
             'id' => 'ID',
            
-            'identity' => 'Identity',
-            'names' => 'Names',
-            'lastnames' => 'Lastnames',
-            'birthday' => 'Birthday',
-            // 'address' => 'Address',
+            'identity' => 'Cédula',
+            'names' => 'Nombres',
+            'lastnames' => 'Apellidos',
+            'birthday' => 'Fecha de Nacimiento',
+            'confirmPassword' => 'Confirmar Contraseña',
             // 'billing_address' => 'Billing Address',
-            'username' => 'Username',
-            'password' => 'Password',
-            'phone' => 'Phone',
-            'cellphone' => 'Cellphone',
-            'sex' => 'Sex',
+            'username' => 'Email',
+            'password' => 'Contraseña',
+            'phone' => 'Teléfono',
+            'cellphone' => 'Celular',
+            'sex' => 'Sexo',
             'creation_date' => 'Creation Date',
         ];
     }
@@ -96,7 +99,16 @@ class User extends ActiveRecord implements IdentityInterface
         throw new NotSupportedException('"findIdentityByAccessToken" No está implementado.');
     }
     
-
+    public function beforeSave($insert) {
+        if(isset($this->password)) 
+            $this->password = $this->hashPassword($this->password);
+         if (parent::beforeSave($insert)) {
+            if ($this->isNewRecord) {
+                $this->auth_key = \Yii::$app->security->generateRandomString();
+            }
+        }
+        return parent::beforeSave($insert);
+    }
         public static function isUserClient($username)
     {
       if (static::findOne(['username' => $username, 'type' => 'CLIENT'])){
@@ -169,7 +181,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function getAuthKey()
     {
-        return $this->authKey;
+        return $this->auth_key;
     }
 
     /**
@@ -177,22 +189,22 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function validateAuthKey($authKey)
     {
-        return $this->authKey === $authKey;
+        return $this->auth_key === $authKey;
     }
         public function validatePassword($password)
     {
-        return $this->password === $this->hashPassword($password);
+         return Yii::$app->getSecurity()->validatePassword($password, $this->password);
     }
 
     public function hashPassword($password){
 
         //return hash('sha256',$password);
-        return md5($password);
+        return Yii::$app->getSecurity()->generatePasswordHash($password);
     }
     
     public function generateAuthKey()
     {
-        $this->auth_key = Security::generateRandomKey();
+        $this->auth_key = Yii::$app->getSecurity()->generateRandomKey();
     }
 
     /**
@@ -200,7 +212,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function generatePasswordResetToken()
     {
-        $this->password_reset_token = Security::generateRandomKey() . '_' . time();
+        $this->password_reset_token = Yii::$app->getSecurity()->generateRandomKey() . '_' . time();
     }
 
     /**
