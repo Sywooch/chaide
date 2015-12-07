@@ -51,7 +51,7 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        
+
        $product=Product::findOne(6); 
        return $this->render('index',['product'=>$product]);
    }
@@ -77,16 +77,33 @@ class SiteController extends Controller
       $model->type="CLIENT";
       $model->creation_date=date("Y-m-d H:i:s");
       if ($model->load(Yii::$app->request->post()) && $model->save()) {
+      $email=  Yii::$app->mailer->compose('confirm', [
+    'model' => $model,
+    'url' => Yii::$app->urlManager->createAbsoluteUrl(['site/confirm','id'=>$model->id,'key'=>$model->auth_key])
+    ])->setFrom('info@chaide.com')
+    ->setTo($model->username)
+    ->setSubject($model->names." "."Confirma tu cuenta en chaide")
+    ->send();
+        if($email){
+            Yii::$app->getSession()->setFlash('success','Check Your email!');
+        }
+        else{
+            Yii::$app->getSession()->setFlash('warning','Failed, contact Admin!');
+        }
+        return $this->redirect(['congrats', 'id' => $model->id]);
 
-        return $this->redirect(['confirm', 'id' => $model->id]);
-        
     } else {
         return $this->render('register', [
             'model' => $model,
             ]);
     }
     }
-
+    public function actionCongrats($id){
+        $model=User::findOne($id);
+       return $this->render('congrats', [
+            'model' => $model,
+            ]); 
+    }
     public function actionLogout()
     {
     Yii::$app->user->logout();
