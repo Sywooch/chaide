@@ -9,6 +9,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Product;
+use app\models\User;
 
 class SiteController extends Controller
 {
@@ -71,6 +72,19 @@ class SiteController extends Controller
         }
     }
 
+    public function actionRegister(){
+      $model = new User();
+      $model->type="CLIENT";
+      $model->creation_date=date("Y-m-d H:i:s");
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['confirm', 'id' => $model->id]);
+        } else {
+            return $this->render('register', [
+                'model' => $model,
+            ]);
+        }
+    }
+    
     public function actionLogout()
     {
         Yii::$app->user->logout();

@@ -38,7 +38,7 @@ $this->title = 'Login';
         <input type="submit" value="Iniciar Sesión"/>
            <?php ActiveForm::end(); ?>
         <div class="div-registro">
-        *Si no posees cuenta en chaide, <a href="#">Regístrate Aquí</a>
+        *Si no posees cuenta en chaide, <a href="<?= Url::to(['site/register']) ?>">Regístrate Aquí</a>
         </div>
 
     </div>
