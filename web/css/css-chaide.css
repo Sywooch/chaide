@@ -2325,3 +2325,14 @@ ul.publiciad-abj li{
 .conf-compra span{
 	font-size:3em;
 	}				
+.help-block{
+	width:70%;
+	float:left;
+	margin:0 0 0 30%;
+	font-size:0.8em;
+	color:#FFF;
+	font-weight:bold;
+	}	
+#ui-datepicker-div{
+	font-size:0.7em;
+	}	
