@@ -11,6 +11,7 @@ $this->title = 'Carrito de compras';
     <div class="cont-formulario">
     	        <form action="registro.html">
    		<div class="cont-campos-header">
+        	<div class="cont-imgthumb tit-carrit">&nbsp;</div>
         	<div class="cont-txt tit-carrit">&nbsp;</div>
             <div class="cont-cant tit-carri">CANTIDAD</div>
             <div class="cont-valor tit-carri">VALOR UNITARIO</div>
@@ -23,14 +24,16 @@ $this->title = 'Carrito de compras';
    
         }
  ?>
-  
-       
+  		
         <div class="cont-campos-header">
+        	<div class="cont-imgthumb tit-carrit">&nbsp;</div>
         	<div class="cont-txt tit-carrit">&nbsp;</div>
+            <div class="cont-cant tit-carrit">&nbsp;</div>
             <div class="cont-cant c-gris">TOTAL</div>
             <div class="cont-valor c-gris">$<?= Yii::$app->cart->getCost() ?></div>
-
-        	<input type="submit" value="Pagar Ahora"/>
+		</div>
+        	<input type="submit" value="PAGAR AHORA"/>
         </form>
-    </div>
+        </div>
+    
 </section>
