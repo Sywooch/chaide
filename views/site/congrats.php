@@ -17,7 +17,8 @@ $this->title = 'Felicidades '.$model->names;
 	</div>
     <div class="cont-formulario">
    		    <div class="cont-infocamposf2 conf-compra">
-                <span>GRACIAS <?= strtoupper($model->names) ?> POR REGISTRARTE</span><br/>
+            	GRACIAS POR REGISTRARTE<br/>
+                <span> <?= strtoupper($model->names) ?> </span><br/>
                 <font>Hemos enviado un correo electrónico para que puedas activar tu cuenta</font>
                 <?= Yii::$app->getSession()->getFlash('success'); ?>
 	     		<?= Yii::$app->getSession()->getFlash('warning'); ?>
