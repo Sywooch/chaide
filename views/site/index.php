@@ -7,11 +7,13 @@ $message="";
 <?php if(Yii::$app->getSession()->getFlash('success')){ ?>
 <div class="flash_message_success">
  <?= Yii::$app->getSession()->getFlash('success'); ?>
+ <div class="btn-cerrarw"><img src="<?= URL::base() ?>/images/btn-cerrarw.svg"/></div>
 </div>
     <?php } ?>
     <?php if(Yii::$app->getSession()->getFlash('warning')){ ?>
 <div class="flash_message_warning">
  <?= Yii::$app->getSession()->getFlash('warning'); ?>
+  <div class="btn-cerrarw"><img src="<?= URL::base() ?>/images/btn-cerrarw.svg"/></div>
 </div>
     <?php } ?>
 
@@ -88,3 +90,12 @@ Nosotros nos encargamos de tu comodidad.</span>
     </div>
 </section>
 <!-- -->
+<script>
+$(document).ready(function() {
+   $(".btn-cerrarw").click(function(){
+	   $(".flash_message_warning").fadeOut();
+	   $(".flash_message_success").fadeOut();
+	   
+	   });
+});
+</script>
