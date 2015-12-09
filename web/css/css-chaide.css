@@ -1182,12 +1182,12 @@ footer{
 
 .cont-campos, .cont-campos-header{
 	width:100%;
-	float:left;
 	margin:0 0 0.5% 0;
+	display:table-row;
 	}
 .cont-campos{
-	/*background-color:#FFFFFF;*/
-	display:table;
+	background-color:#FFFFFF;
+	position:relative;
 	}		
 .cont-campos label{
 	width:25%;
@@ -1208,11 +1208,11 @@ footer{
 	background-color:#4a4a49;
 	color:rgba(255,255,255,1.00);
 	float:right;
-	padding:7px 0;
+	padding:8px 0;
 	text-align:center;
 	border:none;
 	margin:0.5% 0;
-	cursor:pointer;	
+	cursor:pointer;
 	}
 .cont-formulario input[type="submit"]:hover{
 	background-color:#1e1e1e;	
@@ -1224,28 +1224,24 @@ footer{
 	margin:10px 0;	
 	}	
 /* CARRITO DE COMPRA */
+.cont-imgthumb{
+	width:15%;
+	padding:5px 0.5% 5px 0.5%;
+	display:table-cell;
+	vertical-align:middle;
+	}
 .cont-txt{
-	width:45%;
-	float:left;
+	width:30%;
 	padding:5px 0.5% 5px 0.5%;
 	margin:0 1% 0 0;
-	background-color:#ffffff;
 	color:#58595b;
+	display:table-cell;
+	vertical-align:middle;
 	}
-.cont-txt span{
-	width:78%;
-	float:left;
-	margin:0 0 0 2%;	
-	}	
-.thumb-carrito{
-	width:20%;
-	float:left;
-	}			
+		
 .cont-cant{
 	width:16%;
-	float:left;
 	padding:5px 0.5%;
-	background-color:#ffffff;
 	text-align:center;
     color:#58595b;
 	text-align: center;
@@ -1254,15 +1250,14 @@ footer{
 	}	
 .cont-valor{
 	width:16%;
-	float:left;
 	padding:5px 0.5%;
 	margin:0 0 0 1%;
-	background-color:#ffffff;
 	text-align:center;
 	color:#58595b;
 	text-align: center;
     display: table-cell;
     vertical-align: middle;
+	position:relative;
 	}																			
 .tit-carri{
 	background-color:#005f92 !important;
@@ -1274,7 +1269,14 @@ footer{
 .c-gris{
 	background-color:#4a4a49 !important;
 	color:rgba(255,255,255,1.00) !important;	
-	}			
+	}
+.erase-product{
+	width: 20px;
+    position: absolute;
+    right: 2%;
+    top: 2%;
+	cursor:pointer;
+	}		
 /* TRAYECTORIA */
 #tit-trayectoria{
 	width:30%;
@@ -2335,4 +2337,21 @@ ul.publiciad-abj li{
 	}	
 #ui-datepicker-div{
 	font-size:0.7em;
+	}	
+/**/
+.flash_message_success, .flash_message_warning{
+	width:100%;
+	position:fixed;
+	color:#FFF;
+	text-align:center;
+	z-index:1010;
+	background:rgba(0,0,0,0.8);
+	padding:10px 0;
+	top:0;
+	left:0;		
+	}
+.btn-cerrarw{
+	width:20px;
+	float:right;
+	margin:0 5px 0 0;
 	}	
