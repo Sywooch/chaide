@@ -2,7 +2,19 @@
 use yii\helpers\Url;
 /* @var $this yii\web\View */
 $this->title = 'Chaide';
+$message="";
 ?>
+<?php if(Yii::$app->getSession()->getFlash('success')){ ?>
+<div class="flash_message_success">
+ <?= Yii::$app->getSession()->getFlash('success'); ?>
+</div>
+    <?php } ?>
+    <?php if(Yii::$app->getSession()->getFlash('warning')){ ?>
+<div class="flash_message_warning">
+ <?= Yii::$app->getSession()->getFlash('warning'); ?>
+</div>
+    <?php } ?>
+
 <!-- -->
 <section id="home-chaide" class="background-home">
     <div class="inf-home">

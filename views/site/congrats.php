@@ -10,6 +10,7 @@ $this->title = 'Felicidades '.$model->names;
 
 ?>
 <section id="home-chaide" class="background-registro">
+
 	<div class="cont-titulos">
     	<h1>REGISTRO</h1>
         <div class="separador-p"><img src="<?= URL::base() ?>/images/separador.svg"/></div>
@@ -18,6 +19,8 @@ $this->title = 'Felicidades '.$model->names;
    		    <div class="cont-infocamposf2 conf-compra">
                 <span>GRACIAS <?= strtoupper($model->names) ?> POR REGISTRARTE</span><br/>
                 <font>Hemos enviado un correo electrónico para que puedas activar tu cuenta</font>
+                <?= Yii::$app->getSession()->getFlash('success'); ?>
+	     		<?= Yii::$app->getSession()->getFlash('warning'); ?>
             </div> 
 
     </div>

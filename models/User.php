@@ -48,7 +48,7 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return [
             
-            [['identity', 'names', 'lastnames', 'birthday', 'username', 'password', 'phone', 'cellphone', 'sex', 'creation_date', 'confirmPassword'], 'required'],
+            [['identity', 'names', 'lastnames', 'birthday', 'username', 'password', 'phone', 'cellphone', 'sex', 'creation_date'], 'required'],
             [['birthday', 'creation_date'], 'safe'],
             ['sex', 'in', 'range' => ['MALE','FEMALE']],
             [['cellphone'], 'string', 'max' => 10],
@@ -58,7 +58,7 @@ class User extends ActiveRecord implements IdentityInterface
             [['username'], 'email'],
             [['username'], 'unique', 'message'=>"Ya existe ese email en el sistema."],
             [['phone'], 'string', 'max' => 9],
-            ['confirmPassword', 'compare', 'compareAttribute'=>'password', 'message'=>"Las contraseñas deben ser iguales" ],
+            ['confirmPassword', 'compare', 'compareAttribute'=>'password', 'on' => 'create', 'message'=>"Las contraseñas deben ser iguales" ],
             ['type', 'in', 'range' => ['CLIENT','ADMIN']],
             ['status', 'in', 'range' => ['ACTIVE','INACTIVE']]
         ];
