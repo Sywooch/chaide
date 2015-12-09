@@ -18,6 +18,11 @@ $("#menu-chaide").click(function(){
         $("#menu-mobile").toggleClass("menu-active");
         $("#general").toggleClass("general-active");
     });  
+   $(".btn-cerrarw").click(function(){
+       $(".flash_message_warning").fadeOut();
+       $(".flash_message_success").fadeOut();
+       
+       });
 });';
 $this->registerJs($script,View::POS_END);
 AppAsset::register($this);
