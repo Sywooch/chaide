@@ -1185,6 +1185,10 @@ footer{
 	margin:0 0 0.5% 0;
 	display:table-row;
 	}
+.f-leftc{
+	float:left;
+	background-color:transparent !important;
+	}	
 .cont-campos{
 	background-color:#FFFFFF;
 	position:relative;

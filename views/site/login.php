@@ -21,7 +21,7 @@ $this->title = 'Login';
         'id' => 'login-form',
         'options' => ['class' => ''],
         'fieldConfig' => [
-            'template' => "<div class=\"cont-campos\">{label}{input}{error}</div>",
+            'template' => "<div class=\"cont-campos f-leftc\">{label}{input}{error}</div>",
                'options' => [
                             'tag'=>'div'
 
