@@ -13,7 +13,7 @@ use yii\helpers\Html;
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body>
+<body style="margin:0 auto; width:700px; text-align:justify; font-family:sans-serif; font-size:13px">
     <?php $this->beginBody() ?>
     <?= $content ?>
     <?php $this->endBody() ?>

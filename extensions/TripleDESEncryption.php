@@ -64,6 +64,7 @@ class TripleDESEncryption
 
 	function generateKeyInterna ($minlength, $maxlength, $useupper, $usespecial, $usenumbers)
 	{
+		$key="";
 		$charset = "abcdefghijklmnopqrstuvwxyz";
 		if ($useupper) $charset .= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		if ($usenumbers) $charset .= "0123456789";

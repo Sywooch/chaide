@@ -26,16 +26,16 @@ class ShopController extends Controller
 			$filePriKC = Yii::getAlias('@app')."PRIVADACIFRADO_pruebas.pem"; 
 			$filePubKF = Yii::getAlias('@app')."/PUBLICAFIRMA_pruebas.pem";
 	 		$filePriKF = Yii::getAlias('@app')."/PRIVADAFIRMA_pruebas.pem";
+	 		$filePubCI =Yii::getAlias('@app')."/PUBLICA_CIFRADO_INTERDIN.pem";
 			$vector = "JbEFFDiOkRc=";
-			$AdquirerID = "https://www.chaide.net/web;";
+			$AdquirerID = "1790241483001";
 			$MerchantID = "1790241483001";
 			$LocalID = "GN01";
 			$moneda = "840";
 			$URL_Tecnico = "http://10.100.68.55/Tienda/Invoca.php;";
-			$ambiente = "chaide.net";
-			$random_key=Yii::$app->getSecurity()->generateRandomString();
-			//die($random_key);
-			$e = $plugin->setLocalID($LocalID); 
+			$ambiente = "pruebas";
+			$random_key=Yii::$app->getSecurity()->generateRandomKey();
+			$e = $plugin->setLocalID($LocalID);
 			if($e!= "")
 			echo "Error: $e";
 			$e = $plugin->setTransacctionID($random_key); 
@@ -70,27 +70,34 @@ class ShopController extends Controller
 			echo "Error: $e";
 			$e = $plugin->setReferencia5($_POST["txtReferencia5"]); 
 			if($e!= "")
-			echo "Error: $e"; $e = $plugin->setIV($vector);
-			if($e!= "")
-			try {
 			echo "Error: $e";
-			$plugin->setSignPrivateKey("file://" . $filePriKF); $plugin->setCipherPublicKey("file://" . realpath("PUBLICA_CIFRADO_INTERDIN.pem")); $xmlGenerateKeyI = $plugin->CreateXMLGENERATEKEY();
+			$e = $plugin->setIV($vector); 
+			if($e!= "")
+			echo "Error: $e";
+			try {
+			$plugin->setSignPrivateKey("file://" . $filePriKF);
+			 $plugin->setCipherPublicKey("file://" . $filePubCI); 
+			 $xmlGenerateKeyI = $plugin->CreateXMLGENERATEKEY();
 			$plugin->XMLProcess($URL_Tecnico);
 			$xmlRequest = $plugin->getXMLREQUEST();
-			return $this->render('vpossend',['xmlRequest'=>$xmlRequest]);
+			$xmlDigitalSign=$plugin->getXMLDIGITALSIGN();
+			return $this->render('confirm',['xmlRequest'=>$xmlRequest,'xmlDigitalSign'=>$xmlDigitalSign,'xmlGenerateKeyI'=>$xmlGenerateKeyI,'transactionid'=>$plugin->TransacctionID]);
 			}
 			catch(Exception $e){
 			echo "Error: $e";
+
 			}
 
 	}
 	public function actionVposrecive(){
 		$vector = "JbEFFDiOkRc=";
 		$xmlGenerateKey = $_POST["XMLGENERATEKEY"];
+		$filePubFI =Yii::getAlias('@app')."/PUBLICA_FIRMA_INTERDIN.pem";
+		$filePriKC = Yii::getAlias('@app')."PRIVADACIFRADO_pruebas.pem"; 
 		$pluginr = new PlugInClientRecive();
 		$pluginr->setIV($vector);
-		$pluginr->setSignPublicKey("file://" . realpath("PUBLICA_FIRMA_INTERDIN.pem")); 
-		$pluginr->setCipherPrivateKey("file://" . realpath("PRIVADACIFRADO_pruebas.pem")); $error = $pluginr->setXMLGENERATEKEY($xmlGenerateKey);
+		$pluginr->setSignPublicKey("file://" . $filePubFI); 
+		$pluginr->setCipherPrivateKey("file://" . $filePriKC); $error = $pluginr->setXMLGENERATEKEY($xmlGenerateKey);
 		$msg = "";
 		if($error != "") {
 		$msg = "Error:" . $error;
