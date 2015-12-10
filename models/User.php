@@ -100,10 +100,11 @@ class User extends ActiveRecord implements IdentityInterface
     }
     
     public function beforeSave($insert) {
-        if(isset($this->password)) 
-            $this->password = $this->hashPassword($this->password);
+
          if (parent::beforeSave($insert)) {
             if ($this->isNewRecord) {
+                    if(isset($this->password)) 
+                    $this->password = $this->hashPassword($this->password);
                 $this->auth_key = \Yii::$app->security->generateRandomString();
             }
         }

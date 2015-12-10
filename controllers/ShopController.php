@@ -11,7 +11,9 @@ use app\extensions\PlugInClientSend;
 use app\extensions\RSAEncryption;
 use app\models\Product;
 use yz\shoppingcart\ShoppingCart;
-
+// http://www.chaide.com./test/shop/dreturn
+// http://www.chaide.com./test/shop/dcancel
+// http://www.chaide.com./test/shop/dpostprocess
 class ShopController extends Controller
 {
     
@@ -20,17 +22,17 @@ class ShopController extends Controller
 	public function actionVpossend(){
 			$plugin = new PlugInClientSend();
 		/*Datos Establecimiento*/
-			$filePubKC = Yii::getAlias('@app')."/PUBLICACIFRADO.pem"; 
-			$filePriKC = Yii::getAlias('@app')."PRIVADACIFRADO.pem"; 
-			$filePubKF = Yii::getAlias('@app')."/PUBLICAFIRMA.pem";
-	 		$filePriKF = Yii::getAlias('@app')."/PRIVADAFIRMA.pem";
-			$vector = "mV6VoYVJ54A=";
-			$AdquirerID = "1711248995001";
-			$MerchantID = "1711248995001";
+			$filePubKC = Yii::getAlias('@app')."/PUBLICACIFRADO_pruebas.pem"; 
+			$filePriKC = Yii::getAlias('@app')."PRIVADACIFRADO_pruebas.pem"; 
+			$filePubKF = Yii::getAlias('@app')."/PUBLICAFIRMA_pruebas.pem";
+	 		$filePriKF = Yii::getAlias('@app')."/PRIVADAFIRMA_pruebas.pem";
+			$vector = "JbEFFDiOkRc=";
+			$AdquirerID = "https://www.chaide.net/web;";
+			$MerchantID = "1790241483001";
 			$LocalID = "GN01";
 			$moneda = "840";
 			$URL_Tecnico = "http://10.100.68.55/Tienda/Invoca.php;";
-			$ambiente = "webcontent.ec";
+			$ambiente = "chaide.net";
 			$random_key=Yii::$app->getSecurity()->generateRandomString();
 			//die($random_key);
 			$e = $plugin->setLocalID($LocalID); 
@@ -72,7 +74,7 @@ class ShopController extends Controller
 			if($e!= "")
 			try {
 			echo "Error: $e";
-			$plugin->setSignPrivateKey("file://" . $filePriKF); $plugin->setCipherPublicKey("file://" . realpath("llaves/PUBLICA_CIFRADO_INTERDIN.pem")); $xmlGenerateKeyI = $plugin->CreateXMLGENERATEKEY();
+			$plugin->setSignPrivateKey("file://" . $filePriKF); $plugin->setCipherPublicKey("file://" . realpath("PUBLICA_CIFRADO_INTERDIN.pem")); $xmlGenerateKeyI = $plugin->CreateXMLGENERATEKEY();
 			$plugin->XMLProcess($URL_Tecnico);
 			$xmlRequest = $plugin->getXMLREQUEST();
 			return $this->render('vpossend',['xmlRequest'=>$xmlRequest]);
@@ -83,12 +85,12 @@ class ShopController extends Controller
 
 	}
 	public function actionVposrecive(){
-		$vector = "mV6VoYVJ54A=";
+		$vector = "JbEFFDiOkRc=";
 		$xmlGenerateKey = $_POST["XMLGENERATEKEY"];
 		$pluginr = new PlugInClientRecive();
 		$pluginr->setIV($vector);
-		$pluginr->setSignPublicKey("file://" . realpath("LLAVES/PUBLICA_FIRMA_INTERDIN.pem")); 
-		$pluginr->setCipherPrivateKey("file://" . realpath("LLAVES/PRIVADA_CIFRADO_ESTABLECIMIENTO.pem")); $error = $pluginr->setXMLGENERATEKEY($xmlGenerateKey);
+		$pluginr->setSignPublicKey("file://" . realpath("PUBLICA_FIRMA_INTERDIN.pem")); 
+		$pluginr->setCipherPrivateKey("file://" . realpath("PRIVADACIFRADO_pruebas.pem")); $error = $pluginr->setXMLGENERATEKEY($xmlGenerateKey);
 		$msg = "";
 		if($error != "") {
 		$msg = "Error:" . $error;

@@ -19,13 +19,13 @@ $this->title = 'Registro';
    </div>
    <?php $form = ActiveForm::begin(); ?>
    <div class="cont-formulario">
-       <div class="cont-campos">
+       <div class="cont-campos f-leftc">
         <?= $form->field($model, 'names')->textInput(['maxlength' => true]) ?>
     </div>
-    <div class="cont-campos">
+    <div class="cont-campos f-leftc">
         <?= $form->field($model, 'lastnames')->textInput(['maxlength' => true]) ?>
     </div>
-    <div class="cont-campos">
+    <div class="cont-campos f-leftc">
        <?= $form->field($model, 'birthday')->widget(\yii\jui\DatePicker::classname(), [
         'language' => 'es',
         'dateFormat' => 'yyyy-MM-dd',
@@ -38,25 +38,25 @@ $this->title = 'Registro';
         ]
         ]) ?>
     </div>
-    <div class="cont-campos">
+    <div class="cont-campos f-leftc">
        <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
    </div>
-   <div class="cont-campos">
+   <div class="cont-campos f-leftc">
     <?= $form->field($model, 'sex')->dropDownList([ 'MALE' => 'HOMBRE', 'FEMALE' => 'MUJER', ], ['prompt' => 'Selecciona una opción.']) ?>
 </div>
-<div class="cont-campos">
+<div class="cont-campos f-leftc">
  <?= $form->field($model, 'identity')->textInput(['maxlength' => true]) ?>
 </div>
-<div class="cont-campos">
+<div class="cont-campos f-leftc">
     <?= $form->field($model, 'cellphone')->textInput(['maxlength' => true]) ?>
 </div>
-<div class="cont-campos">
+<div class="cont-campos f-leftc">
     <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
 </div>
-<div class="cont-campos">
+<div class="cont-campos f-leftc">
    <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
 </div>
-<div class="cont-campos">
+<div class="cont-campos f-leftc">
     <?= $form->field($model, 'confirmPassword')->passwordInput(['maxlength' => true]) ?>
 </div>
 <input type="submit" value="Regístrate"/>
