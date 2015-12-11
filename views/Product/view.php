@@ -97,7 +97,7 @@ $this->title = $model->title;
 <section class="cont-colchonint2">
     <img src="<?= URL::base() ?>/images/int-colchon2.jpg" class="colchon-celular"/>
     <div class="secc-intcolchon">
-        <ul>
+        <ul class="ventajas-<?= count($model->advantages) ?>">
             <?php foreach($model->advantages as $advantage): ?>
             <li>
                 <h1><?= $advantage->title ?></h1>

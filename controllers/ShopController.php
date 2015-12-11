@@ -114,6 +114,12 @@ class ShopController extends Controller
 		}
 
 	}
+
+	public function actionDcancel(){
+		Yii::$app->getSession()->setFlash('warning','Se canceló la transacción.');
+		return $this->redirect(['viewcart']);
+	}
+
 	public function actionVposrecive(){
 		$vector = "JbEFFDiOkRc=";
 		$xmlGenerateKey = $_POST["XMLGENERATEKEY"];

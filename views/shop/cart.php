@@ -3,6 +3,12 @@ use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 $this->title = 'Carrito de compras';
 ?>
+<?php if(Yii::$app->getSession()->getFlash('warning')){ ?>
+<div class="flash_message_success">
+ <?= Yii::$app->getSession()->getFlash('warning'); ?>
+ <div class="btn-cerrarw"><img src="<?= URL::base() ?>/images/btn-cerrarw.svg"/></div>
+</div>
+    <?php } ?>
  <section id="home-chaide" class="background-registro">
 	<div class="cont-titulos">
     	<h1>CARRITO DE COMPRAS</h1>
