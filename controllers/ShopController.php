@@ -10,6 +10,7 @@ use app\extensions\PlugInClientRecive;
 use app\extensions\PlugInClientSend;
 use app\extensions\RSAEncryption;
 use app\models\Product;
+use yii\helpers\Url;
 use yz\shoppingcart\ShoppingCart;
 // http://www.chaide.com./test/shop/dreturn
 // http://www.chaide.com./test/shop/dcancel
@@ -17,9 +18,30 @@ use yz\shoppingcart\ShoppingCart;
 class ShopController extends Controller
 {
     
+    public function behaviors()
+    {
+        return [
+        'access' => [
+           'class' => AccessControl::className(),
+           'only' => ['vpossend', 'vposrecive'],
+           'rules' => [
 
+               [
+                   'actions' => ['vpossend', 'vposrecive'],
+                   'allow' => true,
+                   'roles' => ['@'],
+                   // 'matchCallback' => function ($rule, $action) {
+                   //     return User::isUserAdmin(Yii::$app->user->identity->username);
+                   // }
+               ],
+           ],
+       ],
+    
+        ];
+    }
 
 	public function actionVpossend(){
+		if(isset($_POST["Subtotal"])){
 			$plugin = new PlugInClientSend();
 		/*Datos Establecimiento*/
 			$filePubKC = Yii::getAlias('@app')."/PUBLICACIFRADO_pruebas.pem"; 
@@ -32,7 +54,7 @@ class ShopController extends Controller
 			$MerchantID = "1790241483001";
 			$LocalID = "GN01";
 			$moneda = "840";
-			$URL_Tecnico = "http://10.100.68.55/Tienda/Invoca.php;";
+			$URL_Tecnico = Url::to("@web/shop/vpossend",true);
 			$ambiente = "pruebas";
 			$random_key=Yii::$app->getSecurity()->generateRandomKey();
 			$e = $plugin->setLocalID($LocalID);
@@ -87,6 +109,9 @@ class ShopController extends Controller
 			echo "Error: $e";
 
 			}
+		}else{
+			return $this->redirect(['viewcart']);
+		}
 
 	}
 	public function actionVposrecive(){

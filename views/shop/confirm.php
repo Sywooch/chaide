@@ -7,7 +7,7 @@ use yii\helpers\Url;
        <div class="separador-p"><img src="<?= URL::base() ?>/images/separador.svg"/></div>
    </div>
       <div class="cont-formulario">
-<form name="frmSolicitudPago" method="post" action="https://www3.optar.ec/webmpi/vpos" >
+<form name="frmSolicitudPago" method="post" action="https://www3.interdinmpi.com.ec/webmpi/vpos" >
 	<input type="submit" name="btAceptar" value="Aceptar"/></td>
 
 	<input type="hidden" name="TRANSACCIONID" value="<?= $transactionid ?>"/>
