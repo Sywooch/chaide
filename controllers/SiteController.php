@@ -107,6 +107,7 @@ class SiteController extends Controller
         'status'=>'INACTIVE',
         ])->one();
         if(!empty($user)){
+        
         $user->status='ACTIVE';
         $user->save();
         Yii::$app->getSession()->setFlash('success','Felicidades tu cuenta ya está activa.');

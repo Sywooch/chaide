@@ -90,12 +90,3 @@ Nosotros nos encargamos de tu comodidad.</span>
     </div>
 </section>
 <!-- -->
-<script>
-$(document).ready(function() {
-   $(".btn-cerrarw").click(function(){
-	   $(".flash_message_warning").fadeOut();
-	   $(".flash_message_success").fadeOut();
-	   
-	   });
-});
-</script>
