@@ -92,6 +92,10 @@ header{
 	width:90%;
 	padding:0 5%;
 	}
+.ventajas-4, .ventajas-3, .ventajas-2, .ventajas-1, .ventajas-5, .ventajas-6{
+	width:100% !important;
+	margin:0 0% !important;
+	}	
 }
 @media screen and (max-width: 1280px) {
 header{
@@ -394,7 +398,14 @@ ul.secciones-noticias{
     width: 96%;
     margin: 1% 0;
     padding: 0 2%;
-}			
+}	
+.ventajas-4 li, .ventajas-2 li, .ventajas-3 li, .ventajas-5 li, .ventajas-6 li, .ventajas-1 li{
+	width: 96% !important;
+    margin: 2% 1% !important;
+	}	
+.secc-intcolchon ul li p{
+	    padding: 10px 0;
+	}			
 }
 @media screen and (max-width: 760px) {
 .cont-footer {
