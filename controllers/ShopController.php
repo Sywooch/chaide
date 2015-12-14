@@ -9,15 +9,18 @@ use yii\filters\VerbFilter;
 use app\extensions\PlugInClientRecive;
 use app\extensions\PlugInClientSend;
 use app\extensions\RSAEncryption;
+use app\extensions\TripleDESEncryption;
 use app\models\Product;
 use yii\helpers\Url;
 use yz\shoppingcart\ShoppingCart;
+use app\models\CarShop;
 // http://www.chaide.com./test/shop/dreturn
 // http://www.chaide.com./test/shop/dcancel
 // http://www.chaide.com./test/shop/dpostprocess
+
 class ShopController extends Controller
 {
-    
+
     public function behaviors()
     {
         return [
@@ -40,14 +43,42 @@ class ShopController extends Controller
         ];
     }
 
+    public function actionDpostprocess(){
+		//Yii::app()->request->enableCsrfValidation = false;
+    	$lsdata = $_POST['xmlReq'];
+		$lsdata = urldecode($lsdata);
+		$d3 = new TripleDESEncryption();
+		$llave = "N2dYKcI9ivQEPlHN0/TCBJHp1c7OYtV5"; 
+		$iv = "JbEFFDiOkRc=";
+		$lsdata = $d3->decrypt($lsdata, $llave, $iv);
+		list($datos, $aut, $Cre,$mes,$ttar,$sub,$Iva,$Ice,$Int,$Tot,$tNo,$cD,$tipo) = split('[&]', $lsdata);
+		list($p0, $DATOS) = split('[=]', $datos);
+		list($p1, $AUT) = split('[=]', $aut);
+		list($p3, $CRE) = split('[=]', $Cre);
+		list($p4, $MES) = split('[=]', $mes);
+	    list($p5, $TTAR) = split('[=]', $ttar);
+	    list($p6, $SUB) = split('[=]', $sub); 
+	    list($p7, $IVA) = split('[=]', $Iva); 
+	    list($p8, $ICE) = split('[=]', $Ice); 
+	    list($p9, $INT) = split('[=]', $Int); 
+	    list($p10, $TOT) = split('[=]', $Tot); 
+	    list($p11, $TNO) = split('[=]', $tNo); 
+	    list($p12, $CD) = split('[=]', $cD); 
+	    list($p13, $TIPO) = split('[=]', $tipo); 
+		if ($TIPO == 'P') {
+		echo 'ESTADO=OK';
+		} else {
+		echo 'ESTADO=KO';
+    }
+}
 	public function actionVpossend(){
 		if(isset($_POST["Subtotal"])){
 			$plugin = new PlugInClientSend();
 		/*Datos Establecimiento*/
-			$filePubKC = Yii::getAlias('@app')."/PUBLICACIFRADO_pruebas.pem"; 
-			$filePriKC = Yii::getAlias('@app')."PRIVADACIFRADO_pruebas.pem"; 
-			$filePubKF = Yii::getAlias('@app')."/PUBLICAFIRMA_pruebas.pem";
-	 		$filePriKF = Yii::getAlias('@app')."/PRIVADAFIRMA_pruebas.pem";
+			// $filePubKC = Yii::getAlias('@app')."/PUBLICA_CIFRADO_ESTABLECIMIENTO.pem"; 
+			// $filePriKC = Yii::getAlias('@app')."/PRIVADA_CIFRADO_ESTABLECIMIENTO.pem"; 
+			// $filePubKF = Yii::getAlias('@app')."/PUBLICA_FIRMA_ESTABLECIMIENTO.pem";
+	 		$filePriKF = Yii::getAlias('@app')."/PRIVADA_FIRMA_ESTABLECIMIENTO.pem";
 	 		$filePubCI =Yii::getAlias('@app')."/PUBLICA_CIFRADO_INTERDIN.pem";
 			$vector = "JbEFFDiOkRc=";
 			$AdquirerID = "1790241483001";
@@ -56,7 +87,8 @@ class ShopController extends Controller
 			$moneda = "840";
 			$URL_Tecnico = Url::to("@web/shop/vpossend",true);
 			$ambiente = "pruebas";
-			$random_key=Yii::$app->getSecurity()->generateRandomKey();
+			$number=rand(1111111111,9999999999);
+			$random_key=Yii::$app->user->id+$number;
 			$e = $plugin->setLocalID($LocalID);
 			if($e!= "")
 			echo "Error: $e";
@@ -78,7 +110,7 @@ class ShopController extends Controller
 			$e = $plugin->setCurrencyID($moneda); 
 			if($e!= "")
 			echo "Error: $e";
-			$e = $plugin->setReferencia1($_POST["txtReferencia1"]); 
+			$e = $plugin->setReferencia1(Yii::$app->user->id); 
 			if($e!= "")
 			echo "Error: $e";
 			$e = $plugin->setReferencia2($_POST["txtReferencia2"]);
@@ -116,24 +148,30 @@ class ShopController extends Controller
 	}
 
 	public function actionDcancel(){
+		//Yii::app()->request->enableCsrfValidation = false;
 		Yii::$app->getSession()->setFlash('warning','Se canceló la transacción.');
 		return $this->redirect(['viewcart']);
 	}
 
-	public function actionVposrecive(){
+	public function actionDreturn(){
+		//Yii::app()->request->enableCsrfValidation = false;
 		$vector = "JbEFFDiOkRc=";
 		$xmlGenerateKey = $_POST["XMLGENERATEKEY"];
 		$filePubFI =Yii::getAlias('@app')."/PUBLICA_FIRMA_INTERDIN.pem";
-		$filePriKC = Yii::getAlias('@app')."PRIVADACIFRADO_pruebas.pem"; 
+		$filePriKC = Yii::getAlias('@app')."/PRIVADA_CIFRADA_ESTABLECIMIENTO.pem"; 
 		$pluginr = new PlugInClientRecive();
 		$pluginr->setIV($vector);
 		$pluginr->setSignPublicKey("file://" . $filePubFI); 
-		$pluginr->setCipherPrivateKey("file://" . $filePriKC); $error = $pluginr->setXMLGENERATEKEY($xmlGenerateKey);
+		$pluginr->setCipherPrivateKey("file://" . $filePriKC);
+
+		$error = $pluginr->setXMLGENERATEKEY($xmlGenerateKey);
+
 		$msg = "";
 		if($error != "") {
 		$msg = "Error:" . $error;
 		return; }
 		$cadeEnc = $_POST["XMLRESPONSE"];
+
 		$firmaCorrecta = $pluginr->XMLProcess($cadeEnc, $_POST["XMLDIGITALSIGN"]); 
 		if($firmaCorrecta == 0)
 		{
@@ -148,7 +186,22 @@ class ShopController extends Controller
 		else
 		$msg = "<b>Los datos no han sido alterados.</b><br>";
 		}
-		return $this->render('vposrecive',['puginr'=>$pluginr]);
+		$transactionID=$pluginr->getTransacctionID();
+		$tax1=$pluginr->getTaxValue1();
+		$tax2=$pluginr->getTaxValue2();
+		$tip=$pluginr->getTipValue();
+		$value=$pluginr->getTransacctionValue();
+		$status=$pluginr->getAuthorizationState();
+		$auth=$pluginr->getAuthorizationCode();
+	    foreach(Yii::$app->cart->positions as $position){
+    			$carshop= new CarShop();
+				$carshop->user_id=$pluginr->getReferencia1();
+          		$carshop->product_id=$position->id;
+          		$carshop->save();
+        }
+
+        Yii::$app->cart->removeAll();
+		return $this->render('response',['transactionID'=>$transactionID,'tax1'=>$tax1,'tax2'=>$tax2,'tip'=>$tip,'value'=>$value,'status'=>$status,'auth'=>$auth]);
 	}
     public function actionIndex()
     {
@@ -166,10 +219,9 @@ class ShopController extends Controller
 	    throw new NotFoundHttpException();
 	}
 	public function actionRemovefromcart($id){
-			    $cart = Yii::$app->cart;
-
+		    $cart = Yii::$app->cart;
 		    $model = Product::findOne($id);
-		    if ($model) {
+		    if ($model){
 		        $cart->remove($model);
 		        //die(print_r($cart));
 		        return $this->redirect(['viewcart']);
