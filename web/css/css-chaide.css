@@ -1178,6 +1178,7 @@ footer{
 	margin:0% 23% 0 23%;
 	padding:1% 2%;
 	background-color:rgba(0,0,0,0.75);
+	color:#FFF;
 	}
 
 .cont-campos, .cont-campos-header{
@@ -2406,4 +2407,20 @@ ul.publiciad-abj li{
 	margin: 0 0.5%;
     padding: 0 0.5%;
 	}			
-
+/**/
+.cont-resc{
+	width:80%;
+	margin:2% 10% 0 10%;
+	float:left;
+	}
+.cont-resc label{
+	width:50%;
+	text-align:center;
+	font-size:1.1em;
+	float:left;
+	}	
+.valor-ex{
+	width:50%;
+	float:left;
+	text-align:center;
+	}	
