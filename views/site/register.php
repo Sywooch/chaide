@@ -43,24 +43,24 @@ $this->title = 'Registro';
    </div>
    <div class="cont-campos f-leftc">
     <?= $form->field($model, 'sex')->dropDownList([ 'MALE' => 'HOMBRE', 'FEMALE' => 'MUJER', ], ['prompt' => 'Selecciona una opción.']) ?>
-</div>
-<div class="cont-campos f-leftc">
- <?= $form->field($model, 'identity')->textInput(['maxlength' => true]) ?>
-</div>
-<div class="cont-campos f-leftc">
-    <?= $form->field($model, 'cellphone')->textInput(['maxlength' => true]) ?>
-</div>
-<div class="cont-campos f-leftc">
-    <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
-</div>
-<div class="cont-campos f-leftc">
-   <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
-</div>
-<div class="cont-campos f-leftc">
-    <?= $form->field($model, 'confirmPassword')->passwordInput(['maxlength' => true]) ?>
-</div>
-<input type="submit" value="Regístrate"/>
-</div>
+    </div>
+    <div class="cont-campos f-leftc">
+     <?= $form->field($model, 'identity')->textInput(['maxlength' => true]) ?>
+    </div>
+    <div class="cont-campos f-leftc">
+        <?= $form->field($model, 'cellphone')->textInput(['maxlength' => true]) ?>
+    </div>
+    <div class="cont-campos f-leftc">
+        <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
+    </div>
+    <div class="cont-campos f-leftc">
+       <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
+    </div>
+    <div class="cont-campos f-leftc">
+        <?= $form->field($model, 'confirmPassword')->passwordInput(['maxlength' => true]) ?>
+    </div>
+    	<input type="submit" value="Regístrate"/>
+    </div>
 <?php ActiveForm::end(); ?>
 
 </section>
