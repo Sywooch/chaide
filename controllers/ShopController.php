@@ -14,6 +14,8 @@ use app\models\Product;
 use yii\helpers\Url;
 use yz\shoppingcart\ShoppingCart;
 use app\models\CarShop;
+use app\models\User;
+use app\models\Logs;
 // http://www.chaide.com./test/shop/dreturn
 // http://www.chaide.com./test/shop/dcancel
 // http://www.chaide.com./test/shop/dpostprocess
@@ -43,10 +45,9 @@ class ShopController extends Controller
         ];
     }
 
-    public function actionDpostprocess(){
+    public function actionDpostprocess($xmlReq){
 		//Yii::app()->request->enableCsrfValidation = false;
-    	$lsdata = $_POST['xmlReq'];
-		$lsdata = urldecode($lsdata);
+    	$lsdata = $xmlReq;
 		$d3 = new TripleDESEncryption();
 		$llave = "N2dYKcI9ivQEPlHN0/TCBJHp1c7OYtV5"; 
 		$iv = "JbEFFDiOkRc=";
@@ -65,8 +66,23 @@ class ShopController extends Controller
 	    list($p11, $TNO) = split('[=]', $tNo); 
 	    list($p12, $CD) = split('[=]', $cD); 
 	    list($p13, $TIPO) = split('[=]', $tipo); 
+	    $logs= New Logs();
+	    $logs->type="POSTPROCESS";
+	    $logs->description="TIPO:".$TIPO."DATOS:".$DATOS;
+	    $logs->save();
 		if ($TIPO == 'P') {
-		echo 'ESTADO=OK';
+		$user= User::findOne($DATOS);
+	    $email=  Yii::$app->mailer->compose('transaction', [
+    	'name' => $user->names,
+    	'aut' => $AUT,
+    	'total' =>$TOT/100
+    	])->setFrom('info@chaide.com')
+    	->setTo($user->username)
+    	->setSubject($model->names." "."tu transacción fue completada con éxito")
+    	->send();
+        if($email){
+   		echo 'ESTADO=OK';
+        }
 		} else {
 		echo 'ESTADO=KO';
     }
@@ -113,7 +129,7 @@ class ShopController extends Controller
 			$e = $plugin->setReferencia1(Yii::$app->user->id); 
 			if($e!= "")
 			echo "Error: $e";
-			$e = $plugin->setReferencia2($_POST["txtReferencia2"]);
+			$e = $plugin->setReferencia2(Yii::$app->user->id);
 			if($e != "")
 			echo "Error: $e";
 			$e = $plugin->setReferencia3($_POST["txtReferencia3"]); 

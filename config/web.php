@@ -32,15 +32,15 @@ $config = [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        'request' => [
-            'class' => 'yii\components\Request',
-             'enableCookieValidation' => false,
-            'enableCsrfValidation' => true,
-            'cookieValidationKey' => 'chaide123',
-            // 'noCsrfRoutes' => [
-            //     'shop/dreturn','dcancel','dpostprocess'
-            // ]
-        ],
+        // 'request' => [
+        //     'class' => 'yii\components\Request',
+        //      'enableCookieValidation' => false,
+        //     'enableCsrfValidation' => true,
+        //     'cookieValidationKey' => 'chaide123',
+        //     // 'noCsrfRoutes' => [
+        //     //     'shop/dreturn','dcancel','dpostprocess'
+        //     // ]
+        // ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             // send all mails to a file by default. You have to set
