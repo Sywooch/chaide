@@ -13,32 +13,33 @@ $message="La transacción no pudo completarse. Por favor intentanlo de nuevo má
        <div class="separador-p"><img src="<?= URL::base() ?>/images/separador.svg"/></div>
    </div>
       <div class="cont-formulario">
- <TABLE id="Table16" style="WIDTH: 456px; HEIGHT: 249px" height="249" cellSpacing="1" cellPadding="1" width="456" border="0">
-<TR>
-<TD style="WIDTH: 128px" width="128"></TD> <TD>Transaccion ID Session Portal <? ?></TD>
-<TD><?= $transactionID ?></TD> </TR>
-<TR>
-<TD style="WIDTH: 128px" width="128"></TD> <TD>Impuesto 1</TD>
-<TD><?= $tax1 ?></TD>
-</TR>
-<TR>
-<TD style="WIDTH: 128px" width="128"></TD> <TD>Impuesto 2</TD>
-<TD><?= $tax2 ?></TD>
-</TR>
-<TR>
-<TD style="WIDTH: 128px" width="128"></TD> <TD>Propina</TD>
-<TD><?= $tip ?></TD>
-</TR>
-<TR>
-<TD style="WIDTH: 128px" width="128"></TD> <TD>Valor</TD>
-<TD><?= $value;?></TD> </TR>
-<TR>
-<TD style="WIDTH: 128px" width="128"></TD> <TD>EST ADO</TD>
-<TD><?= $status; ?></TD> </TR>
-<TR>
-<TD style="WIDTH: 128px" width="128"></TD> <TD>NUMERO AUTORIZACION</TD>
-￼￼<TD><?= $auth; ?></TD> </TR>
-
-</TR> </TABLE>
+      <div class="cont-resc">
+      	<label>Transaccion ID Session Portal <? ?></label>
+        <div class="valor-ex"><?= $transactionID ?></div>
+      </div>
+      <div class="cont-resc">
+      	<label>Impuesto 1</label>
+        <div class="valor-ex"><?= $tax1 ?></div>
+      </div>
+      <div class="cont-resc">
+      	<label>Impuesto 2</label>
+        <div class="valor-ex"><?= $tax2 ?></div>
+      </div>
+      <div class="cont-resc">
+      	<label>Propina</label>
+        <div class="valor-ex"><?= $tip ?></div>
+      </div>
+      <div class="cont-resc">
+      	<label>Valor</label>
+        <div class="valor-ex"><?= $value;?></div>
+      </div>
+      <div class="cont-resc">
+      	<label>EST ADO</label>
+        <div class="valor-ex"><?= $status; ?></div>
+      </div>
+      <div class="cont-resc">
+      	<label>NÚMERO AUTORIZACION</label>
+        <div class="valor-ex"><?= $auth; ?></div>
+      </div>
 </div>
 </section>

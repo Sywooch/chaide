@@ -1178,6 +1178,7 @@ footer{
 	margin:0% 23% 0 23%;
 	padding:1% 2%;
 	background-color:rgba(0,0,0,0.75);
+	color:#FFF;
 	}
 
 .cont-campos, .cont-campos-header{
@@ -2359,4 +2360,67 @@ ul.publiciad-abj li{
 	float:right;
 	margin:0 5px 0 0;
 	padding:0;
+	}	
+/**/
+.secc-intcolchon ul li {
+    width: 15%;
+    margin: 0 0.5%;
+    padding: 0 1%;
+    background: rgba(0,0,0,0.8);
+    list-style: none;
+    position: relative;
+    height: 98%;
+    float: left;
+}
+.secc-intcolchon ul {
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+.ventajas-2{
+	width:50% !important;
+	margin:0 25% !important;
+	}
+.ventajas-2 li{
+	width:47% !important;
+	}	
+.ventajas-3{
+	width:70% !important;
+	margin:0 15% !important;
+	}
+.ventajas-3 li{
+	width:30.3% !important;
+	}	
+.ventajas-4{
+	width:80% !important;
+	margin:0 10% !important;
+	}
+.ventajas-4 li{
+	width:22% !important;
+	}	
+.ventajas-5 li{
+	width:17% !important;
+	}	
+.ventajas-6 li{
+	width:15.66% !important;
+	margin: 0 0.5%;
+    padding: 0 0.5%;
+	}			
+/**/
+.cont-resc{
+	width:80%;
+	margin:2% 10% 0 10%;
+	float:left;
+	}
+.cont-resc label{
+	width:50%;
+	text-align:center;
+	font-size:1.1em;
+	float:left;
+	}	
+.valor-ex{
+	width:50%;
+	float:left;
+	text-align:center;
 	}	
