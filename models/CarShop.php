@@ -29,7 +29,7 @@ class CarShop extends ActiveRecord
     {
         return [
             [['user_id', 'product_id'], 'required'],
-            [['user_id', 'product_id'], 'integer']
+            [['user_id', 'product_id', 'quantity'], 'integer']
         ];
     }
 

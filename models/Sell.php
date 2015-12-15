@@ -31,6 +31,7 @@ class Sell extends ActiveRecord
         return [
             [['user_id'], 'integer'],
             [['creation_date'], 'required'],
+            ['status', 'in', 'range' => ['COMPLETE','INCOMPLETE']],
             [['creation_date'], 'safe']
         ];
     }

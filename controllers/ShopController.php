@@ -15,7 +15,9 @@ use yii\helpers\Url;
 use yz\shoppingcart\ShoppingCart;
 use app\models\CarShop;
 use app\models\User;
+use app\models\Sell;
 use app\models\Logs;
+use app\models\Detail;
 // http://www.chaide.com./test/shop/dreturn
 // http://www.chaide.com./test/shop/dcancel
 // http://www.chaide.com./test/shop/dpostprocess
@@ -68,21 +70,39 @@ class ShopController extends Controller
 	    list($p13, $TIPO) = split('[=]', $tipo); 
 	    $logs= New Logs();
 	    $logs->type="POSTPROCESS";
-	    $logs->description="TIPO:".$TIPO."DATOS:".$DATOS;
+	    $logs->description="TIPO:".$TIPO."DATOS:".$DATOS."AUT:".$AUT."CRE:".$CRE."MES:".$MES."TTAR:".$TTAR."SUB:".$SUB."IVA:".$IVA."ICE:".$ICE."INT:".$INT."TOTAL:".$TOT."TNO:".$TNO."CD:".$CD;
 	    $logs->save();
 		if ($TIPO == 'P') {
-		$user= User::findOne($DATOS);
-	    $email=  Yii::$app->mailer->compose('transaction', [
-    	'name' => $user->names,
-    	'aut' => $AUT,
-    	'total' =>$TOT/100
-    	])->setFrom('info@chaide.com')
-    	->setTo($user->username)
-    	->setSubject($model->names." "."tu transacción fue completada con éxito")
-    	->send();
-        if($email){
-   		echo 'ESTADO=OK';
-        }
+			//$user= User::findOne($DATOS);
+			$sell= Sell::findOne($DATOS);
+			$sell->status="COMPLETE";
+			$carshop=CarShop::find()->where(['user_id'=>$sell->user_id])->all();
+			if($sell->save()){
+				foreach($carshop as $item){
+					$detail= New Detail();
+					$detail->product_id=$item->product_id;
+					$detail->quantity=$item->quantity;
+					$detail->sell=$sell->id;
+					$detail->save();
+				}
+				$carshop->deleteAll();
+				
+			    $email=  Yii::$app->mailer->compose('transaction', [
+		    	'name' => $sell->user->names,
+		    	'aut' => $AUT,
+		    	'total' =>$TOT/100
+		    	])->setFrom('info@chaide.com')
+		    	->setTo($sell->user->username)
+		    	->setSubject($sell->user->names." "."tu transacción fue completada con éxito")
+		    	->send();
+		        if($email){
+		   		echo 'ESTADO=OK';
+		        }else{
+		        echo 'ESTADO=KO';	
+		        }
+		    }else{
+		    	echo 'ESTADO=KO';
+		    }
 		} else {
 		echo 'ESTADO=KO';
     }
@@ -94,6 +114,22 @@ class ShopController extends Controller
 			// $filePubKC = Yii::getAlias('@app')."/PUBLICA_CIFRADO_ESTABLECIMIENTO.pem"; 
 			// $filePriKC = Yii::getAlias('@app')."/PRIVADA_CIFRADO_ESTABLECIMIENTO.pem"; 
 			// $filePubKF = Yii::getAlias('@app')."/PUBLICA_FIRMA_ESTABLECIMIENTO.pem";
+	    foreach(Yii::$app->cart->positions as $position){
+    			$carshop= new CarShop();
+				$carshop->user_id=$pluginr->getReferencia1();
+          		$carshop->product_id=$position->id;
+          		$carshop->quantity=$position->quantity;
+          		try {
+          			$carshop->save();
+          		} catch (Exception $e) {
+          			
+          		}
+        }
+        	$sell=New Sell();
+        	$sell->user_id=Yii::$app->user->identity->id;
+        	$sell->status="INCOMPLETE";
+        	$sell->creation_date=date("Y-m-d H:i:s");
+        	$sell->save();
 	 		$filePriKF = Yii::getAlias('@app')."/PRIVADA_FIRMA_ESTABLECIMIENTO.pem";
 	 		$filePubCI =Yii::getAlias('@app')."/PUBLICA_CIFRADO_INTERDIN.pem";
 			$vector = "JbEFFDiOkRc=";
@@ -126,10 +162,10 @@ class ShopController extends Controller
 			$e = $plugin->setCurrencyID($moneda); 
 			if($e!= "")
 			echo "Error: $e";
-			$e = $plugin->setReferencia1(Yii::$app->user->id); 
+			$e = $plugin->setReferencia1($sell->primaryKey); 
 			if($e!= "")
 			echo "Error: $e";
-			$e = $plugin->setReferencia2(Yii::$app->user->id);
+			$e = $plugin->setReferencia2($sell->primaryKey);
 			if($e != "")
 			echo "Error: $e";
 			$e = $plugin->setReferencia3($_POST["txtReferencia3"]); 
@@ -209,13 +245,6 @@ class ShopController extends Controller
 		$value=$pluginr->getTransacctionValue();
 		$status=$pluginr->getAuthorizationState();
 		$auth=$pluginr->getAuthorizationCode();
-	    foreach(Yii::$app->cart->positions as $position){
-    			$carshop= new CarShop();
-				$carshop->user_id=$pluginr->getReferencia1();
-          		$carshop->product_id=$position->id;
-          		$carshop->save();
-        }
-
         Yii::$app->cart->removeAll();
 		return $this->render('response',['transactionID'=>$transactionID,'tax1'=>$tax1,'tax2'=>$tax2,'tip'=>$tip,'value'=>$value,'status'=>$status,'auth'=>$auth]);
 	}
