@@ -48,7 +48,15 @@ $this->title = 'Carrito de compras';
        <input type="hidden" name="txtReferencia3" value="0" />
        <input type="hidden" name="txtReferencia4" value="0" />
        <input type="hidden" name="txtReferencia5" value="0" />  
-
+		<div class="cont-fpago">
+        <h1>Seleccione su forma de pago</h1>
+        <ul>
+        	<li><input type="radio" /><img src="<?= URL::base() ?>/images/diners.png" /></li>
+            <li><input type="radio" /><img src="<?= URL::base() ?>/images/mastercard.png" /></li>
+            <li><input type="radio" /><img src="<?= URL::base() ?>/images/paypal.png" /></li>
+            <li><input type="radio" /><img src="<?= URL::base() ?>/images/visa.png" /></li>
+        </ul>             
+        </div>
         	<input type="submit" value="PAGAR AHORA"/>
             <?php ActiveForm::end(); ?>
         </div>
