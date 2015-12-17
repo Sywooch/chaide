@@ -1045,7 +1045,7 @@ footer{
 	height:17%;
 	top:0;
 	left:0;
-	z-index:100;
+	z-index:101;
 	background-image:url(../images/back-header.jpg);
 	background-repeat:no-repeat;
 	background-position:center bottom;
@@ -1218,6 +1218,7 @@ footer{
 	border:none;
 	margin:0.5% 0;
 	cursor:pointer;
+	clear:both;
 	}
 .cont-formulario input[type="submit"]:hover{
 	background-color:#1e1e1e;	
@@ -1649,8 +1650,9 @@ ul.publiciad-abj li{
 	position:relative;
 	}	
 .cont-maps iframe{
-	width:100%;
-	min-height:450px;
+	    width: 70%;
+    min-height: 450px;
+    margin: 0 0 0 30%;
 	}		
 .cont-l-locales{
 	width:28%;
@@ -2424,3 +2426,37 @@ ul.publiciad-abj li{
 	float:left;
 	text-align:center;
 	}
+/**/
+/**/
+.cont-fpago{
+	width:372px;
+	float:right;
+	clear:both;
+	}	
+.cont-fpago h1{
+	width:100%;
+	text-align:center;
+	float:left;
+	color:#FFF;
+	font-size:0.9em;
+	}	
+.cont-fpago ul{
+	width:100%;
+	float:left;
+	margin:3% 0 0 0;
+	padding:0;
+	background-color: #FFF;
+	}
+.cont-fpago ul li{
+	float:left;
+	padding:2px 5px;
+	list-style:none;
+	}
+.cont-fpago ul li input{
+	float:left;
+	margin: 10px 0 0 0;
+	}		
+.cont-fpago ul li img{
+	width:70px;
+	float:left;
+	}			
