@@ -226,7 +226,7 @@ class User extends ActiveRecord implements IdentityInterface
 
     public function getSells()
     {
-        return $this->hasMany(Sell::className(), ['user_id' => 'id']);
+        return $this->hasMany(Sell::className(), ['user_id' => 'id'])->orderBy(['id' => SORT_DESC]);;
     }
         public function getBillingAddresses()
     {

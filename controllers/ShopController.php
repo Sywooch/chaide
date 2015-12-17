@@ -46,7 +46,7 @@ class ShopController extends Controller
     
         ];
     }
-
+ 
     public function actionDpostprocess($xmlReq){
 		//Yii::app()->request->enableCsrfValidation = false;
     	$lsdata = $xmlReq;
@@ -89,7 +89,7 @@ class ShopController extends Controller
 				CarShop::deleteAll("user_id = $id");
 			    $email=  Yii::$app->mailer->compose('transaction', [
 		    	'name' => $user->names,
-		    	'aut' => $AUT,
+		    	'aut' => $sell->transactionid,
 		    	'total' =>$TOT/100
 		    	])->setFrom('info@chaide.com')
 		    	->setTo($user->username)
@@ -127,11 +127,6 @@ class ShopController extends Controller
           			
           		}
         }
-        	$sell=New Sell();
-        	$sell->user_id=Yii::$app->user->identity->id;
-        	$sell->status="INCOMPLETE";
-        	$sell->creation_date=date("Y-m-d H:i:s");
-        	$sell->save();
 	 		$filePriKF = Yii::getAlias('@app')."/PRIVADA_FIRMA_ESTABLECIMIENTO.pem";
 	 		$filePubCI =Yii::getAlias('@app')."/PUBLICA_CIFRADO_INTERDIN.pem";
 			$vector = "JbEFFDiOkRc=";
@@ -142,7 +137,13 @@ class ShopController extends Controller
 			$URL_Tecnico = Url::to("@web/shop/vpossend",true);
 			$ambiente = "pruebas";
 			$number=rand(1111111111,9999999999);
-			$random_key=Yii::$app->user->id+$number;
+			$random_key=Yii::$app->user->identity->id.$number;
+	       	$sell=New Sell();
+        	$sell->user_id=Yii::$app->user->identity->id;
+        	$sell->status="INCOMPLETE";
+        	$sell->creation_date=date("Y-m-d H:i:s");
+        	$sell->transactionid=$random_key;
+        	$sell->save();
 			$e = $plugin->setLocalID($LocalID);
 			if($e!= "")
 			echo "Error: $e";
@@ -247,9 +248,19 @@ class ShopController extends Controller
 		$value=$pluginr->getTransacctionValue()/100;
 		$status=$pluginr->getAuthorizationState();
 		$auth=$pluginr->getAuthorizationCode();
-		if($status=="Y")
+		$referencia1=$pluginr->getReferencia1();
+		$sell= Sell::findOne($referencia1);
+		$transactionid=$sell->transactionid;
+		if($status=="Y"){
+		$xml=simplexml_load_file("https://www3.optar.ec/webmpi/qvpos?RucEstab=1790241483001&NoTransaccion=$transactionid");
+		if($xml->TRANSACCION->RESULTADO=="OK"){
         Yii::$app->cart->removeAll();
-		return $this->render('response',['transactionID'=>$transactionID,'tax1'=>$tax1,'tax2'=>$tax2,'tip'=>$tip,'value'=>$value,'status'=>$status,'auth'=>$auth]);
+    	}else{
+    		$sell->status=="INCOMPLETE";
+    		$sell->save();
+    	}
+    	}
+		return $this->render('response',['transactionID'=>$transactionID,'tax1'=>$tax1,'tax2'=>$tax2,'tip'=>$tip,'value'=>$value,'status'=>$status,'auth'=>$auth,'xml'=>$xml]);
 	}
     public function actionIndex()
     {

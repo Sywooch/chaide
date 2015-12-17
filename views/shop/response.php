@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Url;
 $message="Felicidades ".Yii::$app->user->identity->names." tu compra ha sido realizada con éxito.";
-if($status=="N"){
+if($status=="N" || $xml->TRANSACCION->RESULTADO != "OK"){
 $message="La transacción no pudo completarse. Por favor intentanlo de nuevo más tarde.";
 }
 
@@ -18,12 +18,20 @@ $message="La transacción no pudo completarse. Por favor intentanlo de nuevo má
         <div class="valor-ex"><?= $transactionID ?></div>
       </div>
       <div class="cont-resc">
-      	<label>Impuesto 1</label>
+        <label>TARJETA</label>
+        <div class="valor-ex"><?= $xml->TRANSACCION->MARCA ?></div>
+      </div>
+        <div class="cont-resc">
+        <label>NÚMERO DE ORDEN</label>
+        <div class="valor-ex"><?= $xml->TRANSACCION->NUMORDEN ?></div>
+      </div>
+      <div class="cont-resc">
+      	<label>IVA</label>
         <div class="valor-ex"><?= $tax1 ?></div>
       </div>
       <div class="cont-resc">
-      	<label>Impuesto 2</label>
-        <div class="valor-ex"><?= $tax2 ?></div>
+      	<label>FECHA</label>
+        <div class="valor-ex"><?= $xml->TRANSACCION->FECHA ?></div>
       </div>
       <div class="cont-resc">
       	<label>Propina</label>
@@ -34,7 +42,7 @@ $message="La transacción no pudo completarse. Por favor intentanlo de nuevo má
         <div class="valor-ex"><?= $value;?></div>
       </div>
       <div class="cont-resc">
-      	<label>EST ADO</label>
+      	<label>ESTADO</label>
         <div class="valor-ex"><?= $status; ?></div>
       </div>
       <div class="cont-resc">

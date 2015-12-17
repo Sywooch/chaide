@@ -94,15 +94,14 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div id="cont-historialp" class="cont-infor">
             <div class="cont-infocamposf2">
-                <h1>HISTORIAL DE COMPRA</h1>
+                <h1>ORDEN # <?= $model->NUMORDEN ?></h1>
                 <div id="listado-compra">
-                    <?php foreach($model->sells as $sell): ?>
                     <div class="cont-infocampos">
-                        <div class="tit-compras">Compra #<?= $sell->id ?>- <?= $sell->creation_date ?>-<?= ($sell->status == 'COMPLETE' ? "COMPLETA" : "INCOMPLETA"); ?></div>
+                        <div class="tit-compras">Compra #<?= $sell->id ?>- <?= $sell->creation_date ?></div>
                         <a href="#" class="btn-vercompras">Ver Detalle</a>
-                         <a href="<?= Url::to(['user/consultsell','transaction'=>$sell->transactionid]) ?>" class="btn-vercompras">Ver Estado</a>
+                         <a href="<?= Url::to(['shop/consultsell','transaction'=>$sell->transactionid]) ?>" class="btn-vercompras">Ver Estado</a>
                     </div> 
-                    <?php  endforeach; ?>
+
                 </div> 
 <!--                 <div id="detalle-compra">
                     <div class="cont-infocampos">

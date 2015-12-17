@@ -20,11 +20,11 @@ class UserController extends Controller
         return [
         'access' => [
            'class' => AccessControl::className(),
-           'only' => ['index', 'update','findmodel'],
+           'only' => ['index', 'update','findmodel','consultsell'],
            'rules' => [
 
                [
-                   'actions' => ['index', 'update','findmodel'],
+                   'actions' => ['index', 'update','findmodel','consultsell'],
                    'allow' => true,
                    'roles' => ['@'],
                    // 'matchCallback' => function ($rule, $action) {
@@ -41,11 +41,16 @@ class UserController extends Controller
      * Lists all User models.
      * @return mixed
      */
+       public function actionConsultsell($transaction){
+
+        $xml=simplexml_load_file("https://www3.optar.ec/webmpi/qvpos?RucEstab=1790241483001&NoTransaccion=$transaction");
+        return $this->render('consult',['model'=>$xml]);
+            
+    }
     public function actionIndex()
     {
         $id=Yii::$app->user->identity->id;
         $model = $this->findModel($id);
-
         return $this->render('index', [
             'model' => $model,
         ]);
