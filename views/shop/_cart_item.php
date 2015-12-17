@@ -10,6 +10,6 @@ use yii\helpers\Url;
             </div>
             <div class="cont-cant"><?= $position->quantity ?></div>
             <div class="cont-valor">$<?= $position->price ?></div>
-            <div class="cont-valor">$<?= $position->price*$position->quantity ?><div class="erase-product"><a href="#"><img src="<?= URL::base() ?>/images/btn-cerrar.svg"/></a></div></div>
+            <div class="cont-valor">$<?= $position->price*$position->quantity ?><div class="erase-product"><a href="<?= Url::to(['shop/removefromcart','id'=>$position->id]) ?>"><img src="<?= URL::base() ?>/images/btn-cerrar.svg"/></a></div></div>
             
         </div>

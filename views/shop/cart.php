@@ -40,7 +40,7 @@ $this->title = 'Carrito de compras';
             <div class="cont-valor c-gris">$<?= Yii::$app->cart->getCost() ?></div>
 		</div>
       <input type="hidden" name="Subtotal" value="<?= Yii::$app->cart->getCost() ?>" />
-      <input type="hidden" name="impuesto1" value="1.12" />
+      <input type="hidden" name="impuesto1" value="<?= Yii::$app->cart->getCost()*0.12 ?>" />
       <input type="hidden" name="impuesto2" value="0" />
       <input type="hidden" name="propina" value="0" />
        <input type="hidden" name="txtReferencia1" value="0" />

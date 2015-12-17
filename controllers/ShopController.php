@@ -73,8 +73,9 @@ class ShopController extends Controller
 	    $logs->description="TIPO:".$TIPO."DATOS:".$DATOS."AUT:".$AUT."CRE:".$CRE."MES:".$MES."TTAR:".$TTAR."SUB:".$SUB."IVA:".$IVA."ICE:".$ICE."INT:".$INT."TOTAL:".$TOT."TNO:".$TNO."CD:".$CD;
 	    $logs->save();
 		if ($TIPO == 'P') {
-			//$user= User::findOne($DATOS);
 			$sell= Sell::findOne($DATOS);
+			$user= User::findOne($sell->user_id);
+			$id=$user->id;
 			$sell->status="COMPLETE";
 			$carshop=CarShop::find()->where(['user_id'=>$sell->user_id])->all();
 			if($sell->save()){
@@ -82,18 +83,17 @@ class ShopController extends Controller
 					$detail= New Detail();
 					$detail->product_id=$item->product_id;
 					$detail->quantity=$item->quantity;
-					$detail->sell=$sell->id;
+					$detail->sell_id=$DATOS;
 					$detail->save();
 				}
-				$carshop->deleteAll();
-				
+				CarShop::deleteAll("user_id = $id");
 			    $email=  Yii::$app->mailer->compose('transaction', [
-		    	'name' => $sell->user->names,
+		    	'name' => $user->names,
 		    	'aut' => $AUT,
 		    	'total' =>$TOT/100
 		    	])->setFrom('info@chaide.com')
-		    	->setTo($sell->user->username)
-		    	->setSubject($sell->user->names." "."tu transacción fue completada con éxito")
+		    	->setTo($user->username)
+		    	->setSubject($user->names." "."tu transacción fue completada con éxito")
 		    	->send();
 		        if($email){
 		   		echo 'ESTADO=OK';
@@ -114,9 +114,11 @@ class ShopController extends Controller
 			// $filePubKC = Yii::getAlias('@app')."/PUBLICA_CIFRADO_ESTABLECIMIENTO.pem"; 
 			// $filePriKC = Yii::getAlias('@app')."/PRIVADA_CIFRADO_ESTABLECIMIENTO.pem"; 
 			// $filePubKF = Yii::getAlias('@app')."/PUBLICA_FIRMA_ESTABLECIMIENTO.pem";
+		$id=Yii::$app->user->identity->id;
+		CarShop::deleteAll("user_id = $id");
 	    foreach(Yii::$app->cart->positions as $position){
     			$carshop= new CarShop();
-				$carshop->user_id=$pluginr->getReferencia1();
+				$carshop->user_id=Yii::$app->user->identity->id;
           		$carshop->product_id=$position->id;
           		$carshop->quantity=$position->quantity;
           		try {
@@ -239,12 +241,13 @@ class ShopController extends Controller
 		$msg = "<b>Los datos no han sido alterados.</b><br>";
 		}
 		$transactionID=$pluginr->getTransacctionID();
-		$tax1=$pluginr->getTaxValue1();
-		$tax2=$pluginr->getTaxValue2();
+		$tax1=$pluginr->getTaxValue1()/100;
+		$tax2=$pluginr->getTaxValue2()/100;
 		$tip=$pluginr->getTipValue();
-		$value=$pluginr->getTransacctionValue();
+		$value=$pluginr->getTransacctionValue()/100;
 		$status=$pluginr->getAuthorizationState();
 		$auth=$pluginr->getAuthorizationCode();
+		if($status=="Y")
         Yii::$app->cart->removeAll();
 		return $this->render('response',['transactionID'=>$transactionID,'tax1'=>$tax1,'tax2'=>$tax2,'tip'=>$tip,'value'=>$value,'status'=>$status,'auth'=>$auth]);
 	}

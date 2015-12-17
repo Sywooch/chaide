@@ -57,7 +57,7 @@ AppAsset::register($this);
         <nav>
             <ul>
                  <li class="m-menu"><a href="<?= Url::to(['site/asesor']) ?>" class="hvr-bounce-to-top">ASESOR DE COMPRAS</a></li>
-                                <li class="m-menu"><a href="<?= Url::to(['line/index']) ?>" class="hvr-bounce-to-top">PRODUCTOS</a>
+                                <li class="m-menu"><a href="#" class="hvr-bounce-to-top">PRODUCTOS</a>
                     <!-- -->
                     <ul id="submenu-chaide">
                         <?php foreach($lines as $line): ?>
@@ -107,7 +107,7 @@ AppAsset::register($this);
                 <h2><?= mb_strtoupper($city->description) ?></h2>
                 <ul>
                     <?php foreach($city->locales as $locale): ?>
-                    <li><a href="#"><?= $locale->address ?></a></li>
+                    <li><a href="<?= Url::to(['locale/index']) ?>"><?= $locale->address ?></a></li>
                     <?php endforeach; ?>               
                 </ul>
                 <?php break; 

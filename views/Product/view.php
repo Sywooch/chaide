@@ -3,9 +3,22 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 use yii\helpers\Url;
+use app\assets\AppAsset;
+use yii\web\View;
 /* @var $this yii\web\View */
 /* @var $model app\models\Product */
-
+$script='$("#play").click(function(){
+        $("#video-colchon-interna").get(0).play();  
+        $("#play").fadeOut();
+        $("#stop").show();
+    });
+$("#stop").click(function(){
+        $("#stop").hide();
+        $("#video-colchon-interna").get(0).pause(); 
+        $("#play").fadeIn();
+    });'; 
+$this->registerJs($script,View::POS_END);
+AppAsset::register($this);
 $this->title = $model->title;
 ?>
 <!-- -->
@@ -53,7 +66,7 @@ $this->title = $model->title;
                 </select>
             </div>
             <?php }  ?>
-            <div class="cont-fcompra">
+<!--             <div class="cont-fcompra">
             <span>Cantidad:</span>
                 <select>
                     <option>1</option>
@@ -61,7 +74,7 @@ $this->title = $model->title;
                     <option>3</option>
                     <option>4</option>
                 </select>
-            </div>
+            </div> -->
         </div>
         <div class="cont-precio">
             <div class="precio-colchon">$<?= $model->price ?><br/><span>(No incluye IVA)</span></div>
