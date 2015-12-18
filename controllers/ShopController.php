@@ -18,6 +18,7 @@ use app\models\User;
 use app\models\Sell;
 use app\models\Logs;
 use app\models\Detail;
+use app\models\DinersTransaction;
 // http://www.chaide.com./test/shop/dreturn
 // http://www.chaide.com./test/shop/dcancel
 // http://www.chaide.com./test/shop/dpostprocess
@@ -71,6 +72,7 @@ class ShopController extends Controller
 	    $logs= New Logs();
 	    $logs->type="POSTPROCESS";
 	    $logs->description="TIPO:".$TIPO."DATOS:".$DATOS."AUT:".$AUT."CRE:".$CRE."MES:".$MES."TTAR:".$TTAR."SUB:".$SUB."IVA:".$IVA."ICE:".$ICE."INT:".$INT."TOTAL:".$TOT."TNO:".$TNO."CD:".$CD;
+	    $logs->creation_date=date("Y-m-d H:i:s");
 	    $logs->save();
 		if ($TIPO == 'P') {
 			$sell= Sell::findOne($DATOS);
@@ -87,6 +89,24 @@ class ShopController extends Controller
 					$detail->save();
 				}
 				CarShop::deleteAll("user_id = $id");
+				$dinerstransaction=new DinersTransaction();
+			    $dinerstransaction->fecha=date("Ymd");
+		      	$dinerstransaction->hora=date("His");
+			    $dinerstransaction->orden=$TNO;
+			    $dinerstransaction->marca=$TTAR;
+			    $dinerstransaction->subtotal=$SUB/100;
+			    $dinerstransaction->iva=strval($IVA/100);
+			    $dinerstransaction->impuesto="0.00";
+			    $dinerstransaction->interes="0.00";
+			    $dinerstransaction->total=strval($TOT/100);
+			    $dinerstransaction->autorizacion=$AUT;
+			    $dinerstransaction->ruc="1790241483001";
+			    $dinerstransaction->credito=$CRE;
+			    $dinerstransaction->meses=$MES;
+			    $dinerstransaction->estado=$TIPO;
+			    $dinerstransaction->conciliado="";
+			    $dinerstransaction->extra="n/a";
+			    $dinerstransaction->save();
 			    $email=  Yii::$app->mailer->compose('transaction', [
 		    	'name' => $user->names,
 		    	'aut' => $sell->transactionid,
