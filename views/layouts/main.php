@@ -18,6 +18,11 @@ $("#menu-chaide").click(function(){
         $("#menu-mobile").toggleClass("menu-active");
         $("#general").toggleClass("general-active");
     });  
+   $(".btn-cerrarw").click(function(){
+       $(".flash_message_warning").fadeOut();
+       $(".flash_message_success").fadeOut();
+       
+       });
 });';
 $this->registerJs($script,View::POS_END);
 AppAsset::register($this);
@@ -36,7 +41,8 @@ AppAsset::register($this);
 
 <?php $this->beginBody() ?>
 <div id="general">
-<!-- MENU CHAIDE -->
+	<!-- -->
+
     <div id="cont-iniciarsesion">
                 <?php if(Yii::$app->user->isGuest){ ?>
                 <a href="<?= Url::to(['site/login']) ?>">Iniciar Sesión</a>
@@ -44,7 +50,9 @@ AppAsset::register($this);
                 <a href="<?= Url::to(['user/index']) ?>"><?= Yii::$app->user->identity->names ?></a> / <a href="<?= Url::to(['site/logout']) ?>">Cerrar Sesión</a>
                 <?php } ?>
     </div>
-<div class="header-int">
+
+    <!-- -->
+<!-- MENU CHAIDE -->
     <header>
         <nav>
             <ul>
@@ -68,17 +76,16 @@ AppAsset::register($this);
                 </li>
                 <li class="m-menu"><a href="<?= Url::to(['locale/index']) ?>" class="hvr-bounce-to-top">LOCALES</a></li>
                 <li><a href="<?= Url::home() ?>"><img src="<?= URL::base() ?>/images/logo-chaide.svg" alt="logotipo chaide"/></a></li>
-              <li class="m-menu"><a href="<?= Url::to(['article/index','type'=>'news']) ?>" class="hvr-bounce-to-top">NOTICIAS</a></li>
+                <li class="m-menu"><a href="<?= Url::to(['article/index','type'=>'news']) ?>" class="hvr-bounce-to-top">NOTICIAS</a></li>
                 <li class="m-menu"><a href="<?= Url::to(['article/index','type'=>'innovation']) ?>" class="hvr-bounce-to-top">INNOVACIÓN</a></li>
                 <li class="m-menu"><a href="<?= Url::to(['shop/viewcart']) ?>" class="hvr-bounce-to-top"><!-- <img src="<?= URL::base() ?>/images/ico-compras.svg"/> --> COMPRAS</a><?php if(count(Yii::$app->cart->positions)>0){ ?> <div class="shop-number"><?=  Yii::$app->cart->getCount() ?></div><?php } ?></li>
-
+          
             </ul>
             <div id="barra-mobile">
                 <a id="menu-chaide"><span></span></a>
             </div>
         </nav>
     </header>
-</div>
             <?= $content ?>
 
 <footer>
@@ -87,7 +94,7 @@ AppAsset::register($this);
             <h1>COMPRA</h1>
             <h2>NUESTROS PRODUCTOS</h2>  
             <ul>
-               <?php foreach($lines as $line): ?>
+                <?php foreach($lines as $line): ?>
                 <li><a href="<?= Url::to(['line/view','id'=>$line->id,'#'=>strtoupper($line->description)]) ?>"><?= mb_strtoupper($line->description) ?></a></li>
                 <?php endforeach; ?>
             </ul>  
@@ -121,7 +128,7 @@ AppAsset::register($this);
             <h1>CONOCE</h1>
             <h2>SERVICIOS ON-LINE</h2> 
             <ul>
-                <li><a href="<?= Url::to(['site/faqs']) ?>">Faq's</a></li>
+                <li><a href="<?= Url::to(['site/about']) ?>">Faq's</a></li>
                 <li><a href="#">Trabaja con Nosotros</a></li>
                 <li><a href="#">B2B</a></li>
                 <li><a href="#">Intranet</a></li>
