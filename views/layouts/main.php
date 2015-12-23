@@ -129,10 +129,10 @@ AppAsset::register($this);
             <h2>SERVICIOS ON-LINE</h2> 
             <ul>
                 <li><a href="<?= Url::to(['site/about']) ?>">Faq's</a></li>
-                <li><a href="#">Trabaja con Nosotros</a></li>
-                <li><a href="#">B2B</a></li>
-                <li><a href="#">Intranet</a></li>
-                <li><a href="#">Proveedores</a></li>
+                <li><a href="http://chaideychaide.bumeran.com.ec/" target="_blank">Trabaja con Nosotros</a></li>
+                <li><a href="http://190.95.226.106/b2b/logging.php" target="_blank">B2B</a></li>
+                <li><a href="http://190.95.226.106:8050/hr_web/default.aspx" target="_blank">Intranet</a></li>
+                <li><a href="http://190.95.226.106:8050/proveedor/login.aspx" target="_blank">Proveedores</a></li>
             </ul>
             <h1 class="h1-footer">NOSOTROS</h1> 
             <ul class="n-footer">
