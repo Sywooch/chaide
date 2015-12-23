@@ -121,7 +121,7 @@ AppAsset::register($this);
             <h1>CONOCE</h1>
             <h2>SERVICIOS ON-LINE</h2> 
             <ul>
-                <li><a href="#">Faq's</a></li>
+                <li><a href="<?= Url::to(['site/faqs']) ?>">Faq's</a></li>
                 <li><a href="#">Trabaja con Nosotros</a></li>
                 <li><a href="#">B2B</a></li>
                 <li><a href="#">Intranet</a></li>
