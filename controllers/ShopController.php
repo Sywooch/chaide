@@ -94,7 +94,7 @@ class ShopController extends Controller
 		      	$dinerstransaction->hora=date("His");
 			    $dinerstransaction->orden=$TNO;
 			    $dinerstransaction->marca=$TTAR;
-			    $dinerstransaction->subtotal=$SUB/100;
+			    $dinerstransaction->subtotal=strval($SUB/100);
 			    $dinerstransaction->iva=strval($IVA/100);
 			    $dinerstransaction->impuesto="0.00";
 			    $dinerstransaction->interes="0.00";
