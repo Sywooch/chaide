@@ -163,7 +163,7 @@ AppAsset::register($this);
         <li><a href="<?= Url::to(['news/index']) ?>">NOTICIAS</a></li>
         <li><a href="<?= Url::to(['locale/index']) ?>">LOCALES</a></li>
         <li><a href="#">INNOVACIÓN</a></li>
-        <li><a href="registro.html">COMPRAS</a></li>
+        <li><a <a href="<?= Url::to(['shop/viewcart']) ?>">COMPRAS</a></li>
    </ul>
 </div>
 <?php $this->endBody() ?>
