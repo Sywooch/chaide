@@ -23,6 +23,21 @@ class ArticleController extends Controller
                     'delete' => ['post'],
                 ],
             ],
+                    'access' => [
+           'class' => AccessControl::className(),
+           'only' => ['index', 'view', 'create', 'update','delete'],
+           'rules' => [
+
+               [
+                   'actions' => ['index', 'view', 'create', 'update','delete'],
+                   'allow' => true,
+                   'roles' => ['@'],
+                   'matchCallback' => function ($rule, $action) {
+                       return User::isUserAdmin(Yii::$app->user->identity->username);
+                   }
+               ],
+           ],
+       ],
         ];
     }
 
