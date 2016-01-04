@@ -223,17 +223,7 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
-        public static function isUserAdmin($username)
-    {
-      if (static::findOne(['username' => $username, 'type' => 'ADMIN'])){
- 
-             return true;
-      } else {
- 
-             return false;
-      }
- 
-    }
+
     public function getSells()
     {
         return $this->hasMany(Sell::className(), ['user_id' => 'id'])->orderBy(['id' => SORT_DESC]);;

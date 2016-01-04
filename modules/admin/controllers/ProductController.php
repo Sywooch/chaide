@@ -47,6 +47,7 @@ class ProductController extends Controller
      */
     public function actionIndex()
     {
+
         $dataProvider = new ActiveDataProvider([
             'query' => Product::find(),
         ]);

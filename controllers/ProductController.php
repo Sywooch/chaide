@@ -8,6 +8,8 @@ use app\models\ProductSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\Request;
+use yii\web\Cookie;
 
 /**
  * ProductController implements the CRUD actions for Product model.
@@ -30,15 +32,11 @@ class ProductController extends Controller
      * Lists all Product models.
      * @return mixed
      */
-    public function actionIndex()
+    public function actionTest()
     {
-        $searchModel = new ProductSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+        $request= New Request;
+        $request->getUserip();
+        
     }
 
     /**
@@ -48,6 +46,11 @@ class ProductController extends Controller
      */
     public function actionView($id)
     {
+        $newCookie= new Cookie();
+        $newCookie->name='product';
+        $newCookie->value=$id;
+        $newCookie->expire = time() + 60 * 60 * 24 * 180;
+        $cookie=Yii::$app->getResponse()->getCookies()->add($newCookie); 
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);

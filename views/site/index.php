@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Url;
+use app\models\Product;
 /* @var $this yii\web\View */
 $this->title = 'Chaide';
 $message="";
@@ -17,7 +18,25 @@ $message="";
 </div>
     <?php } ?>
 
-<!-- -->
+
+<?php 
+if(Yii::$app->getRequest()->getCookies()->has('product')){
+    $id=Yii::$app->getRequest()->getCookies()->getValue('product');
+    $product_i=Product::findOne($id);
+?>
+<section id="home-chaide" class="background-home" style="background-image:url('<?= URL::base() ?>/images/productos-interna/<?= $product_i->background1 ?>')">
+    <div class="inf-home">
+        <div class="borde-externo">
+        <span><?= $product_i->description ?><br/>
+        </span>
+        </div>
+        <a href="<?= URl::to(['product/view','id'=>$id,'#'=>$product_i->title]) ?>"><div class="btn-comprara">Comprar ahora</div></a>
+    </div>
+</section>
+ 
+<?php 
+}else{
+?>
 <section id="home-chaide" class="background-home">
     <div class="inf-home">
         <div class="borde-externo">
@@ -27,6 +46,9 @@ $message="";
         <a href="<?= URl::to(['line/view','id'=>'1','#'=>'LÍNEA RESTONIC']) ?>"><div class="btn-comprara">Comprar ahora</div></a>
     </div>
 </section>
+<?php 
+}
+?>
 <!-- -->
     <div class="footter-home">
         <ul>
