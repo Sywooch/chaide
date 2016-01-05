@@ -8,7 +8,8 @@ use app\models\LineSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use yii\web\Request;
+use yii\web\Cookie;
 /**
  * LineController implements the CRUD actions for Line model.
  */
@@ -48,6 +49,11 @@ class LineController extends Controller
      */
     public function actionView($id)
     {
+        $newCookie= new Cookie();
+        $newCookie->name='line';
+        $newCookie->value=$id;
+        $newCookie->expire = time() + 60 * 60 * 24 * 180;
+        $cookie=Yii::$app->getResponse()->getCookies()->add($newCookie); 
         $this->layout = 'main2';
         return $this->render('view', [
             'model' => $this->findModel($id),

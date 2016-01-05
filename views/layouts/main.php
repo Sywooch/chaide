@@ -62,12 +62,12 @@ AppAsset::register($this);
                     <ul id="submenu-chaide">
                         <?php foreach($lines as $line): ?>
                         <li>
-                            <a href="<?= Url::to(['line/view','id'=>$line->id,'#'=>strtoupper($line->description)]) ?>" class="hvr-bounce-to-top"><?= mb_strtoupper($line->description) ?></a>
+                            <a href="<?= Url::to(['line/view','id'=>$line->id,'#'=>strtoupper($line->title)]) ?>" class="hvr-bounce-to-top"><?= mb_strtoupper($line->title) ?></a>
                             <ul id="productos-submenu">
                                 <?php foreach($line->products as $k => $product): ?>
                                     <li><a href="<?= Url::to(['product/view','id'=>$product->id,'#'=>strtoupper($product->title)]) ?>"><?= $product->title ?></a></li>
                                 <?php endforeach; ?>
-                                <!--<li><a href="<?= Url::to(['line/view','id'=>$line->id,'#'=>strtoupper($line->description)]) ?>" class="btn-vermas-m">Ver más +</a></li>-->
+                                <!--<li><a href="<?= Url::to(['line/view','id'=>$line->id,'#'=>strtoupper($line->title)]) ?>" class="btn-vermas-m">Ver más +</a></li>-->
                             </ul>
                         </li>
                     <?php endforeach; ?>
@@ -95,7 +95,7 @@ AppAsset::register($this);
             <h2>NUESTROS PRODUCTOS</h2>  
             <ul>
                 <?php foreach($lines as $line): ?>
-                <li><a href="<?= Url::to(['line/view','id'=>$line->id,'#'=>strtoupper($line->description)]) ?>"><?= mb_strtoupper($line->description) ?></a></li>
+                <li><a href="<?= Url::to(['line/view','id'=>$line->id,'#'=>strtoupper($line->title)]) ?>"><?= mb_strtoupper($line->title) ?></a></li>
                 <?php endforeach; ?>
             </ul>  
         </div>

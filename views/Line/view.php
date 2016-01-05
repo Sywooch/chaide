@@ -8,11 +8,11 @@ use yii\helpers\Url;
 /* @var $searchModel app\models\ProductSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = $model->description;
+$this->title = $model->title;
 ?>
 <section class="cont-paginternas productos">
     <div class="secciones-productos">
-        <div class="tit-productos"><?= $model->description ?></div>
+        <div class="tit-productos"><?= $model->title ?></div>
         <h2>Desde <strong>$776.92</strong> (No incluye IVA)</h2>
         <ul>
             <?php foreach($model->products as $product): ?>
