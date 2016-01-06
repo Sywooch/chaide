@@ -62,3 +62,65 @@ $this->title = 'Carrito de compras';
         </div>
     
 </section>
+<!-- ARTICULOS RELACIONADOS -->
+	<div class="footter-home">
+   	 	<ul>
+    		<li>
+            	<img src="<?= URL::base() ?>/images/ico-tiempo.svg" alt="ahorre tiempo"/>
+                <div class="txt-informativo">
+                	<h1>AHORRE SU TIEMPO</h1>
+                    <span>Realice su compra por internet</span>
+                </div>
+            </li>
+        	<li class="li-medium">
+            	<img src="<?= URL::base() ?>/images/ico-geotrust.svg" alt="geotrust"/>
+                <div class="txt-informativo-medium">
+                	<h1>GEOTRUST</h1>
+                    <span>Compra 100% segura</span>
+                </div>
+            </li>
+        	<li>
+            	<img src="<?= URL::base() ?>/images/ico-envio.svg" alt="envio gratis"/>
+                <div class="txt-informativo">
+                	<h1>ENVÍO GRATIS</h1>
+                    <span>En facturas superiores a $200</span>
+                </div>
+            </li>
+     	</ul>
+	</div>
+<!-- -->
+<section class="cont-secciones">
+	<h1>COMPLETA TU COMPRA</h1>
+    <p>Con esta gran variedad de productos que Chaide te ofrece</p>
+    <ul>
+        	<li>
+            	<a href="colchon-interna.html"><img src="<?= URL::base() ?>/images/productos/colchon1.png" alt="productos chaide"/><h1>CARRESA</h1><h2>Desde <strong>$776.92</strong> (No incluye IVA)</h2></a>
+                <a href="#" class="link-comprar">Comprar</a>
+                <div class="c-comparar">
+                	<input type="checkbox" /><label>Comparar</label>
+                </div>
+            </li>
+            <li>
+            	<img src="<?= URL::base() ?>/images/productos/sabanas.png" alt="productos chaide"/><h1>SÁBANAS FIORE</h1><h2>Desde <strong>$776.92</strong> (No incluye IVA)</h2>
+                <a href="#" class="link-comprar">Comprar</a>
+                <div class="c-comparar">
+                	<input type="checkbox" /><label>Comparar</label>
+                </div>
+            </li>
+            <li>
+            	<img src="<?= URL::base() ?>/images/productos/almohada.png" alt="productos chaide"/><h1>ALMOHADA MEMORY FOAM</h1><h2>Desde <strong>$776.92</strong> (No incluye IVA)</h2>
+                <a href="#" class="link-comprar">Comprar</a>
+                <div class="c-comparar">
+                	<input type="checkbox" /><label>Comparar</label>
+                </div>
+            </li>
+            <li>
+            	<img src="<?= URL::base() ?>/images/productos/legs.png" alt="productos chaide"/><h1>LEGS</h1><h2>Desde <strong>$776.92</strong> (No incluye IVA)</h2>
+                <a href="#" class="link-comprar">Comprar</a>
+                <div class="c-comparar">
+                	<input type="checkbox" /><label>Comparar</label>
+                </div>
+            </li>
+    </ul>         
+</section>
+<!-- -->
