@@ -9,6 +9,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ForgotForm;
 use app\models\ContactForm;
+use app\models\ResetForm;
 use app\models\Product;
 use app\models\Line;
 use app\models\User;
@@ -97,14 +98,14 @@ class SiteController extends Controller
             ->setSubject($user->names." "."Resetea tu cuenta en chaide")
             ->send();
                     if($email){
-                        Yii::$app->getSession()->setFlash('success_reset','No te olvides de revisar en la bandeja de spam.');
+                        Yii::$app->getSession()->setFlash('success','No te olvides de revisar en la bandeja de spam.');
                     }
                     else{
-                        Yii::$app->getSession()->setFlash('warning_reset','Un error ha ocurrido por favor contactate con soporte técnico.');
+                        Yii::$app->getSession()->setFlash('warning','Un error ha ocurrido por favor contactate con soporte técnico.');
                     }
                     return $this->goHome();
             }else{
-              Yii::$app->getSession()->setFlash('warning_reset','Un error ha ocurrido por favor contactate con soporte técnico.');  
+              Yii::$app->getSession()->setFlash('warning','Un error ha ocurrido por favor contactate con soporte técnico.');  
               return $this->goHome();
             }
            
@@ -115,12 +116,25 @@ class SiteController extends Controller
 
 }
 public function actionReset($token){
-    $model= User::findByPasswordResetToken($token);
-    if($model){
-     die("todo bien");
-    }else{
-        die("error");
+    $user= User::findByPasswordResetToken($token);
+     $model= New ResetForm;
+    if ($model->load(Yii::$app->request->post())) {
+        if($user){
+            $user->removePasswordResetToken();
+            $user->password=md5($model->password);
+            $user->save();
+         Yii::$app->getSession()->setFlash('success','Su password ha sido cambiado con éxito.');
+           return $this->goHome(); 
+
+        }else{   
+           Yii::$app->getSession()->setFlash('warning','El token de seguridad es inválido o ya ha expirado.');
+           return $this->goHome(); 
+        }
     }
+     return $this->render('reset', [
+        'model' => $model,
+        ]);
+
 }
 
     public function actionRegister(){
