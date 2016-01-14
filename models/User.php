@@ -9,6 +9,7 @@ use yii\base\Security;
 use yii\web\IdentityInterface;
 use yii\behaviors\TimestampBehavior;
 use yii\db\Expression;
+use yii\models\Token;
 /**
  * This is the model class for table "user".
  *
@@ -103,9 +104,9 @@ class User extends ActiveRecord implements IdentityInterface
 
          if (parent::beforeSave($insert)) {
             if ($this->isNewRecord) {
-                    if(isset($this->password)) 
-                    $this->password = $this->hashPassword($this->password);
                 $this->auth_key = \Yii::$app->security->generateRandomString();
+                  if(isset($this->password)) 
+                    $this->password = $this->hashPassword($this->password);
             }
         }
         return parent::beforeSave($insert);
@@ -152,11 +153,10 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findByPasswordResetToken($token)
     {
-        $expire = Yii::$app->params['user.passwordResetTokenExpire'];
+        $expire = (1 * 4 * 60 * 60);
         $parts = explode('_', $token);
         $timestamp = (int) end($parts);
         if ($timestamp + $expire < time()) {
-            // token expired
             return null;
         }
 
@@ -194,13 +194,13 @@ class User extends ActiveRecord implements IdentityInterface
     }
         public function validatePassword($password)
     {
-         return Yii::$app->getSecurity()->validatePassword($password, $this->password);
+         return $this->password === md5($password);
     }
 
     public function hashPassword($password){
 
         //return hash('sha256',$password);
-        return Yii::$app->getSecurity()->generatePasswordHash($password);
+        return md5($password);
     }
     
     public function generateAuthKey()
@@ -213,7 +213,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function generatePasswordResetToken()
     {
-        $this->password_reset_token = Yii::$app->getSecurity()->generateRandomKey() . '_' . time();
+        $this->password_reset_token = \Yii::$app->getSecurity()->generateRandomString() . '_' . time();
     }
 
     /**

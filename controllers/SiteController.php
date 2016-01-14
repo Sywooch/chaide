@@ -7,6 +7,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
+use app\models\ForgotForm;
 use app\models\ContactForm;
 use app\models\Product;
 use app\models\Line;
@@ -49,7 +50,10 @@ class SiteController extends Controller
         ],
         ];
     }
-
+    public function actionTest(){
+        $posts = Yii::$app->db3->createCommand('SELECT * FROM post')
+            ->queryAll();
+    }
     public function actionIndex()
     {
 
@@ -71,6 +75,51 @@ class SiteController extends Controller
         return $this->render('login', [
             'model' => $model,
             ]);
+    }
+}
+   public function actionForgot()
+   {
+
+          
+          if (!\Yii::$app->user->isGuest) {
+        return $this->goHome();
+    }
+       $model = new ForgotForm();
+           if ($model->load(Yii::$app->request->post()) && $model->find()) {
+            $user=$model->find();
+            $user->generatePasswordResetToken();
+            if($user->save()){
+              $email=  Yii::$app->mailer->compose('reset', [
+            'names' => $user->names,
+            'url' => Yii::$app->urlManager->createAbsoluteUrl(['site/reset','token'=>$user->password_reset_token])
+            ])->setFrom('info@chaide.com')
+            ->setTo($user->username)
+            ->setSubject($user->names." "."Resetea tu cuenta en chaide")
+            ->send();
+                    if($email){
+                        Yii::$app->getSession()->setFlash('success_reset','No te olvides de revisar en la bandeja de spam.');
+                    }
+                    else{
+                        Yii::$app->getSession()->setFlash('warning_reset','Un error ha ocurrido por favor contactate con soporte técnico.');
+                    }
+                    return $this->goHome();
+            }else{
+              Yii::$app->getSession()->setFlash('warning_reset','Un error ha ocurrido por favor contactate con soporte técnico.');  
+              return $this->goHome();
+            }
+           
+    }
+        return $this->render('forgot', [
+            'model' => $model,
+            ]);
+
+}
+public function actionReset($token){
+    $model= User::findByPasswordResetToken($token);
+    if($model){
+     die("todo bien");
+    }else{
+        die("error");
     }
 }
 

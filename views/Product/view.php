@@ -44,7 +44,6 @@ $this->title = $model->title;
                 </ul>
                 <?php } ?>
             </div>
-            <form action="carrito.html">
          
             <div class="cont-fcompra">
                 <span>Medidas Disponibles:</span>
