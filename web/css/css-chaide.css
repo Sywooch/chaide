@@ -2441,7 +2441,7 @@ ul.publiciad-abj li{
 	}	
 .cont-fpago h1{
 	width:100%;
-	text-align:center;
+	text-align:right;
 	float:left;
 	color:#FFF;
 	font-size:0.9em;
@@ -2466,3 +2466,14 @@ ul.publiciad-abj li{
 	width:70px;
 	float:left;
 	}			
+/**/
+.btn-pago{
+	width:150px;
+	float:right;
+	padding:0 2px;
+	background:rgba(0,0,0,0.2);
+	margin:0 2px;
+	}	
+.btn-pago:hover{
+	background:rgba(0,0,0,0.4);
+	}	

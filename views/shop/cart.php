@@ -64,8 +64,9 @@ AppAsset::register($this);
 		<div class="cont-fpago">
         <h1>Pagar Con:</h1>
        
-        	<a id="interdin" href="#"><img  src="<?= URL::base() ?>/images/tarjetas-05.png" /></a>
-            <a id="pacificard" href="#"><img  src="<?= URL::base() ?>/images/tarjetas-06.png" /></a>
+        	<a id="interdin" href="#" class="btn-pago"><img  src="<?= URL::base() ?>/images/tarjetas-05.png" /></a>
+            
+            <a id="pacificard" href="#" class="btn-pago"><img  src="<?= URL::base() ?>/images/tarjetas-06.png" /></a>
         
                
         </div>
