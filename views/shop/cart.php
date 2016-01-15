@@ -1,7 +1,20 @@
 <?php 
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
+use app\assets\AppAsset;
+use yii\web\View;
 $this->title = 'Carrito de compras';
+$script='$(document).ready(function() {
+    $("#interdin").on("click", function(e){
+$("form").attr("action", "vpossend").submit();
+});
+    $("#pacificard").on("click", function(e){
+$("form").attr("action", "vpossend2").submit();
+});
+});
+';
+$this->registerJs($script,View::POS_END);
+AppAsset::register($this);
 ?>
 <?php if(Yii::$app->getSession()->getFlash('warning')){ ?>
 <div class="flash_message_success">
@@ -49,15 +62,14 @@ $this->title = 'Carrito de compras';
        <input type="hidden" name="txtReferencia4" value="0" />
        <input type="hidden" name="txtReferencia5" value="0" />  
 		<div class="cont-fpago">
-        <h1>Seleccione su forma de pago</h1>
-        <ul>
-        	<li><input type="radio" /><img src="<?= URL::base() ?>/images/diners.png" /></li>
-            <li><input type="radio" /><img src="<?= URL::base() ?>/images/mastercard.png" /></li>
-            <li><input type="radio" /><img src="<?= URL::base() ?>/images/paypal.png" /></li>
-            <li><input type="radio" /><img src="<?= URL::base() ?>/images/visa.png" /></li>
-        </ul>             
+        <h1>Pagar Con:</h1>
+       
+        	<a id="interdin" href="#"><img  src="<?= URL::base() ?>/images/tarjetas-05.png" /></a>
+            <a id="pacificard" href="#"><img  src="<?= URL::base() ?>/images/tarjetas-06.png" /></a>
+        
+               
         </div>
-        	<input type="submit" value="PAGAR AHORA"/>
+        	<!-- <input type="submit" value="PAGAR AHORA"/> -->
             <?php ActiveForm::end(); ?>
         </div>
     
