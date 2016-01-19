@@ -61,6 +61,36 @@ AppAsset::register($this);
        <input type="hidden" name="txtReferencia3" value="0" />
        <input type="hidden" name="txtReferencia4" value="0" />
        <input type="hidden" name="txtReferencia5" value="0" />  
+       	<div id="cont-direccion">
+        	<div class="direc-50">
+            	<h1>Escojer datos de facturación:</h1>
+                <select>
+                	<option>Facturacion Envio1</option>
+                    <option>Facturacion Envio2</option>
+                </select>
+                <div class="info-faturacion">
+                 	<strong>Dirección:</strong> Alonso de Torres y James Colmet.<br/>
+                 	<strong>No. Calle:</strong> N40 - 86<br/>
+                 	<strong>Ciudad:</strong> Quito<br/>
+                 	<strong>Sector:</strong> El Bosque<br/>
+                    <span>Si no posees direccion de Facturación. <a href="#">Ingresa aquí</a></span>
+                </div>
+            </div>
+            <div class="direc-50">
+            	<h1>Escojer la dirección de envio:</h1>
+                <select>
+                	<option>Direccion Envio1</option>
+                    <option>Direccion Envio2</option>
+                </select>
+                <div class="info-faturacion">
+                 	<strong>Dirección:</strong> Alonso de Torres y James Colmet.<br/>
+                 	<strong>No. Calle:</strong> N40 - 86<br/>
+                 	<strong>Ciudad:</strong> Quito<br/>
+                 	<strong>Sector:</strong> El Bosque<br/>
+                    <span>Si no posees direccion de Envío. <a href="#">Ingresa aquí</a></span>
+                </div>
+            </div>
+        </div>
 		<div class="cont-fpago">
         <h1>Pagar Con:</h1>
        

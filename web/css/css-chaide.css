@@ -2477,3 +2477,44 @@ ul.publiciad-abj li{
 .btn-pago:hover{
 	background:rgba(0,0,0,0.4);
 	}	
+/**/
+#cont-direccion{
+	width:100%;
+	float:left;
+	margin:5px 0;
+	}	
+.direc-50{
+	width:48%;
+	padding:0 1%;
+	float:left;
+	}	
+.direc-50 h1{
+	font-size:0.9em;
+	}	
+.direc-50 select{
+	width:100%;
+	float:left;
+	padding:2px 0;
+	}	
+.info-faturacion{
+	width:96%;
+	padding:3px 2%;
+	background:rgba(0,0,0,0.2);
+	color:#A2A2A2;
+	font-size:0.8em;
+	float:left;
+	margin:2px 0 0 0;
+	min-height:87px;
+	}
+.info-faturacion span{
+	color:#A2A2A2;
+	float:left;
+	width:100%;
+	margin:4px 0 0 0;
+	padding:2px 0 0 0;
+	border-top:1px solid #666;
+	}	
+.info-faturacion span a{
+	text-decoration:underline;
+	color:#005f92 !important;
+		}	
