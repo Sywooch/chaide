@@ -10,6 +10,7 @@ use app\extensions\PlugInClientRecive;
 use app\extensions\PlugInClientSend;
 use app\extensions\RSAEncryption;
 use app\extensions\TripleDESEncryption;
+use app\extensions\VposPlugin;
 use app\models\Product;
 use yii\helpers\Url;
 use yz\shoppingcart\ShoppingCart;
@@ -31,11 +32,11 @@ class ShopController extends Controller
         return [
         'access' => [
            'class' => AccessControl::className(),
-           'only' => ['vpossend', 'vposrecive'],
+           'only' => ['vpossend', 'vposresponse','vpossend2'],
            'rules' => [
 
                [
-                   'actions' => ['vpossend', 'vposrecive'],
+                   'actions' => ['vpossend', 'vposresponse' ,'vpossend2'],
                    'allow' => true,
                    'roles' => ['@'],
                    // 'matchCallback' => function ($rule, $action) {
@@ -126,6 +127,157 @@ class ShopController extends Controller
 		} else {
 		echo 'ESTADO=KO';
     }
+}
+	public function actionVpossend2(){
+		if(isset($_POST["Subtotal"])){
+			$id=Yii::$app->user->identity->id;
+			CarShop::deleteAll("user_id = $id");
+		    foreach(Yii::$app->cart->positions as $position){
+	    			$carshop= new CarShop();
+					$carshop->user_id=Yii::$app->user->identity->id;
+	          		$carshop->product_id=$position->id;
+	          		$carshop->quantity=$position->quantity;
+	          		try {
+	          			$carshop->save();
+	          		} catch (Exception $e) {
+	          			
+	          		}
+	        }
+			$number=rand(1111111111,9999999999);
+			$codigoOperacion=Yii::$app->user->identity->id.$number;
+	       	$sell=New Sell();
+        	$sell->user_id=Yii::$app->user->identity->id;
+        	$sell->status="INCOMPLETE";
+        	$sell->creation_date=date("Y-m-d H:i:s");
+        	$sell->transactionid=$codigoOperacion;
+        	$sell->save();
+            $array_send= array();
+            $array_get=array();
+            $array_send['acquirerId']='8';
+            $array_send['commerceId']='6098';
+           $array_send['purchaseAmount']= ($_POST["Subtotal"]+$_POST["impuesto1"])*100;
+            $array_send['purchaseCurrencyCode']='840';
+            $array_send['purchaseOperationNumber']=$codigoOperacion;
+            $array_send['billingAddress']="El bosque";
+            $array_send['billingCity']='Quito';
+            $array_send['tax_1_name'] = 'Monto IVA';
+            $array_send['tax_1_amount'] = $_POST["impuesto1"]*100;
+            $array_send['tax_2_name'] = 'Servicio';
+            $array_send['tax_2_amount'] = '0';
+            $array_send['tax_3_name'] = 'Monto Grava IVA';
+            $array_send['tax_3_amount'] = '0';
+            $array_send['tax_4_name'] = 'Monto No Grava IVA';
+            $array_send['tax_4_amount'] = '0';
+            $array_send['tax_5_name'] = 'Monto Fijo';
+            $array_send['tax_5_amount'] = $array_send['tax_1_amount']+$array_send['tax_2_amount']+$array_send['tax_3_amount']+$array_send['tax_4_amount'];
+            $array_send['billingCountry']='Ecuador';
+            $array_send['reserved1']=$sell->primaryKey;
+            //$array_send['billingZIP']=$codigoPostalCobranza;
+            $array_send['billingPhone']=Yii::$app->user->identity->phone;
+            $array_send['billingEMail']=Yii::$app->user->identity->username;
+            $array_send['billingFirstName']=Yii::$app->user->identity->names;
+            $array_send['billingLastName']=Yii::$app->user->identity->lastnames;
+            $array_send['language']='SP'; //En español
+
+$llavePublicaCifrado="-----BEGIN PUBLIC KEY-----\n".
+"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDTJt+hUZiShEKFfs7DShsXCkoq\n".
+"TEjv0SFkTM04qHyHFU90Da8Ep1F0gI2SFpCkLmQtsXKOrLrQTF0100dL/gDQlLt0\n".
+"Ut8kM/PRLEM5thMPqtPq6G1GTjqmcsPzUUL18+tYwN3xFi4XBog4Hdv0ml1SRkVO\n".
+"DRr1jPeilfsiFwiO8wIDAQAB\n".
+"-----END PUBLIC KEY-----";
+$llavePrivadaFirma="-----BEGIN RSA PRIVATE KEY-----\n".
+"MIICXwIBAAKBgQDJ8Digf7DW2DKDK4fr1WjPVuqsY+qi+ujZF5JAZ7sRwgF9IUa2\n".
+"1q3Cw3PB7LzHljDa05l8BNYY0cPLtpxGbOQyOjVlKoSzyHbApvIV4aicZ+4iKTgI\n".
+"h+LAsNxy2xLXyAcArtSejKsT7aExalLLEekxSl/LEd1ALKQv84t9jXPSsQIDAQAB\n".
+"AoGBAMQ4+q1qpql9l0fCSucsjhW7PXmZ9Wu9J/mbX+/ZW/ubatruNMqBvIKebaMo\n".
+"qR+/n2Vja6cJBAlF+1296gi80tcIaLgru00nfTCnLJCAkHlJArljivI59G3SOevu\n".
+"sxSrYf0PBKNUkl/04FYuko5UusiPBUgKnxnaTFr3xjo7L4/hAkEA9bgr596Ihc41\n".
+"2ntTe+EBf9lLLJPxotMfnGre7rJvW3sg+ErY630Tgu4qK19z1kvpgenhg61+TQTy\n".
+"mediJ1RLJQJBANJjH6jKbPOdwpICMo7wuNVVC5M6VTeCEhxhT/eatUao1P3iyfVR\n".
+"pg0AJroH+cV2fZIzGqfgrKqjT5FzFmJkuZ0CQQDGBEttqkn++rUvgp8+f49Dxors\n".
+"O7VI8DbTSNSrK6TN5iYlsbup2rv0kZXuKhghpD9jcGVKRnA4BTq0iGDzLNz5AkEA\n".
+"phIAp6hCIHtjXwXFCvgRrrQXEvx00AAoc6aNDRJeDYyvtEkUykTNIm4AI9Cv5KMH\n".
+"tCQK4oGDSp7m7BVAkiKYMQJBAPJ1cboF8KZOpe4Do+Qfr/2+6VJfDDy2h1cYQwh9\n".
+"oy/tQYyjBdqb+gTw+KNAMyOc5bYZ01HziPUCCjZOFeSfClo=\n".
+"-----END RSA PRIVATE KEY-----";
+//Setear un arreglo de cadenas con los parámetros que serán devueltos
+$VI= "f714258719af22cb";
+//por el componente
+$array_get['XMLREQ']="";
+$array_get['DIGITALSIGN']="";
+$array_get['SESSIONKEY']="";
+		$plugin= New VposPlugin;
+           $plugin->VPOSSend($array_send, $array_get, $llavePublicaCifrado, $llavePrivadaFirma, $VI);
+            if(!empty($array_get)){
+              
+                return $this->render('confirm_a',['array_get'=>$array_get]);   
+                
+            }
+		}
+	}
+public function actionVposresponse(){
+$plugin= New VposPlugin;
+ $llavePrivadaCifrado ="-----BEGIN RSA PRIVATE KEY-----\n".
+"MIICXQIBAAKBgQCwFKSABzdu0Ehj9QJZaOg/TYYpyWMz1O8zK7xK+O8lu+Y+RZ7J\n".
+"WgQ3ZKc4ISnDIKZ/v+tBD29cgyrrnLvBrC9emyWEMODkE5sOpLWx80eLOXKJ7HPD\n".
+"HqKbqCJ33EkxGqN8clGh+ETIHnozLN6Eiv2XhNmNe2oUCbyWbgcaTBHKcQIDAQAB\n".
+"AoGAazTGS2UZbRDHYoSkX4euEAzFaN/C1KYK1V8Fj6gtAw56SuPcn7983bUc0uHu\n".
+"KW3RsepJ9BzPssXx9e5BqtOJKtA/Y9qsufdbWeqj45SJatb7blkrrPqzXco03bAa\n".
+"8x3KNR1PQgt7PiIaV1THDCzaEOH++1BwfoAOr3aOuM5rPAECQQDXZ2qKgz8yM4hO\n".
+"QVF4bTQkHIF+sh4Uy3BYRCdW4tGebLhSYcpOf4HnLdfXD7iUG1ImPSH3SPK0pCrk\n".
+"lPg3Fk3RAkEA0UP+3sgqooWbNuqKSDAfULsmITDq/jaHfurGSCN2SCyInZsH4QO2\n".
+"6zElGjQOa0a64SVmZm0Fqg68Q6rTlbG6oQJBAK/heVTwJcHP4hRDsUoroM97lyDk\n".
+"PzurgWgQ/i4rtg0tqLNbtdyysFcbT4oDBCuqw0EF2Z4YqlRlV8CdAq+4PoECQQCw\n".
+"R+4gb0/y/keFGEgKjXcjw7NYDGQ4Z2j2kgEb7buLCvC+i0U02LMzJoARtb5bwgZU\n".
+"+PNs3vQBkE4pVnLMTB5hAkA+EyxIGiXXTfVIirsgLIlVnJlZxVnIhr2OavOnMrHB\n".
+"4sXdaj2KxPZNxGIi7rGOyN+8yic/ffbKCGdarDlBX09p\n".
+"-----END RSA PRIVATE KEY-----";
+
+ $llavePublicaFirma ="-----BEGIN PUBLIC KEY-----\n".
+"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCvJS8zLPeePN+fbJeIvp/jjvLW\n".
+"Aedyx8UcfS1eM/a+Vv2yHTxCLy79dEIygDVE6CTKbP1eqwsxRg2Z/dI+/e14WDRs\n".
+"g0QzDdjVFIuXLKJ0zIgDw6kQd1ovbqpdTn4wnnvwUCNpBASitdjpTcNTKONfXMtH\n".
+"pIs4aIDXarTYJGWlyQIDAQAB\n".
+"-----END PUBLIC KEY-----";
+
+
+
+ $arrayIn['IDACQUIRER'] = $_POST['IDACQUIRER'];
+ $arrayIn['IDCOMMERCE'] = $_POST['IDCOMMERCE'];
+ $arrayIn['XMLRES'] = $_POST['XMLRES'];
+ $arrayIn['DIGITALSIGN'] = $_POST['DIGITALSIGN'];
+ $arrayIn['SESSIONKEY'] = $_POST['SESSIONKEY'];
+ $arrayIn['reserved1']=$_POST['reserved1']; 
+ //$arrayIn['planCode'] = $_POST['planCode'];
+ //$arrayIn['quotaCode'] = $arrayIn['quotaCode'];
+ $arrayOut = '';
+
+
+ $VI = "f714258719af22cb";
+
+ if($plugin->VPOSResponse($arrayIn,$arrayOut,$llavePublicaFirma,$llavePrivadaCifrado,$VI)){
+                $sell= Sell::findOne($arrayOut["reserved1"]);
+    			$user= User::findOne($sell->user_id);
+                if($arrayOut["authorizationResult"]=="00"){
+			$id=$user->id;
+			$sell->status="COMPLETE";
+			$carshop=CarShop::find()->where(['user_id'=>$sell->user_id])->all();
+			if($sell->save()){
+				foreach($carshop as $item){
+					$detail= New Detail();
+					$detail->product_id=$item->product_id;
+					$detail->quantity=$item->quantity;
+					$detail->sell_id=$sell->id;
+					$detail->save();
+				}
+				CarShop::deleteAll("user_id = $id");
+                }
+
+            }
+            return $this->render('response_a',['sell'=>$sell,'arrayOut'=>$arrayOut]);
+
+
+}
 }
 	public function actionVpossend(){
 		if(isset($_POST["Subtotal"])){

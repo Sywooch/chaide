@@ -29,8 +29,8 @@ class Sell extends ActiveRecord
     public function rules()
     {
         return [
-            [['user_id','transactionid'], 'integer'],
-            [['creation_date'], 'required'],
+            [['user_id','transactionid','delivery_id','billing_id'], 'integer'],
+            [['creation_date','user_id','transactionid','delivery_id','billing_id'], 'required'],
             ['status', 'in', 'range' => ['COMPLETE','INCOMPLETE']],
             [['creation_date'], 'safe']
         ];
