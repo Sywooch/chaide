@@ -2520,11 +2520,17 @@ ul.publiciad-abj li{
 		}	
 /**/
 .img-sell{
-	width:60%;
-	padding:3px 20%;
-	}	
+	width:18%;
+	padding:3px 1%;
+	float:left;
+	}
+.cont-txtdc{
+	width:80%;
+	float:left;
+	}		
 .back-de{
 	background:rgba(0,0,0,0.2);
+	margin-bottom:6px 0;
 	}	
 .direcciones-g{
 	width:96%;
