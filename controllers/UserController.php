@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use app\models\Sell;
 
 /**
  * UserController implements the CRUD actions for User model.
@@ -20,11 +21,11 @@ class UserController extends Controller
         return [
         'access' => [
            'class' => AccessControl::className(),
-           'only' => ['index', 'update','findmodel','consultsell'],
+           'only' => ['index', 'update','findmodel','consultsell','viewsell','history'],
            'rules' => [
 
                [
-                   'actions' => ['index', 'update','findmodel','consultsell'],
+                   'actions' => ['index', 'update','findmodel','consultsell','viewsell','history'],
                    'allow' => true,
                    'roles' => ['@'],
                    // 'matchCallback' => function ($rule, $action) {
@@ -44,7 +45,7 @@ class UserController extends Controller
        public function actionConsultsell($transaction){
 
         $xml=simplexml_load_file("https://www3.optar.ec/webmpi/qvpos?RucEstab=1790241483001&NoTransaccion=$transaction");
-        return $this->render('consult',['model'=>$xml]);
+        return $xml;
             
     }
     public function actionIndex()
@@ -56,6 +57,21 @@ class UserController extends Controller
         ]);
     }
 
+    public function actionViewsell($id){
+        $model= Sell::findOne($id);
+        $xml=$this->Consultsell($model->transactionid);
+           return $this->render('sell', [
+            'model' => $model, 'xml' => $xml
+        ]);
+    }
+    public function actionHistory()
+    {
+        $id=Yii::$app->user->identity->id;
+        $model = $this->findModel($id);
+        return $this->render('history', [
+            'model' => $model,
+        ]);
+    }
     /**
      * Displays a single User model.
      * @param integer $id

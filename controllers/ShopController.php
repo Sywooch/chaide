@@ -129,7 +129,7 @@ class ShopController extends Controller
     }
 }
 	public function actionVpossend2(){
-		if(isset($_POST["Subtotal"])){
+		if(isset($_POST["Subtotal"]) && isset($_POST["billing"]) && isset($_POST["delivery"])){
 			$id=Yii::$app->user->identity->id;
 			CarShop::deleteAll("user_id = $id");
 		    foreach(Yii::$app->cart->positions as $position){
@@ -150,6 +150,8 @@ class ShopController extends Controller
         	$sell->status="INCOMPLETE";
         	$sell->creation_date=date("Y-m-d H:i:s");
         	$sell->transactionid=$codigoOperacion;
+        	$sell->delivery_id=$_POST["delivery"];
+        	$sell->billing_id=$_POST["billing"];
         	$sell->save();
             $array_send= array();
             $array_get=array();
@@ -280,7 +282,7 @@ $plugin= New VposPlugin;
 }
 }
 	public function actionVpossend(){
-		if(isset($_POST["Subtotal"])){
+		if(isset($_POST["Subtotal"]) && isset($_POST["billing"]) && isset($_POST["delivery"])){
 			$plugin = new PlugInClientSend();
 		/*Datos Establecimiento*/
 			// $filePubKC = Yii::getAlias('@app')."/PUBLICA_CIFRADO_ESTABLECIMIENTO.pem"; 
@@ -315,6 +317,8 @@ $plugin= New VposPlugin;
         	$sell->status="INCOMPLETE";
         	$sell->creation_date=date("Y-m-d H:i:s");
         	$sell->transactionid=$random_key;
+        	$sell->delivery_id=$_POST["delivery"];
+        	$sell->billing_id=$_POST["billing"];
         	$sell->save();
 			$e = $plugin->setLocalID($LocalID);
 			if($e!= "")

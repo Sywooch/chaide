@@ -5,14 +5,28 @@ use app\assets\AppAsset;
 use yii\web\View;
 $this->title = 'Carrito de compras';
 $script='$(document).ready(function() {
-    $("#interdin").on("click", function(e){
-$("form").attr("action", "vpossend").submit();
-});
-    $("#pacificard").on("click", function(e){
-$("form").attr("action", "vpossend2").submit();
-});
+        $("#interdin").on("click", function(e){
+    $("form").attr("action", "vpossend").submit();
+    });
+        $("#pacificard").on("click", function(e){
+    $("form").attr("action", "vpossend2").submit();
+    });
+    $("#billing_id").change(function(){
+        var id= $(this).val();
+        var aux= "infob-";
+        $("[class^="+aux+"]").hide();
+        $(".infob-"+id).show();
+    });
+    $("#delivery_id").change(function(){
+        var id= $(this).val();
+        var aux= "infod-";
+        $("[class^="+aux+"]").hide();
+        $(".infod-"+id).show();
+    });
 });
 ';
+$display="block";
+$display2="block";
 $this->registerJs($script,View::POS_END);
 AppAsset::register($this);
 ?>
@@ -61,36 +75,63 @@ AppAsset::register($this);
        <input type="hidden" name="txtReferencia3" value="0" />
        <input type="hidden" name="txtReferencia4" value="0" />
        <input type="hidden" name="txtReferencia5" value="0" />  
-       	<div id="cont-direccion">
+       	<?php if(!Yii::$app->user->isGuest): ?>
+        <div id="cont-direccion">
         	<div class="direc-50">
             	<h1>Escojer datos de facturación:</h1>
-                <select>
-                	<option>Facturacion Envio1</option>
-                    <option>Facturacion Envio2</option>
+                <select id="billing_id" name="billing">
+                	<option value="" disabled>Escoge una opción</option>
+                    <?php foreach(Yii::$app->user->identity->billingAddresses as $k => $billing):  ?>
+                    <option value="<?= $billing->id ?>"><?= $billing->sector ?></option>
+                    <?php endforeach; ?>
                 </select>
                 <div class="info-faturacion">
-                 	<strong>Dirección:</strong> Alonso de Torres y James Colmet.<br/>
-                 	<strong>No. Calle:</strong> N40 - 86<br/>
-                 	<strong>Ciudad:</strong> Quito<br/>
-                 	<strong>Sector:</strong> El Bosque<br/>
+                <?php foreach(Yii::$app->user->identity->billingAddresses as $k => $billing): ?>
+                  <?php if($k!=0){ $display="none"; }  ?>
+                  
+                    <div class="infob-<?= $billing->id ?>" style="display:<?= $display; ?>">
+                        <strong>Dirección:</strong><div id="billing_address"><?= $billing->street1." ".$billing->street2 ?>.</div>
+                        <strong>No. Calle:</strong><div id="billing_number"><?= $billing->number ?></div>
+                        <strong>Ciudad:</strong><div id="billing_city"><?= $billing->city->description ?></div>
+                        <strong>Sector:</strong><div id="billing_sector"><?= $billing->sector ?></div>
+                    </div>
+                    
+                <?php endforeach; ?>
                     <span>Si no posees direccion de Facturación. <a href="#">Ingresa aquí</a></span>
                 </div>
             </div>
             <div class="direc-50">
             	<h1>Escojer la dirección de envio:</h1>
-                <select>
-                	<option>Direccion Envio1</option>
-                    <option>Direccion Envio2</option>
+                <select id="delivery_id" name="delivery">
+                    <option value="" disabled>Escoge una opción</option>
+                    <?php foreach(Yii::$app->user->identity->deliveryAddresses as $k => $delivery):
+                        if($k==0){
+                            $address= $delivery->street1." ".$delivery->street2;
+                            $number= $delivery->number;
+                            $city = $delivery->city->description;
+                            $sector= $delivery->sector;
+                        }   
+                     ?>
+                    <option value="<?= $delivery->id ?>"><?= $delivery->sector ?></option>
+                    <?php endforeach; ?>
                 </select>
                 <div class="info-faturacion">
-                 	<strong>Dirección:</strong> Alonso de Torres y James Colmet.<br/>
-                 	<strong>No. Calle:</strong> N40 - 86<br/>
-                 	<strong>Ciudad:</strong> Quito<br/>
-                 	<strong>Sector:</strong> El Bosque<br/>
+                <?php foreach(Yii::$app->user->identity->deliveryAddresses as $k => $delivery): ?>
+                  <?php if($k!=0){ $display2="none"; }  ?>
+                  
+                    <div class="infod-<?= $delivery->id ?>" style="display:<?= $display2; ?>">
+                        <strong>Dirección:</strong><div id="billing_address"><?= $delivery->street1." ".$delivery->street2 ?>.</div>
+                        <strong>No. Calle:</strong><div id="billing_number"><?= $delivery->number ?></div>
+                        <strong>Ciudad:</strong><div id="billing_city"><?= $delivery->city->description ?></div>
+                        <strong>Sector:</strong><div id="billing_sector"><?= $delivery->sector ?></div>
+                    </div>
+                    
+                <?php endforeach; ?>
                     <span>Si no posees direccion de Envío. <a href="#">Ingresa aquí</a></span>
                 </div>
             </div>
         </div>
+    <?php endif; ?>
 		<div class="cont-fpago">
         <h1>Pagar Con:</h1>
        

@@ -18,9 +18,9 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <div class="cont-perfil">
         <ul id="botonera-perfil">
-            <li><a href="<?= Url::to(['user/index']) ?>" class="p-selected">DATOS PERSONALES</a></li>
+<li><a href="<?= Url::to(['user/index']) ?>" >DATOS PERSONALES</a></li>
             <li><a href="<?= Url::to(['user/address']) ?>">FACTURACIÓN</a></li>
-            <li><a href="<?= Url::to(['user/history']) ?>">HISTORIAL</a></li>
+            <li><a href="<?= Url::to(['user/history']) ?> "class="p-selected">HISTORIAL</a></li>
         </ul>
         <div id="cont-datosp" class="cont-infor">
             <div class="cont-infocamposf1">
@@ -94,16 +94,15 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div id="cont-historialp" class="cont-infor">
             <div class="cont-infocamposf2">
-                <h1>ORDEN # <?= $model->TRANSACCION->NUMORDEN ?></h1>
+                <h1>HISTORIAL DE COMPRA</h1>
                 <div id="listado-compra">
+                    <?php foreach($model->sells as $sell): ?>
                     <div class="cont-infocampos">
-                        <div class="tit-compras">TARJETA: <?= $model->TRANSACCION->MARCA ?></div>
-                        <div class="tit-compras">FECHA: <?= $model->TRANSACCION->FECHA ?></div>
-                        <div class="tit-compras"># DE AUTORIZACIÓN: <?= $model->TRANSACCION->NUMAUTORIZA ?></div>
-                        <div class="tit-compras">ESTADO: <?= $model->TRANSACCION->RESULTADO ?></div>
-
+                        <div class="tit-compras">Compra #<?= $sell->id ?>- <?= $sell->creation_date ?>-<?= ($sell->status == 'COMPLETE' ? "COMPLETA" : "INCOMPLETA"); ?></div>
+                        <a href="#" class="btn-vercompras">Ver Detalle</a>
+                         <a href="<?= Url::to(['user/consultsell','transaction'=>$sell->transactionid]) ?>" class="btn-vercompras">Ver Estado</a>
                     </div> 
-
+                    <?php  endforeach; ?>
                 </div> 
 <!--                 <div id="detalle-compra">
                     <div class="cont-infocampos">
