@@ -19,50 +19,14 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="cont-perfil">
         <ul id="botonera-perfil">
             <li><a href="<?= Url::to(['user/index']) ?>" class="p-selected">DATOS PERSONALES</a></li>
-            <li><a href="<?= Url::to(['user/address']) ?>">FACTURACIÓN</a></li>
+            <li><a href="<?= Url::to(['user/address']) ?>">DIRECCIONES</a></li>
             <li><a href="<?= Url::to(['user/history']) ?>">HISTORIAL</a></li>
         </ul>
-        <div id="cont-datosp" class="cont-infor">
-            <div class="cont-infocamposf1">
-                <div class="cont-infocampos">
-                    <label>Nombre:</label>
-                    <input type="text"/>
-                </div>
-                <div class="cont-infocampos">
-                    <label>Apellido:</label>
-                    <input type="text"/>
-                </div>
-                <div class="cont-infocampos">
-                    <label>Cédula:</label>
-                    <input type="text"/>
-                </div>
-                <div class="cont-infocampos">
-                    <label>E-mail:</label>
-                    <input type="text"/>
-                </div>
-            </div>
-            <div class="cont-infocamposf1">
-                <div class="cont-infocampos">
-                    <label>Teléfono:</label>
-                    <input type="text"/>
-                </div>
-                <div class="cont-infocampos">
-                    <label>Celular:</label>
-                    <input type="text"/>
-                </div>
-                <div class="cont-infocampos">
-                    <label>Sexo:</label>
-                    <input type="text"/>
-                </div>
-                <div class="cont-infocampos">
-                    <label>Fecha de nacimiento:</label>
-                    <input type="text"/>
-                </div>
-            </div> 
-            <input type="submit" value="Editar" class="btn-submit"/> 
-            <input type="submit" value="Guardar" class="btn-submit"/>           
-        </div>
+        <div id="cont-datosp" class="cont-infor" style="display:block">
 
-
+                          <?= $this->render('_form', [
+                'model' => $model,
+                ]) ?> 
+    </div>
     </div>
 </section>

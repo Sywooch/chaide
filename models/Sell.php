@@ -59,4 +59,9 @@ class Sell extends ActiveRecord
     {
         return $this->hasMany(Product::className(),['id' => 'product_id'])->viaTable('detail',['sell_id' => 'id']);
     } 
+        public function getDetails()
+    {
+        return $this->hasMany(Detail::className(), ['sell_id' => 'id']);
+    }
+
 }

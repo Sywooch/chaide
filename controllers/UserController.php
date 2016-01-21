@@ -4,12 +4,14 @@ namespace app\controllers;
 
 use Yii;
 use app\models\User;
+use app\models\BillingAddress;
 use app\models\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use app\models\Sell;
+use app\models\DeliveryAddress;
 
 /**
  * UserController implements the CRUD actions for User model.
@@ -21,11 +23,11 @@ class UserController extends Controller
         return [
         'access' => [
            'class' => AccessControl::className(),
-           'only' => ['index', 'update','findmodel','consultsell','viewsell','history'],
+           'only' => ['index', 'update','findmodel','consultsell','viewsell','history','address'],
            'rules' => [
 
                [
-                   'actions' => ['index', 'update','findmodel','consultsell','viewsell','history'],
+                   'actions' => ['index', 'update','findmodel','consultsell','viewsell','history','address'],
                    'allow' => true,
                    'roles' => ['@'],
                    // 'matchCallback' => function ($rule, $action) {
@@ -42,7 +44,7 @@ class UserController extends Controller
      * Lists all User models.
      * @return mixed
      */
-       public function actionConsultsell($transaction){
+       protected function Consultsell($transaction){
 
         $xml=simplexml_load_file("https://www3.optar.ec/webmpi/qvpos?RucEstab=1790241483001&NoTransaccion=$transaction");
         return $xml;
@@ -70,6 +72,16 @@ class UserController extends Controller
         $model = $this->findModel($id);
         return $this->render('history', [
             'model' => $model,
+        ]);
+    }
+
+    public function actionAddress(){
+            $id=Yii::$app->user->identity->id;
+            $billing= BillingAddress::find()->where(['user_id'=>$id])->all();
+            $delivery= DeliveryAddress::find()->where(['user_id'=>$id])->all();
+              return $this->render('address', [
+            'billing' => $billing,
+            'delivery' => $delivery
         ]);
     }
     /**

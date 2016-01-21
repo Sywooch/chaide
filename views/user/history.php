@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="cont-perfil">
         <ul id="botonera-perfil">
 			<li><a href="<?= Url::to(['user/index']) ?>" >DATOS PERSONALES</a></li>
-            <li><a href="<?= Url::to(['user/address']) ?>">FACTURACIÓN</a></li>
+            <li><a href="<?= Url::to(['user/address']) ?>">DIRECCIONES</a></li>
             <li><a href="<?= Url::to(['user/history']) ?>"class="p-selected">HISTORIAL</a></li>
         </ul>
         <div id="cont-historialp" class="cont-infor">

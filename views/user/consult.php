@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="cont-perfil">
         <ul id="botonera-perfil">
             <li><a href="<?= Url::to(['user/index']) ?>" class="p-selected">DATOS PERSONALES</a></li>
-            <li><a href="<?= Url::to(['user/address']) ?>">FACTURACIÓN</a></li>
+            <li><a href="<?= Url::to(['user/address']) ?>">DIRECCIONES</a></li>
             <li><a href="<?= Url::to(['user/history']) ?>">HISTORIAL</a></li>
         </ul>
         <div id="cont-datosp" class="cont-infor">
@@ -105,7 +105,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div> 
 
                 </div> 
-<!--                 <div id="detalle-compra">
+               <div id="detalle-compra">
                     <div class="cont-infocampos">
                         <div class="tit-compras">Colchon Caressa</div>
                         <div class="num-cifra">$10000</div>
@@ -122,7 +122,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="tit-compras">TOTAL</div>
                         <div class="num-cifra">$100000</div>
                     </div>
-                </div>  -->              
+                </div>               
             </div> 
         </div>
     </div>

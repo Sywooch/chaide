@@ -19,110 +19,35 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="cont-perfil">
         <ul id="botonera-perfil">
 <li><a href="<?= Url::to(['user/index']) ?>" >DATOS PERSONALES</a></li>
-            <li><a href="<?= Url::to(['user/address']) ?>">FACTURACIÓN</a></li>
+            <li><a href="<?= Url::to(['user/address']) ?>">DIRECCIONES</a></li>
             <li><a href="<?= Url::to(['user/history']) ?> "class="p-selected">HISTORIAL</a></li>
         </ul>
-        <div id="cont-datosp" class="cont-infor">
-            <div class="cont-infocamposf1">
-                <div class="cont-infocampos">
-                    <label>Nombre:</label>
-                    <input type="text"/>
-                </div>
-                <div class="cont-infocampos">
-                    <label>Apellido:</label>
-                    <input type="text"/>
-                </div>
-                <div class="cont-infocampos">
-                    <label>Cédula:</label>
-                    <input type="text"/>
-                </div>
-                <div class="cont-infocampos">
-                    <label>E-mail:</label>
-                    <input type="text"/>
-                </div>
-            </div>
-            <div class="cont-infocamposf1">
-                <div class="cont-infocampos">
-                    <label>Teléfono:</label>
-                    <input type="text"/>
-                </div>
-                <div class="cont-infocampos">
-                    <label>Celular:</label>
-                    <input type="text"/>
-                </div>
-                <div class="cont-infocampos">
-                    <label>Sexo:</label>
-                    <input type="text"/>
-                </div>
-                <div class="cont-infocampos">
-                    <label>Fecha de nacimiento:</label>
-                    <input type="text"/>
-                </div>
-            </div> 
-            <input type="submit" value="Editar" class="btn-submit"/> 
-            <input type="submit" value="Guardar" class="btn-submit"/>           
-        </div>
-        <div id="cont-facturacionp" class="cont-infor">
-            <div class="cont-infocamposf2">
-                <h1>DIRECCIÓN DE FACTURACIÓN</h1>
-                <div class="cont-infocampos">
-                    <label>Ciudad:</label>
-                    <select>
-                        <option>Quito</option>
-                        <option>Guayaquil</option>
-                    </select>
-                </div>
-                <div class="cont-infocampos">
-                    <label>Calle 1:</label>
-                    <input type="text"/>
-                </div>
-                <div class="cont-infocampos">
-                    <label>Calle 2:</label>
-                    <input type="text"/>
-                </div>
-                <div class="cont-infocampos">
-                    <label>Sector:</label>
-                    <input type="text"/>
-                </div>
-                <div class="cont-infocampos">
-                    <label>Número:</label>
-                    <input type="text"/>
-                </div>
-                <input type="submit" value="Editar" class="btn-submit"/> 
-                <input type="submit" value="Guardar" class="btn-submit"/> 
-            </div> 
-        </div>
+
         <div id="cont-historialp" class="cont-infor">
             <div class="cont-infocamposf2">
-                <h1>HISTORIAL DE COMPRA</h1>
+                <h1>ORDEN # <?= $xml->TRANSACCION->NUMORDEN ?></h1>
                 <div id="listado-compra">
-                    <?php foreach($model->sells as $sell): ?>
                     <div class="cont-infocampos">
-                        <div class="tit-compras">Compra #<?= $sell->id ?>- <?= $sell->creation_date ?>-<?= ($sell->status == 'COMPLETE' ? "COMPLETA" : "INCOMPLETA"); ?></div>
-                        <a href="#" class="btn-vercompras">Ver Detalle</a>
-                         <a href="<?= Url::to(['user/consultsell','transaction'=>$sell->transactionid]) ?>" class="btn-vercompras">Ver Estado</a>
+                        <div class="tit-compras">TARJETA: <?= $xml->TRANSACCION->MARCA ?></div>
+                        <div class="tit-compras">FECHA: <?= $xml->TRANSACCION->FECHA ?></div>
+                        <div class="tit-compras"># DE AUTORIZACIÓN: <?= $xml->TRANSACCION->NUMAUTORIZA ?></div>
+                        <div class="tit-compras">ESTADO: <?= $xml->TRANSACCION->RESULTADO ?></div>
+
                     </div> 
-                    <?php  endforeach; ?>
+
                 </div> 
-<!--                 <div id="detalle-compra">
+               <div id="detalle-compra">
+               	<?php foreach($model->details as $detail): ?>
                     <div class="cont-infocampos">
-                        <div class="tit-compras">Colchon Caressa</div>
-                        <div class="num-cifra">$10000</div>
+                    	<img src="<?= URL::base() ?>/images/productos/<?= $detail->product->picture ?>">
+                        <div class="tit-compras"><?= $detail->product->title ?></div>
+                        <div class="num-cifra">$<?= $detail->product->price ?></div>
                     </div>
-                    <div class="cont-infocampos">
-                        <div class="tit-compras">Colchon Caressa</div>
-                        <div class="num-cifra">$10000</div>
-                    </div>
-                    <div class="cont-infocampos">
-                        <div class="tit-compras">Colchon Caressa</div>
-                        <div class="num-cifra">$10000</div>
-                    </div>
-                    <div class="cont-infocampos c-total">
-                        <div class="tit-compras">TOTAL</div>
-                        <div class="num-cifra">$100000</div>
-                    </div>
-                </div>  -->              
+                <?php endforeach; ?>
+                </div>               
             </div> 
         </div>
+
+
     </div>
 </section>
