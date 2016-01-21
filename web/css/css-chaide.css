@@ -2518,3 +2518,63 @@ ul.publiciad-abj li{
 	text-decoration:underline;
 	color:#005f92 !important;
 		}	
+/**/
+.img-sell{
+	width:60%;
+	padding:3px 20%;
+	}	
+.back-de{
+	background:rgba(0,0,0,0.2);
+	}	
+.direcciones-g{
+	width:96%;
+	padding:3px 2%;
+	background:rgba(0,0,0,0.2);
+	color:#FFF;
+	float:left;
+	margin:0 0 7px 0;
+	font-size:0.9em;
+	}
+.direcciones-g span{
+	width:70%;
+	float:left;
+	}			
+.direcciones-g a:link, .direcciones-g a:visited{
+	float:right;
+	background: rgba(0,0,0,0.1);
+	width:13%;
+	padding:0 1%;
+	margin:2px 1% 0 1%;
+	text-align:center;
+	color:#8B8B8B !important;
+	font-size:0.8em;
+	text-decoration:underline;
+	}
+.h1-princi{
+	background-color: #005f92;
+    text-align: center;
+    color: rgba(255,255,255,1.00);
+    text-align: center;
+    padding: 3px 0;
+	width:100%;
+	margin:0 0 5px 0;
+	}		
+#bnt-adireccion{
+	width:200px;
+	background: rgba(0,0,0,0.4);
+    text-align: left;
+    color: rgba(255,255,255,1.00);
+	padding:3px 10px;
+	margin:7px 0;
+	float:left;
+	}
+#bnt-adireccion:hover{
+	background-color: #113E56;
+	}		
+#direccion-registrada{
+	width:100%;
+	float:left;
+	}	
+#formulario-direccion{
+	display:none;
+	}	

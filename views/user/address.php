@@ -24,8 +24,55 @@ $this->params['breadcrumbs'][] = $this->title;
         </ul>
 
         <div id="cont-facturacionp" class="cont-infor" style="display:block">
-
-                <div class="cont-infocamposf2" >
+        		<div id="direccion-registrada">
+                    <h1 class="h1-princi">DIRECCIONES DE ENVIO</h1>
+                    <div class="direcciones-g">
+                        <span>James Colmet N40-86 y Alonso de Torres</span>
+                        <a href="#">Editar</a>
+                        <a href="#">Borrar</a>
+                    </div>	
+                    <div class="direcciones-g">
+                        <span>Barrio San Jose La Salle, Calle Hermano Miguel y Calle A, Sector Conocoto - Quito - Ecuador</span>
+                        <a href="#">Editar</a>
+                        <a href="#">Borrar</a>
+                    </div>	
+                    <div class="direcciones-g">
+                        <span>James Colmet N40-86 y Alonso de Torres</span>
+                        <a href="#">Editar</a>
+                        <a href="#">Borrar</a>
+                    </div>	
+                    <div class="direcciones-g">
+                        <span>Barrio San Jose La Salle, Calle Hermano Miguel y Calle A, Sector Conocoto - Quito - Ecuador</span>
+                        <a href="#">Editar</a>
+                        <a href="#">Borrar</a>
+                    </div>	
+                    <a href="#" id="bnt-adireccion">+ AÑADIR DIRECCIÓN</a>
+                </div>
+                <div id="direccion-registrada">
+                    <h1 class="h1-princi">DIRECCIONES DE FACTURACIÓN</h1>
+                    <div class="direcciones-g">
+                        <span>James Colmet N40-86 y Alonso de Torres</span>
+                        <a href="#">Editar</a>
+                        <a href="#">Borrar</a>
+                    </div>	
+                    <div class="direcciones-g">
+                        <span>Barrio San Jose La Salle, Calle Hermano Miguel y Calle A, Sector Conocoto - Quito - Ecuador</span>
+                        <a href="#">Editar</a>
+                        <a href="#">Borrar</a>
+                    </div>	
+                    <div class="direcciones-g">
+                        <span>James Colmet N40-86 y Alonso de Torres</span>
+                        <a href="#">Editar</a>
+                        <a href="#">Borrar</a>
+                    </div>	
+                    <div class="direcciones-g">
+                        <span>Barrio San Jose La Salle, Calle Hermano Miguel y Calle A, Sector Conocoto - Quito - Ecuador</span>
+                        <a href="#">Editar</a>
+                        <a href="#">Borrar</a>
+                    </div>	
+                    <a href="#" id="bnt-adireccion">+ AÑADIR DIRECCIÓN</a>
+                </div>
+                <div class="cont-infocamposf2" id="formulario-direccion">
                 <h1>DIRECCIONES DE ENVÍO</h1>
                 <div class="cont-infocampos">
                     <label>Ciudad:</label>

@@ -38,8 +38,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div> 
                <div id="detalle-compra">
                	<?php foreach($model->details as $detail): ?>
-                    <div class="cont-infocampos">
-                    	<img src="<?= URL::base() ?>/images/productos/<?= $detail->product->picture ?>">
+                    <div class="cont-infocampos back-de">
+                    	<img src="<?= URL::base() ?>/images/productos/<?= $detail->product->picture ?>" class="img-sell">
                         <div class="tit-compras"><?= $detail->product->title ?></div>
                         <div class="num-cifra">$<?= $detail->product->price ?></div>
                     </div>
