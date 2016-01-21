@@ -136,7 +136,7 @@ $this->title = $model->title;
         <h1>ESTRUCTURA INTERNA</h1>
         <ul>
             <?php foreach($model->characteristics as $characteristic): ?>
-            <li><?= $characteristic->description ?></li>
+            <li><?= ucfirst($characteristic->description) ?></li>
             <?php endforeach; ?>
         </ul>
         <div class="cont-medidas50">

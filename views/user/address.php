@@ -26,80 +26,27 @@ $this->params['breadcrumbs'][] = $this->title;
         <div id="cont-facturacionp" class="cont-infor" style="display:block">
         		<div id="direccion-registrada">
                     <h1 class="h1-princi">DIRECCIONES DE ENVIO</h1>
+                    <?php foreach($delivery as $address): ?>
                     <div class="direcciones-g">
-                        <span>James Colmet N40-86 y Alonso de Torres</span>
+                        <span><?= $address->city->description."-".$address->sector."-".$address->street1."-".$address->street2."-".$address->number ?></span>
                         <a href="#">Editar</a>
                         <a href="#">Borrar</a>
                     </div>	
-                    <div class="direcciones-g">
-                        <span>Barrio San Jose La Salle, Calle Hermano Miguel y Calle A, Sector Conocoto - Quito - Ecuador</span>
-                        <a href="#">Editar</a>
-                        <a href="#">Borrar</a>
-                    </div>	
-                    <div class="direcciones-g">
-                        <span>James Colmet N40-86 y Alonso de Torres</span>
-                        <a href="#">Editar</a>
-                        <a href="#">Borrar</a>
-                    </div>	
-                    <div class="direcciones-g">
-                        <span>Barrio San Jose La Salle, Calle Hermano Miguel y Calle A, Sector Conocoto - Quito - Ecuador</span>
-                        <a href="#">Editar</a>
-                        <a href="#">Borrar</a>
-                    </div>	
+                    <?php endforeach; ?>
                     <a href="#" id="bnt-adireccion">+ AÑADIR DIRECCIÓN</a>
                 </div>
                 <div id="direccion-registrada">
                     <h1 class="h1-princi">DIRECCIONES DE FACTURACIÓN</h1>
+                    <?php foreach($billing as $address): ?>
                     <div class="direcciones-g">
-                        <span>James Colmet N40-86 y Alonso de Torres</span>
+                        <span><?= $address->city->description."-".$address->sector."-".$address->street1."-".$address->street2."-".$address->number ?></span>
                         <a href="#">Editar</a>
                         <a href="#">Borrar</a>
-                    </div>	
-                    <div class="direcciones-g">
-                        <span>Barrio San Jose La Salle, Calle Hermano Miguel y Calle A, Sector Conocoto - Quito - Ecuador</span>
-                        <a href="#">Editar</a>
-                        <a href="#">Borrar</a>
-                    </div>	
-                    <div class="direcciones-g">
-                        <span>James Colmet N40-86 y Alonso de Torres</span>
-                        <a href="#">Editar</a>
-                        <a href="#">Borrar</a>
-                    </div>	
-                    <div class="direcciones-g">
-                        <span>Barrio San Jose La Salle, Calle Hermano Miguel y Calle A, Sector Conocoto - Quito - Ecuador</span>
-                        <a href="#">Editar</a>
-                        <a href="#">Borrar</a>
-                    </div>	
+                    </div>  
+                    <?php endforeach; ?>		
                     <a href="#" id="bnt-adireccion">+ AÑADIR DIRECCIÓN</a>
                 </div>
-                <div class="cont-infocamposf2" id="formulario-direccion">
-                <h1>DIRECCIONES DE ENVÍO</h1>
-                <div class="cont-infocampos">
-                    <label>Ciudad:</label>
-                    <select>
-                        <option>Quito</option>
-                        <option>Guayaquil</option>
-                    </select>
-                </div>
-                <div class="cont-infocampos">
-                    <label>Calle 1:</label>
-                    <input type="text"/>
-                </div>
-                <div class="cont-infocampos">
-                    <label>Calle 2:</label>
-                    <input type="text"/>
-                </div>
-                <div class="cont-infocampos">
-                    <label>Sector:</label>
-                    <input type="text"/>
-                </div>
-                <div class="cont-infocampos">
-                    <label>Número:</label>
-                    <input type="text"/>
-                </div>
-                <input type="submit" value="Editar" class="btn-submit"/> 
-                <input type="submit" value="Guardar" class="btn-submit"/> 
-            </div> 
+
         </div>
 
     </div>

@@ -54,6 +54,11 @@ class UserController extends Controller
     {
         $id=Yii::$app->user->identity->id;
         $model = $this->findModel($id);
+             if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                Yii::$app->getSession()->setFlash('success','Felicidades tus datos han sido guardados con éxito.');
+                return $this->goHome();
+        } 
+
         return $this->render('index', [
             'model' => $model,
         ]);
