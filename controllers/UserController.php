@@ -23,11 +23,11 @@ class UserController extends Controller
         return [
         'access' => [
            'class' => AccessControl::className(),
-           'only' => ['index', 'update','findmodel','consultsell','viewsell','history','address'],
+           'only' => ['index', 'update','findmodel','consultsell','viewsell','history','address','updatea','createa'],
            'rules' => [
 
                [
-                   'actions' => ['index', 'update','findmodel','consultsell','viewsell','history','address'],
+                   'actions' => ['index', 'update','findmodel','consultsell','viewsell','history','address','createa','updatea'],
                    'allow' => true,
                    'roles' => ['@'],
                    // 'matchCallback' => function ($rule, $action) {
@@ -62,6 +62,48 @@ class UserController extends Controller
         return $this->render('index', [
             'model' => $model,
         ]);
+    }
+
+    public function actionCreatea($type){
+
+        $model = New BillingAddress;
+        $model->user_id=Yii::$app->user->identity->id;
+        $model->creation_date=date("Y-m-d H:i:s");
+        $model->update_date=date("Y-m-d H:i:s");
+        if($type=="D"){
+        $model = New DeliveryAddress;
+        $model->user_id=Yii::$app->user->identity->id;
+        $model->creation_date=date("Y-m-d H:i:s");
+        $model->update_date=date("Y-m-d H:i:s");
+        }
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                Yii::$app->getSession()->setFlash('success','Felicidades tus datos han sido guardados con éxito.');
+                return $this->goHome();
+        } else {
+            return $this->render('createa', [
+                'model' => $model,
+            ]);
+        }
+    }
+    public function actionUpdatea($id,$type){
+         
+        $model=BillingAddress::findOne($id);
+        $model->update_date=date("Y-m-d H:i:s");
+        $model->user_id=Yii::$app->user->identity->id;
+         if($type=="D"){
+        $model =DeliveryAddress::findOne($id);
+        $model->update_date=date("Y-m-d H:i:s");
+        $model->user_id=Yii::$app->user->identity->id;
+        }
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                Yii::$app->getSession()->setFlash('success','Felicidades tus datos han sido guardados con éxito.');
+                return $this->goHome();
+        } else {
+            return $this->render('updatea', [
+                'model' => $model,
+            ]);
+        }
     }
 
     public function actionViewsell($id){
