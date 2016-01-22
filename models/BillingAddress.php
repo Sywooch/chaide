@@ -53,11 +53,11 @@ class BillingAddress extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'user_id' => 'User ID',
-            'city_id' => 'City ID',
-            'street1' => 'Street1',
-            'street2' => 'Street2',
-            'sector' => 'Sector',
-            'number' => 'Number',
+            'city_id' => 'Ciudad:',
+            'street1' => 'Calle1:',
+            'street2' => 'Calle2:',
+            'sector' => 'Sector:',
+            'number' => 'Número:',
             'creation_date' => 'Creation Date',
             'update_date' => 'Update Date',
         ];

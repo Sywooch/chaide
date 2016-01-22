@@ -88,13 +88,15 @@ class UserController extends Controller
     }
     public function actionUpdatea($id,$type){
          
-        $model=BillingAddress::findOne($id);
-        $model->update_date=date("Y-m-d H:i:s");
-        $model->user_id=Yii::$app->user->identity->id;
+
          if($type=="D"){
         $model =DeliveryAddress::findOne($id);
         $model->update_date=date("Y-m-d H:i:s");
         $model->user_id=Yii::$app->user->identity->id;
+        }else{
+        $model=BillingAddress::findOne($id);
+        $model->update_date=date("Y-m-d H:i:s");
+        $model->user_id=Yii::$app->user->identity->id;  
         }
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
                 Yii::$app->getSession()->setFlash('success','Felicidades tus datos han sido guardados con éxito.');

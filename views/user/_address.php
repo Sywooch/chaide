@@ -1,12 +1,19 @@
-                <div class="cont-infocamposf2" id="formulario-direccion">
+<?php
+
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use app\models\City;
+
+/* @var $this yii\web\View */
+/* @var $model app\models\Article */
+/* @var $form yii\widgets\ActiveForm */
+?>
+                <div class="cont-infocamposf2" >
                      <?php $form = ActiveForm::begin(); ?>
-                <h1>DIRECCIONES DE ENVÍO</h1>
+                <h1>DIRECCIÓN</h1>
                 <div class="cont-infocampos">
-                    <label>Ciudad:</label>
-                    <select>
-                        <option>Quito</option>
-                        <option>Guayaquil</option>
-                    </select>
+                  <?= $form->field($model, 'city_id')->DropDownList(ArrayHelper::map(City::find()->all(), 'id', 'description')) ?>
                 </div>
                 <div class="cont-infocampos">
                     <label>Calle 1:</label>
@@ -22,7 +29,7 @@
                 </div>
                 <div class="cont-infocampos">
                     <label>Número:</label>
-                        <?= $form->field($model, 'number')->textInput(['maxlength' => true]) ?>
+                    <?= $form->field($model, 'number')->textInput(['maxlength' => true]) ?>
                 </div>
                 <input type="submit" value="Guardar" class="btn-submit"/> 
                 <?php ActiveForm::end(); ?>
