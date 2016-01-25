@@ -19,7 +19,7 @@ class LineSearch extends Line
     {
         return [
             [['id', 'type_id'], 'integer'],
-            [['description'], 'safe'],
+            [['description', 'status', 'picture', 'title'], 'safe'],
         ];
     }
 
@@ -60,7 +60,10 @@ class LineSearch extends Line
             'type_id' => $this->type_id,
         ]);
 
-        $query->andFilterWhere(['like', 'description', $this->description]);
+        $query->andFilterWhere(['like', 'description', $this->description])
+            ->andFilterWhere(['like', 'status', $this->status])
+            ->andFilterWhere(['like', 'picture', $this->picture])
+            ->andFilterWhere(['like', 'title', $this->title]);
 
         return $dataProvider;
     }

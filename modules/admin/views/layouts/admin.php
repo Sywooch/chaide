@@ -36,12 +36,12 @@ AdminAsset::register($this);
 	            echo Nav::widget([
 	                'options' => ['class' => 'navbar-nav navbar-right'],
 	                'items' => [
-	                	['label'=>'Categorias', 'url'=>['/admin/category']],
-	                	['label'=>'Noticias', 'url'=>['/admin/news']],
-	                	['label'=>'Tests', 'url'=>['/admin/test']],
-	                	['label'=>'Preguntas EVA', 'url'=>['/admin/ask']],
-                        ['label'=>'Horoscopo', 'url'=>['/admin/week']],
-	                	['label'=>'Banners', 'url'=>['/admin/banner']],
+	                	['label'=>'Lineas', 'url'=>['/admin/line']],
+	                	['label'=>'Productos', 'url'=>['/admin/product']],
+	                	['label'=>'Locales', 'url'=>['/admin/locale']],
+	                	['label'=>'Noticias/Inovación', 'url'=>['/admin/article']],
+                        ['label'=>'Usuarios', 'url'=>['/admin/user']],
+	                	['label'=>'Ordenes', 'url'=>['/admin/shop']],
                         ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
                             'url' => ['/admin/default/logout'],
                             'linkOptions' => ['data-method' => 'post']],
@@ -70,7 +70,7 @@ AdminAsset::register($this);
 
     <footer class="footer">
         <div class="container">
-            <p class="pull-left">&copy; EVA <?= date('Y') ?></p>
+            <p class="pull-left">&copy; Chaide <?= date('Y') ?></p>
             <p class="pull-right">Powered by <a href="http://share.com.ec" target="_blank">Share Ecuador</a></p>
         </div>
     </footer>

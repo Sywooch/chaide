@@ -132,7 +132,9 @@ class Product extends ActiveRecord implements CartPositionInterface
     } 
        public function getCharacteristics()
     {
-        return $this->hasMany(Characteristic::className(),['id' => 'characteristic_id'])->viaTable('product_characteristic',['product_id' => 'id']);
+        return $this->hasMany(Characteristic::className(),['id' => 'characteristic_id'])->viaTable('product_characteristic',['product_id' => 'id'], function ($query) {
+            $query->orderBy(['sort' => 'ASC']);
+        });
     }
        public function getAdvantages()
     {

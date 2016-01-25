@@ -5,9 +5,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Line */
 
-$this->title = 'Update Line: ' . ' ' . $model->id;
+$this->title = 'Update Line: ' . ' ' . $model->title;
 $this->params['breadcrumbs'][] = ['label' => 'Lines', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="line-update">

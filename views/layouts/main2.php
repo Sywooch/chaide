@@ -155,7 +155,7 @@ AppAsset::register($this);
     	<li><a href="#" id="b-contacto"><img src="<?= URL::base() ?>/images/ico-contacto.svg"/></a></li>
         <li><a href="https://www.facebook.com/ChaideOficial?fref=ts" target="_blank"  id="b-facebook"><img src="<?= URL::base() ?>/images/ico-facebook2.svg"/></a></li>
         <li><a href="#"  id="b-twitter"><img src="<?= URL::base() ?>/images/ico-twitter2.svg"/></a></li>
-        <li><a href="#"  id="b-youtube"><img src="<?= URL::base() ?>/images/ico-youtube2.svg"/></a></li>
+        <!-- <li><a href="#"  id="b-youtube"><img src="<?= URL::base() ?>/images/ico-youtube2.svg"/></a></li> -->
     </ul>
 </div>
 <!-- menu mobile -->

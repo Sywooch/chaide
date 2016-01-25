@@ -48,7 +48,6 @@ class ShopController extends Controller
     
         ];
     }
- 
     public function actionDpostprocess($xmlReq){
 		//Yii::app()->request->enableCsrfValidation = false;
     	$lsdata = $xmlReq;

@@ -75,4 +75,13 @@ return array (
       '@yz/shoppingcart' => $vendorDir . '/omnilight/yii2-shopping-cart',
     ),
   ),
+  'mongosoft/yii2-soap-client' => 
+  array (
+    'name' => 'mongosoft/yii2-soap-client',
+    'version' => '0.1.0.0',
+    'alias' => 
+    array (
+      '@mongosoft/soapclient' => $vendorDir . '/mongosoft/yii2-soap-client',
+    ),
+  ),
 );

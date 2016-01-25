@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'title',
             'description:ntext',
             'price',
-            '3d',
+            'render',
             'picture',
             'background1',
             'background2',
@@ -41,6 +41,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'status',
             'creation_date',
             'scale',
+            'warranty',
+            'support',
         ],
     ]) ?>
 

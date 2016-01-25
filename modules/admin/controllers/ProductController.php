@@ -4,7 +4,7 @@ namespace app\modules\admin\controllers;
 
 use Yii;
 use app\models\Product;
-use yii\data\ActiveDataProvider;
+use app\models\ProductSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -23,21 +23,6 @@ class ProductController extends Controller
                     'delete' => ['post'],
                 ],
             ],
-                                'access' => [
-           'class' => AccessControl::className(),
-           'only' => ['index', 'view', 'create', 'update','delete'],
-           'rules' => [
-
-               [
-                   'actions' => ['index', 'view', 'create', 'update','delete'],
-                   'allow' => true,
-                   'roles' => ['@'],
-                   'matchCallback' => function ($rule, $action) {
-                       return User::isUserAdmin(Yii::$app->user->identity->username);
-                   }
-               ],
-           ],
-       ],
         ];
     }
 
@@ -47,12 +32,11 @@ class ProductController extends Controller
      */
     public function actionIndex()
     {
-
-        $dataProvider = new ActiveDataProvider([
-            'query' => Product::find(),
-        ]);
+        $searchModel = new ProductSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }

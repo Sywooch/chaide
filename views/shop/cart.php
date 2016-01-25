@@ -97,7 +97,7 @@ AppAsset::register($this);
                     </div>
                     
                 <?php endforeach; ?>
-                    <span>Si no posees direccion de Facturación. <a href="#">Ingresa aquí</a></span>
+                    <span>Si no posees direccion de Facturación. <a href="<?= Url::to(['user/address']) ?>">Ingresa aquí</a></span>
                 </div>
             </div>
             <div class="direc-50">
@@ -127,7 +127,7 @@ AppAsset::register($this);
                     </div>
                     
                 <?php endforeach; ?>
-                    <span>Si no posees direccion de Envío. <a href="#">Ingresa aquí</a></span>
+                    <span>Si no posees direccion de Envío. <a href="<?= Url::to(['user/address']) ?>">Ingresa aquí</a></span>
                 </div>
             </div>
         </div>

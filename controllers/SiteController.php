@@ -52,8 +52,34 @@ class SiteController extends Controller
         ];
     }
     public function actionTest(){
-        $posts = Yii::$app->db3->createCommand('SELECT * FROM post')
-            ->queryAll();
+        $url="http://192.168.10.26:1080/sap/bc/srt/wsdl/bndg_E0A334B5CF2A6FF1810A00215A4C209C/wsdl11/allinone/ws_policy/document?sap-client=300";
+        $client = new \mongosoft\soapclient\Client([
+        'url' => $url,
+         'options' => [
+            'cache_wsdl' => WSDL_CACHE_NONE,
+            'user' => 'WEBSERVICE',//Usuario SAP
+            'password' => 'chaide*123',
+            'soap' => SOAP_1_1,
+            'KTOKD' => 'YB01',
+            'KTOKD_dest' => '0002',
+            'BUKRS' => '1000',
+            'VKORG' => '1000',
+            'VTWEG' => '03',
+            'SPART' => '00',
+            'TITLE_P' => 'SENOR',
+            'SPRAS' => 'S',
+            'LAND1' => 'EC',
+            'TATYP' => 'MWST',
+            'KDKG1' => '04',
+            'mandante' => '100',
+            'clase_pedido' => 'ZTA1',
+            'tipo_posicion' => 'TAN',
+            'organizacion_venta' => '1000',
+            'canal' => '03',
+            'sector' => '00',
+        ],
+        ]);
+        print_r($client);
     }
     public function actionIndex()
     {

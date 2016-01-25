@@ -28,11 +28,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'cellphone')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'sex')->dropDownList([ 'MALE' => 'HOMBRE', 'FEMALE' => 'MUJER', ], ['prompt' => 'Seleciona una Opción']) ?>
+    <?= $form->field($model, 'sex')->dropDownList([ 'MALE' => 'MALE', 'FEMALE' => 'FEMALE', ], ['prompt' => '']) ?>
 
     <?= $form->field($model, 'creation_date')->textInput() ?>
 
     <?= $form->field($model, 'type')->dropDownList([ 'CLIENT' => 'CLIENT', 'ADMIN' => 'ADMIN', ], ['prompt' => '']) ?>
+
+    <?= $form->field($model, 'status')->dropDownList([ 'ACTIVE' => 'ACTIVE', 'INACTIVE' => 'INACTIVE', ], ['prompt' => '']) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

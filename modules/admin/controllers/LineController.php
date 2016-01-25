@@ -4,7 +4,7 @@ namespace app\modules\admin\controllers;
 
 use Yii;
 use app\models\Line;
-use yii\data\ActiveDataProvider;
+use app\models\LineSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -23,21 +23,6 @@ class LineController extends Controller
                     'delete' => ['post'],
                 ],
             ],
-                                'access' => [
-           'class' => AccessControl::className(),
-           'only' => ['index', 'view', 'create', 'update','delete'],
-           'rules' => [
-
-               [
-                   'actions' => ['index', 'view', 'create', 'update','delete'],
-                   'allow' => true,
-                   'roles' => ['@'],
-                   'matchCallback' => function ($rule, $action) {
-                       return User::isUserAdmin(Yii::$app->user->identity->username);
-                   }
-               ],
-           ],
-       ],
         ];
     }
 
@@ -47,11 +32,11 @@ class LineController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Line::find(),
-        ]);
+        $searchModel = new LineSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }

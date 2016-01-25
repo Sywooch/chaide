@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Line */
 
-$this->title = $model->id;
+$this->title = $model->title;
 $this->params['breadcrumbs'][] = ['label' => 'Lines', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -32,6 +32,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'type_id',
             'description',
             'status',
+            'picture',
+            'title',
         ],
     ]) ?>
 

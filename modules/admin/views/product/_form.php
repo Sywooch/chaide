@@ -20,8 +20,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'price')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, '3d')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'picture')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'background1')->textInput(['maxlength' => true]) ?>

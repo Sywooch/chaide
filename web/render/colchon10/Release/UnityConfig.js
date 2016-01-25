@@ -50,7 +50,7 @@ function CompatibilityCheck()
     // Check for WebGL. Allow running without WebGL on development players for running tests on build farm.
     if (!0 && !hasWebGL)
     {
-        alert("You need a browser which supports WebGL to run this content. Try installing Firefox.");
+       // alert("You need a browser which supports WebGL to run this content. Try installing Firefox.");
         window.history.back();                
     }
     // Show warnings if needed.
@@ -86,25 +86,25 @@ if (typeof window.onerror != 'function')
         didShowErrorMessage = true;
         if (err.indexOf("DISABLE_EXCEPTION_CATCHING") != -1)
         {
-            alert ("An exception has occured, but exception handling has been disabled in this build. If you are the developer of this content, enable exceptions in your project's WebGL player settings to be able to catch the exception or see the stack trace.");
+           // alert ("An exception has occured, but exception handling has been disabled in this build. If you are the developer of this content, enable exceptions in your project's WebGL player settings to be able to catch the exception or see the stack trace.");
             return;
         }
         if (err.indexOf("Cannot enlarge memory arrays") != -1)
         {
-            alert ("Out of memory. If you are the developer of this content, try allocating more memory to your WebGL build in the WebGL player settings.");
+           // alert ("Out of memory. If you are the developer of this content, try allocating more memory to your WebGL build in the WebGL player settings.");
             return;        
         }
         if (err.indexOf("Invalid array buffer length") != -1 || err.indexOf("out of memory") != -1 )
         {
-            alert ("The browser could not allocate enough memory for the WebGL content. If you are the developer of this content, try allocating less memory to your WebGL build in the WebGL player settings.");
+           // alert ("The browser could not allocate enough memory for the WebGL content. If you are the developer of this content, try allocating less memory to your WebGL build in the WebGL player settings.");
             return;                
         }
         if (err.indexOf("Script error.") != -1 && document.URL.indexOf("file:") == 0)
         {
-            alert ("It seems your browser does not support running Unity WebGL content from file:// urls. Please upload it to an http server, or try a different browser.");
+           // alert ("It seems your browser does not support running Unity WebGL content from file:// urls. Please upload it to an http server, or try a different browser.");
             return;
         } 
-        alert ("An error occured running the Unity content on this page. See your browser's JavaScript console for more info. The error was:\n"+err);
+      //  alert ("An error occured running the Unity content on this page. See your browser's JavaScript console for more info. The error was:\n"+err);
 }
 }
 
