@@ -101,7 +101,7 @@ $this->title = $model->title;
              ?>
             <div id="price-<?= $code->id ?>" style="display:none" class="precio-colchon">$<?= $sap->price ?><br/><span>(No incluye IVA)</span></div>
         <?php } endforeach; ?>
-            <div class="cont-input"> <?= Html::submitButton('Comprar Ahora', ['class' => 'link-comprar']) ?></div>
+            <div class="cont-input"> <?= Html::submitButton('Comprar Ahora', ['class' => 'link-comprar2']) ?></div>
         </div>
       <?php  ActiveForm::end(); ?>
     </div>
