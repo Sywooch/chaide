@@ -1141,6 +1141,8 @@ footer{
     text-align: center;
     border: none;
 	cursor:pointer;
+	font-family: 'dosisregular' !important;
+	font-size:0.9em;
 }							
 .secciones-productos ul li a:hover{
 	background-color:#44413b;
