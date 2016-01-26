@@ -3,7 +3,9 @@
 namespace app\models;
 
 use Yii;
-
+use yii\db\ActiveRecord;
+use yz\shoppingcart\CartPositionInterface;
+use yz\shoppingcart\CartPositionTrait;
 /**
  * This is the model class for table "sap_code".
  *
@@ -16,11 +18,20 @@ use Yii;
  * @property Color $color
  * @property Product $product
  */
-class SapCode extends \yii\db\ActiveRecord
+class SapCode extends ActiveRecord implements CartPositionInterface
 {
     /**
      * @inheritdoc
      */
+    use CartPositionTrait;
+           public function getPrice()
+    {
+        return $this->price;
+    }
+        public function getId()
+    {
+        return $this->id;
+    }
     public static function tableName()
     {
         return 'sap_code';

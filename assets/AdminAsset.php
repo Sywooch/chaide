@@ -21,6 +21,7 @@ class AdminAsset extends AssetBundle
         'css/site.css',
     ];
     public $js = [
+    'https://www.google.com/jsapi'
     ];
     public $depends = [
         'yii\web\YiiAsset',

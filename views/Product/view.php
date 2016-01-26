@@ -5,6 +5,7 @@ use yii\widgets\DetailView;
 use yii\helpers\Url;
 use app\assets\AppAsset;
 use yii\web\View;
+use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\models\Product */
 $script='$("#play").click(function(){
@@ -29,6 +30,13 @@ $this->title = $model->title;
         <div class="barra-azul">
             <?= strtoupper($model->title) ?>
         </div>
+    <?php $form = ActiveForm::begin([
+
+        'id' => 'active-form',
+        'action'=>['shop/addtocart'],
+        'method' => 'get',
+
+    ]); ?>
         <div class="info-colchon">
             <div class="cont-fcompra">
                 <!--<span>Colchon Caressa</span>-->
@@ -47,21 +55,26 @@ $this->title = $model->title;
          
             <div class="cont-fcompra">
                 <span>Medidas Disponibles:</span>
-                <select>
-                   <?php foreach($model->sapCodes as $code): ?>
+                <select name="id">
+                   <?php foreach($model->sapCodes as $k => $code): ?>
+                   <?php 
+                   if($k==0){
+                   $sap=$code;
+                   }
+                   ?>
                     <?php if($code->mesure){ ?>
-                    <option value="<?= $code->mesure->id ?>"><?= $code->mesure->description ?></option>
+                    <option value="<?= $code->id ?>"><?= $code->mesure->description ?></option>
                                 <?php } 
                                 endforeach; ?>
                 </select>
             </div>
-            <?php if($model->colors){  ?>
+            <?php if($code->color){  ?>
             <div class="cont-fcompra">
                 <span>Color:</span>
                 <select>
-                      <?php foreach($model->colors as $color): ?>
-                    <option value="<?= $color->id ?>"><?= $color->description ?></option>
-                    <?php endforeach; ?>
+                    
+                    <option value="<?= $code->id ?>"><?= $code->color->description ?></option>
+                   
                 </select>
             </div>
             <?php }  ?>
@@ -76,10 +89,10 @@ $this->title = $model->title;
             </div> -->
         </div>
         <div class="cont-precio">
-            <div class="precio-colchon">$<?= $model->price ?><br/><span>(No incluye IVA)</span></div>
-            <div class="cont-input"><a href="<?= Url::to(['shop/addtocart','id'=>$model->id]) ?> ?>" class="link-comprar">Comprar Ahora</a></div>
+            <div class="precio-colchon">$<?= $sap->price ?><br/><span>(No incluye IVA)</span></div>
+            <div class="cont-input"> <?= Html::submitButton('Comprar Ahora', ['class' => 'link-comprar']) ?></div>
         </div>
-        </form>
+      <?php  ActiveForm::end(); ?>
     </div>
 
 </section>

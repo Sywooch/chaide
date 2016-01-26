@@ -2,7 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use app\models\Line;
+use yii\helpers\ArrayHelper;
 /* @var $this yii\web\View */
 /* @var $model app\models\Product */
 /* @var $form yii\widgets\ActiveForm */
@@ -12,7 +13,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'line_id')->textInput() ?>
+    <?= $form->field($model, 'line_id')->DropDownList(ArrayHelper::map(Line::find()->all(), 'id', 'title')) ?>
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 

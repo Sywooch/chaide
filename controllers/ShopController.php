@@ -20,6 +20,7 @@ use app\models\Sell;
 use app\models\Logs;
 use app\models\Detail;
 use app\models\DinersTransaction;
+use app\models\SapCode;
 // http://www.chaide.com./test/shop/dreturn
 // http://www.chaide.com./test/shop/dcancel
 // http://www.chaide.com./test/shop/dpostprocess
@@ -444,7 +445,7 @@ $plugin= New VposPlugin;
 	public function actionAddtocart($id){
 		    $cart = Yii::$app->cart;
 
-		    $model = Product::findOne($id);
+		    $model = SapCode::findOne($id);
 		    if ($model) {
 		        $cart->put($model, 1);
 		        //die(print_r($cart));
@@ -454,7 +455,7 @@ $plugin= New VposPlugin;
 	}
 	public function actionRemovefromcart($id){
 		    $cart = Yii::$app->cart;
-		    $model = Product::findOne($id);
+		    $model = SapCode::findOne($id);
 		    if ($model){
 		        $cart->remove($model);
 		        //die(print_r($cart));
@@ -466,7 +467,7 @@ $plugin= New VposPlugin;
 	public function actionUpdatefromcart($id,$quantity){
 			    $cart = Yii::$app->cart;
 
-		    $model = Product::findOne($id);
+		    $model = SapCode::findOne($id);
 		    if ($model) {
 		        $cart->update($model,$quantity);
 		        //die(print_r($cart));

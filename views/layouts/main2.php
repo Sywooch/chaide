@@ -19,8 +19,6 @@ $("#menu-chaide").click(function(){
         $("#general").toggleClass("general-active");
     });  
 });
-  var FHChat = {product_id: "170388a7484c"};
-  FHChat.properties={};FHChat.set=function(key,data){this.properties[key]=data};!function(){var a,b;return b=document.createElement("script"),a=document.getElementsByTagName("script")[0],b.src="https://chat-client-js.firehoseapp.com/chat-min.js",b.async=!0,a.parentNode.insertBefore(b,a)}();
    (function(){ var widget_id = "QcMOZSFvGS";
 var s = document.createElement("script"); s.type = "text/javascript"; s.async = true; s.src = "//code.jivosite.com/script/widget/"+widget_id; var ss = document.getElementsByTagName("script")[0]; ss.parentNode.insertBefore(s, ss);})(); ';
 $this->registerJs($script,View::POS_END);
