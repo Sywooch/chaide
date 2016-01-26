@@ -99,7 +99,7 @@ $this->title = $model->title;
             <?php foreach($model->sapCodes as $k => $code):
             if($k!=0){
              ?>
-            <div id="price-<?= $code->id ?>" style="display:none" class="precio-colchon">$<?= $sap->price ?><br/><span>(No incluye IVA)</span></div>
+            <div id="price-<?= $code->id ?>" style="display:none" class="precio-colchon">$<?= $code->price ?><br/><span>(No incluye IVA)</span></div>
         <?php } endforeach; ?>
             <div class="cont-input"> <?= Html::submitButton('Comprar Ahora', ['class' => 'link-comprar2']) ?></div>
         </div>
