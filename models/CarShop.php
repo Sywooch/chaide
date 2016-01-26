@@ -28,8 +28,8 @@ class CarShop extends ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'product_id'], 'required'],
-            [['user_id', 'product_id', 'quantity'], 'integer']
+            [['user_id', 'product_id','sap_id'], 'required'],
+            [['user_id', 'product_id', 'quantity','sap_id'], 'integer']
         ];
     }
 

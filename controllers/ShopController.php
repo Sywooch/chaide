@@ -87,6 +87,7 @@ class ShopController extends Controller
 					$detail->product_id=$item->product_id;
 					$detail->quantity=$item->quantity;
 					$detail->sell_id=$DATOS;
+					$detail->sap_id=$item->sap_id;
 					$detail->save();
 				}
 				CarShop::deleteAll("user_id = $id");
@@ -135,8 +136,9 @@ class ShopController extends Controller
 		    foreach(Yii::$app->cart->positions as $position){
 	    			$carshop= new CarShop();
 					$carshop->user_id=Yii::$app->user->identity->id;
-	          		$carshop->product_id=$position->id;
+	          		$carshop->product_id=$position->product_id;
 	          		$carshop->quantity=$position->quantity;
+	          		$carshop->sap_id=$position->id;
 	          		try {
 	          			$carshop->save();
 	          		} catch (Exception $e) {
@@ -270,6 +272,7 @@ $plugin= New VposPlugin;
 					$detail->product_id=$item->product_id;
 					$detail->quantity=$item->quantity;
 					$detail->sell_id=$sell->id;
+					$detail->sap_id=$item->sap_id;
 					$detail->save();
 				}
 				CarShop::deleteAll("user_id = $id");
@@ -293,8 +296,9 @@ $plugin= New VposPlugin;
 	    foreach(Yii::$app->cart->positions as $position){
     			$carshop= new CarShop();
 				$carshop->user_id=Yii::$app->user->identity->id;
-          		$carshop->product_id=$position->id;
+          		$carshop->product_id=$position->product_id;
           		$carshop->quantity=$position->quantity;
+          		$carshop->sap_id=$position->id;
           		try {
           			$carshop->save();
           		} catch (Exception $e) {

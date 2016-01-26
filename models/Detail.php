@@ -28,8 +28,8 @@ class Detail extends ActiveRecord
     public function rules()
     {
         return [
-            [['product_id', 'sell_id'], 'required'],
-            [['product_id', 'sell_id'], 'integer']
+            [['product_id', 'sell_id','sap_id'], 'required'],
+            [['product_id', 'sell_id','sap_id'], 'integer']
         ];
     }
 

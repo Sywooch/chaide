@@ -17,6 +17,12 @@ $("#stop").click(function(){
         $("#stop").hide();
         $("#video-colchon-interna").get(0).pause(); 
         $("#play").fadeIn();
+    });
+    $("#sap_mesure").change(function(){
+        var id= $(this).val();
+        var aux= "price-";
+        $("[id^="+aux+"]").hide();
+        $("#price-"+id).show();
     });'; 
 $this->registerJs($script,View::POS_END);
 AppAsset::register($this);
@@ -55,7 +61,7 @@ $this->title = $model->title;
          
             <div class="cont-fcompra">
                 <span>Medidas Disponibles:</span>
-                <select name="id">
+                <select id="sap_mesure" name="id">
                    <?php foreach($model->sapCodes as $k => $code): ?>
                    <?php 
                    if($k==0){
@@ -89,7 +95,12 @@ $this->title = $model->title;
             </div> -->
         </div>
         <div class="cont-precio">
-            <div class="precio-colchon">$<?= $sap->price ?><br/><span>(No incluye IVA)</span></div>
+            <div id="price-<?= $sap->id ?>" class="precio-colchon">$<?= $sap->price ?><br/><span>(No incluye IVA)</span></div>
+            <?php foreach($model->sapCodes as $k => $code):
+            if($k!=0){
+             ?>
+            <div id="price-<?= $code->id ?>" style="display:none" class="precio-colchon">$<?= $sap->price ?><br/><span>(No incluye IVA)</span></div>
+        <?php } endforeach; ?>
             <div class="cont-input"> <?= Html::submitButton('Comprar Ahora', ['class' => 'link-comprar']) ?></div>
         </div>
       <?php  ActiveForm::end(); ?>
