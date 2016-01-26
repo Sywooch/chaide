@@ -1132,13 +1132,15 @@ footer{
 	text-align:center;
 	}	
 .link-comprar2{
-width:50%;
-margin:2% 25% 1% 25%;
-background-color:#58595b;
-color:rgba(255,255,255,1.00);
-padding:5px 0;
-float:left;
-text-align:center;
+    width: 100%;
+    margin: 2% 0 1% 0;
+    background-color: #3C3C3C;
+    color: rgba(255,255,255,1.00);
+    padding: 13px 0;
+    float: left;
+    text-align: center;
+    border: none;
+	cursor:pointer;
 }							
 .secciones-productos ul li a:hover{
 	background-color:#44413b;
