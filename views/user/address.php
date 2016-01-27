@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="direcciones-g">
                         <span><?= $address->city->description."-".$address->sector."-".$address->street1."-".$address->street2."-".$address->number ?></span>
                         <a href="<?= Url::to(['user/updatea','id'=>$address->id,'type'=>'D']) ?>">Editar</a>
-                        <a href="#">Borrar</a>
+                        <!-- <a href="#">Borrar</a> -->
                     </div>	
                     <?php endforeach; ?>
                     <a href="<?= Url::to(['user/createa','type'=>'D']) ?>" id="bnt-adireccion">+ AÑADIR DIRECCIÓN</a>
@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="direcciones-g">
                         <span><?= $address->city->description."-".$address->sector."-".$address->street1."-".$address->street2."-".$address->number ?></span>
                         <a href="<?= Url::to(['user/updatea','id'=>$address->id,'type'=>'B']) ?>">Editar</a>
-                        <a href="#">Borrar</a>
+                        <!-- <a href="#">Borrar</a> -->
                     </div>  
                     <?php endforeach; ?>		
                     <a href="<?= Url::to(['user/createa','type'=>'B']) ?>" id="bnt-adireccion">+ AÑADIR DIRECCIÓN</a>

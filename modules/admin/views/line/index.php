@@ -26,10 +26,16 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'type_id',
+            'title',
             'description',
             'status',
-            'picture',
+            array(
+           'attribute' => 'Imagen',
+            'format' => 'html',
+            'value' => function($data) { return Html::img('/images/'.$data->picture, ['width'=>'250']); }
+
+
+               ),
             // 'title',
 
             ['class' => 'yii\grid\ActionColumn'],
