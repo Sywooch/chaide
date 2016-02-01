@@ -190,6 +190,21 @@ public function actionReset($token){
             ]);
     }
     }
+    public function actionKeys(){
+        $model= User::find()->where(['status'=>'INACTIVE'])->all();
+        foreach($model as $k => $user){
+            $user->auth_key=Yii::$app->security->generateRandomString();
+            $user->status='ACTIVE';
+            $user->phone='022222222';
+            $user->cellphone='0999999999';
+            if($user->save()){
+              echo $k;  
+          }else{
+            print_r($user->getErrors());
+          }
+            
+        }
+    }
     public function actionConfirm($id, $key)
     {
         $user = User::find()->where([

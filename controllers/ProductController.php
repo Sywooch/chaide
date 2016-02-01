@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Product;
+use app\models\ProductCharacteristic;
 use app\models\ProductSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -50,9 +51,11 @@ class ProductController extends Controller
         $newCookie->name='product';
         $newCookie->value=$id;
         $newCookie->expire = time() + 60 * 60 * 24 * 180;
-        $cookie=Yii::$app->getResponse()->getCookies()->add($newCookie); 
+        $cookie=Yii::$app->getResponse()->getCookies()->add($newCookie);
+        $productcharacteristics=ProductCharacteristic::find()->where(['product_id'=>$id])->orderBy(['sort' => SORT_ASC])->all();
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'productcharacteristics' => $productcharacteristics
         ]);
     }
 

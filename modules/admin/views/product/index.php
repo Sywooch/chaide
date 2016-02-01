@@ -27,16 +27,29 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'line_id',
+            'line.title',
             'title',
-            'description:ntext',
-            'price',
+            //'description:ntext',
+            //'price',
             // 'render',
-            // 'picture',
-            // 'background1',
+                        array(
+           'attribute' => 'Imagen',
+            'format' => 'html',
+            'value' => function($data) { return Html::img('/images/productos/'.$data->picture, ['width'=>'250']); }
+
+
+               ),
+            array(
+           'attribute' => 'Background',
+            'format' => 'html',
+            'value' => function($data) { return Html::img('/images/productos-interna/'.$data->background1, ['width'=>'250']); }
+
+
+               ),
             // 'background2',
             // 'background3',
-            // 'status',
-            // 'creation_date',
+             'status',
+             'creation_date',
             // 'scale',
             // 'warranty',
             // 'support',
