@@ -51,8 +51,29 @@ class SiteController extends Controller
         ],
         ];
     }
-    public function actionTest(){
-        $url="http://192.168.10.26:1080/sap/bc/srt/wsdl/bndg_E0A334B5CF2A6FF1810A00215A4C209C/wsdl11/allinone/ws_policy/document?sap-client=300";
+    public function actionTest($urlid){
+        
+
+        switch ($urlid) {
+        case 0:
+            $url='http://WEBSERVICE:chaide*123@sapservprd.industria.chaide.com:1080/sap/bc/srt/wsdl/bndg_E0A334B5CF2A6FF1810A00215A4C209C/wsdl11/allinone/standard/document?sap-client=300';//EN URL ORIGINAL REEMPLAZAR POLICY CON STANDAR
+       
+        break;
+        case 1:
+           $url='http://WEBSERVICE:chaide*123@sapservprd.industria.chaide.com:1080/sap/bc/srt/wsdl/bndg_E0A0D052E5A0B8F1810A00215A4C209C/wsdl11/allinone/standard/document?sap-client=300';//EN URL ORIGINAL REEMPLAZAR POLICY CON STANDAR
+     
+        break;
+        case 2:
+            $url= 'http://WEBSERVICE:chaide*123@sapservprd.industria.chaide.com:1080/sap/bc/srt/wsdl/bndg_E0A0D0AD3576A1F1810A00215A4C209C/wsdl11/allinone/standard/document?sap-client=300';//EN URL ORIGINAL REEMPLAZAR POLICY CON STANDAR
+        break;
+            case 3:
+            $url= 'http://WEBSERVICE:chaide*123@sapservprd.industria.chaide.com:1080/sap/bc/srt/wsdl/bndg_E3EDA2FD29B7C0F1810A00215A4C209C/wsdl11/allinone/standard/document?sap-client=300';//EN URL ORIGINAL REEMPLAZAR POLICY CON STANDAR
+    break;
+}
+
+                 
+
+
         $client = new \mongosoft\soapclient\Client([
         'url' => $url,
          'options' => [
@@ -79,8 +100,35 @@ class SiteController extends Controller
             'sector' => '00',
         ],
         ]);
-        print_r($client);
+        $ws=array(   
+            'user' => 'WEBSERVICE',//Usuario SAP
+            'password' => 'chaide*123',
+            'soap' => SOAP_1_1,           
+            'soap' => SOAP_1_1,
+            'KTOKD' => 'YB01',
+            'KTOKD_dest' => '0002',
+            'BUKRS' => '1000',
+            'VKORG' => '1000',
+            'VTWEG' => '03',
+            'SPART' => '00',
+            'TITLE_P' => 'SENOR',
+            'SPRAS' => 'S',
+            'LAND1' => 'EC',
+            'TATYP' => 'MWST',
+            'KDKG1' => '04',
+            'mandante' => '100',
+            'clase_pedido' => 'ZTA1',
+            'tipo_posicion' => 'TAN',
+            'organizacion_venta' => '1000',
+            'canal' => '03',
+            'sector' => '00');
+        print_r($client->Zsdb2cCreaclie($ws));
+    
+
+
     }
+
+
     public function actionIndex()
     {
 
