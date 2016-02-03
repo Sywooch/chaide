@@ -104,7 +104,6 @@ class SiteController extends Controller
             'user' => 'WEBSERVICE',//Usuario SAP
             'password' => 'chaide*123',
             'soap' => SOAP_1_1,           
-            'soap' => SOAP_1_1,
             'KTOKD' => 'YB01',
             'KTOKD_dest' => '0002',
             'BUKRS' => '1000',
@@ -121,7 +120,10 @@ class SiteController extends Controller
             'tipo_posicion' => 'TAN',
             'organizacion_venta' => '1000',
             'canal' => '03',
-            'sector' => '00');
+            'sector' => '00'
+            
+            );
+print_r($client->auth($ws));
         print_r($client->Zsdb2cCreaclie($ws));
     
 
