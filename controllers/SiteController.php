@@ -13,7 +13,14 @@ use app\models\ResetForm;
 use app\models\Product;
 use app\models\Line;
 use app\models\User;
-
+    class SOAPStruct
+{
+    function __construct($user, $pass) 
+    {
+        $this->username = $user;
+        $this->password = $pass;
+    }
+}
 class SiteController extends Controller
 {
     public function behaviors()
@@ -51,6 +58,7 @@ class SiteController extends Controller
         ],
         ];
     }
+
     public function actionTest($urlid){
         
 
@@ -76,11 +84,13 @@ class SiteController extends Controller
 
         $client = new \mongosoft\soapclient\Client([
         'url' => $url,
-         'options' => [
-            'cache_wsdl' => WSDL_CACHE_NONE,
-            'user' => 'WEBSERVICE',//Usuario SAP
-            'password' => 'chaide*123',
-            'soap' => SOAP_1_1,
+        ]);
+        $auth = new SOAPStruct("WEBSERVICE","chaide*123");
+
+        $header = new     \SoapHeader("http://chaide.dev/","AuthHeader",$auth,false); 
+
+        $client->__setSoapHeaders($header); 
+        $ws=array(             
             'KTOKD' => 'YB01',
             'KTOKD_dest' => '0002',
             'BUKRS' => '1000',
@@ -98,34 +108,51 @@ class SiteController extends Controller
             'organizacion_venta' => '1000',
             'canal' => '03',
             'sector' => '00',
-        ],
-        ]);
-        $ws=array(   
-            'user' => 'WEBSERVICE',//Usuario SAP
-            'password' => 'chaide*123',
-            'soap' => SOAP_1_1,           
-            'KTOKD' => 'YB01',
-            'KTOKD_dest' => '0002',
-            'BUKRS' => '1000',
-            'VKORG' => '1000',
-            'VTWEG' => '03',
-            'SPART' => '00',
-            'TITLE_P' => 'SENOR',
-            'SPRAS' => 'S',
+            'ANRED' => 'SENOR',
+            'NAME1' => 'Franklin Alexis',
+            'NAME2' => 'Paula Aguirre',
+            'SORTL' => '1715901086',
+            'STRAS' => 'Rio Rumiyacu n71-144 y Juan Procel',
+            'CITY1' => 'QUITO',
             'LAND1' => 'EC',
-            'TATYP' => 'MWST',
-            'KDKG1' => '04',
-            'mandante' => '100',
-            'clase_pedido' => 'ZTA1',
-            'tipo_posicion' => 'TAN',
-            'organizacion_venta' => '1000',
-            'canal' => '03',
-            'sector' => '00'
-            
+            'LZONE' => 'UIO_PLANTA',
+            'SPRAS' => 'S',
+            'TELF1' => '2495310',
+            'TEL_NUMBER' => '0998130318',
+            'TELFX' => '',
+            'SMTP_ADDR' => 'franklin.paula@sahre.com.ec',
+            'STCD1' => '1715901086',
+            'STCDT' => '05',
+            'FITYP' => 'PN',
+            'STKZN' => 'X',
+            'ZTERM' => 'DT02',
+            'XZVER' => 'X',
+            'ZWELS' => 'CDEFT',
+            'BUSAB' => '15',
+            'XAUSZ' => '1',
+            'BZIRK' => 'ZVUIO',
+            'VKBUR' => '100',
+            'VKGRP' => '100',
+            'KDGRP' => '05',
+            'WAERS' => 'USD',
+            'KALKS' => '1',
+            'AWAHR' => '100',
+            'VERSG' => '1',
+            'LPRIO' => '02',
+            'VSBED' => '01',
+            'KZAZU' => 'X',
+            'ANTLF' => '9',
+            'VWERK' => '1000',
+            'KTGRD' => '01',
+            'TAXKD' => '1',
+            'PARVW' => 'SP',
+            'KTONR' => '100001'
             );
-print_r($client->auth($ws));
+
         print_r($client->Zsdb2cCreaclie($ws));
-    
+        die();
+
+        
 
 
     }
