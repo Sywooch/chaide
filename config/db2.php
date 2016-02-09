@@ -3,9 +3,9 @@
 return [
 
     'class' => 'yii\db\Connection',
-    'dsn' => 'sqlsrv:Server=190.95.226.106;Database=mydatabase',
-    'username' => 'share',
-    'password' => 'sh@re2016',
+    'dsn' => 'sqlsrv:Server=Localhost;Database=mydatabase',
+    'username' => 'Root',
+    'password' => 'Root',
     'charset' => 'utf8',
     
 ];
